@@ -27,7 +27,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -44,9 +47,40 @@
 			<artifactId>spring-security-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+			<dependency>
+				<groupId>org.owasp.esapi</groupId>
+				<artifactId>esapi</artifactId>
+				<version>2.1.0.1</version>
+				<exclusions>
+					<exclusion>
+						<groupId>xerces</groupId>
+						<artifactId>xercesImpl</artifactId>
+					</exclusion>
+					<exclusion>
+						<groupId>xom</groupId>
+						<artifactId>xom</artifactId>
+					</exclusion>
+				</exclusions>
+			</dependency>
 	</dependencies>
 
 	<build>
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <excludes>
+                    <exclude>**/*.p12</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <includes>
+                    <include>**/truststore.p12</include>
+                </includes>
+            </resource>
+        </resources>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
@@ -54,5 +88,98 @@
 			</plugin>
 		</plugins>
 	</build>
+
+    <profiles>
+        <profile>
+            <id>local</id>
+            <properties>
+                <spring.profiles.active>local</spring.profiles.active>
+            </properties>
+            <build>
+                <finalName>${project.name}-local</finalName>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/int</directory>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <id>int</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.profiles.active>int</spring.profiles.active>
+            </properties>
+            <build>
+                <finalName>${project.name}-int</finalName>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/int</directory>
+                        <excludes>
+                            <exclude>Procfile</exclude>
+                        </excludes>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources/int</directory><!-- from -->
+                        <targetPath>${project.build.directory}</targetPath><!-- to -->
+                        <includes><!-- what -->
+                            <include>Procfile</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <id>sqa</id>
+            <properties>
+                <spring.profiles.active>sqa</spring.profiles.active>
+            </properties>
+            <build>
+                <finalName>${project.name}-sqa</finalName>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/sqa</directory>
+                        <excludes>
+                            <exclude>Procfile</exclude>
+                        </excludes>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources/sqa</directory><!-- from -->
+                        <targetPath>${project.build.directory}</targetPath><!-- to -->
+                        <includes><!-- what -->
+                            <include>Procfile</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+        <profile>
+            <id>prod</id>
+            <properties>
+                <spring.profiles.active>prod</spring.profiles.active>
+            </properties>
+            <build>
+                <finalName>${project.name}</finalName>
+                <resources>
+                    <resource>
+                        <directory>src/main/resources/prod</directory>
+                        <excludes>
+                            <exclude>Procfile</exclude>
+                        </excludes>
+                    </resource>
+                    <resource>
+                        <directory>src/main/resources/prod</directory><!-- from -->
+                        <targetPath>${project.build.directory}</targetPath><!-- to -->
+                        <includes><!-- what -->
+                            <include>Procfile</include>
+                        </includes>
+                    </resource>
+                </resources>
+            </build>
+        </profile>
+    </profiles>
+
 
 </project>

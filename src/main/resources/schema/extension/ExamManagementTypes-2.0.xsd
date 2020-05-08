@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/2.0"
+           targetNamespace="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/2.0"
+           elementFormDefault="qualified" version="2.0">
+
+    <xs:include schemaLocation="CommonTypes-2.0.xsd"/>
+    <xs:include schemaLocation="ContentionScope-2.0.2.xsd"/>
+    <xs:include schemaLocation="AppointmentScope-2.0.xsd"/>
+    <xs:include schemaLocation="RequestScope-2.0.1.xsd"/>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+           Fault Group
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+           ExamSchedulingRequestEvent Group
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+    <xs:element name="ExamRequestAcknowledgementEvent" type="ExamRequestAcknowledgementEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="ExamSchedulingRequestCreatedEvent" type="ExamSchedulingRequestCreatedEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="ReworkExamSchedulingRequestCreatedEvent" type="ReworkExamSchedulingRequestCreatedEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="ClarificationRequestEvent" type="ClarificationRequestEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="RequestScopedFaultEvent" type="RequestScopedFaultEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+
+
+    <xs:element name="ClarificationResponseEvent" type="ClarificationResponseEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="NarrativeClarificationResponseEvent" type="NarrativeClarificationResponseEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="EditedRequestClarificationResponseEvent" type="EditedRequestClarificationResponseEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="AddressChangeEvent" type="AddressChangeEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="ExamSchedulingRequestCancellationEvent" type="ExamSchedulingRequestCancellationEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+    <xs:element name="SpecialInstructionsEvent" type="SpecialInstructionsEventType"
+                substitutionGroup="ExamSchedulingRequestEvent"/>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+           ExamRelatedContentionEvent Group
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+    <xs:element name="ContentionCancellationRequestedEvent" type="ContentionCancellationRequestedEventType"
+                substitutionGroup="ExamRelatedContentionEvent"/>
+    <xs:element name="ContentionCanceledEvent" type="ContentionCanceledEventType"
+                substitutionGroup="ExamRelatedContentionEvent"/>
+    <xs:element name="ResultPackageAvailableEvent" type="ResultPackageAvailableEventType"
+                substitutionGroup="ExamRelatedContentionEvent"/>
+    <xs:element name="ContentionScopedFaultEvent" type="ContentionScopedFaultEventType"
+                substitutionGroup="ExamRelatedContentionEvent"/>
+
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+           ExamAppointmentStatusEvent Group
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+    <xs:element name="AppointmentScheduledEvent" type="AppointmentScheduledEventType"
+                substitutionGroup="ExamAppointmentStatusEvent"/>
+    <xs:element name="AppointmentACEAssignedEvent" type="ACEAppointmentAssignedEventType"
+                substitutionGroup="ExamAppointmentStatusEvent"/>
+    <xs:element name="AppointmentCancelRequestEvent" type="AppointmentCancelRequestEventType"
+                substitutionGroup="ExamAppointmentStatusEvent"/>
+    <xs:element name="AppointmentCanceledEvent" type="AppointmentCanceledEventType"
+                substitutionGroup="ExamAppointmentStatusEvent"/>
+    <xs:element name="AppointmentCompletedEvent" type="AppointmentCompletedEventType"
+                substitutionGroup="ExamAppointmentStatusEvent"/>
+    <xs:element name="RescheduleRequestEvent" type="AppointmentRescheduleRequestedEventType"
+                substitutionGroup="ExamAppointmentStatusEvent"/>
+    <xs:element name="AppointmentScopedFaultEvent" type="AppointmentScopedFaultEventType"
+                substitutionGroup="ExamAppointmentStatusEvent"/>
+
+</xs:schema>

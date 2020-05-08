@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/2.2"
+           targetNamespace="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/2.2"
+           elementFormDefault="qualified" version="2.2">
+
+    <xs:include schemaLocation="CommonTypes-2.2.xsd"/>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+         ExamAppointment Object Types
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:complexType name="ExamAppointmentCollectionType">
+        <xs:sequence>
+            <xs:element ref="ExamAppointment" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ExamAppointment" type="ExamAppointmentType"/> <!--TODO: "this is provided for documentation only; no messages of this type should be sent as part of biz process"-->
+    <xs:complexType name="ExamAppointmentType">
+        <xs:annotation>
+            <xs:documentation>This type is central to the domain model for exam management. Exams are direct medical
+                evidence
+                for a disability contention used to determine the current level of disability. Contentions often provide
+                clarification and supporting attributes such as the related DBQ and major organs affected during the
+                exam. An appointment gives a medical professional the opportunity to examine a veteran and/or veteran's
+                records
+                to evaluate the contention.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ExamAppointmentStatusEvents" type="ExamAppointmentStatusEventCollectionType"/>
+            <xs:element name="ExamRelatedContentionUuidCollection" type="UuidCollection"/>
+        </xs:sequence>
+        <xs:attribute name="examAppointmentUuid" type="UuidType" use="required"/>
+        <xs:attribute name="examType" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+         ExamAppointment Event Types
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:complexType name="ExamAppointmentStatusEventCollectionType">
+        <xs:sequence>
+            <xs:element ref="ExamAppointmentStatusEvent" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ExamAppointmentStatusEvent" type="ExamAppointmentStatusEventType" abstract="true"/>
+    <xs:complexType name="ExamAppointmentStatusEventType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>Base abstract class for events pertaining to an appointment
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamManagementEventType">
+                <xs:attribute name="examAppointmentUuid" type="UuidType" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            A universally unique identifier that ties all status events to the ExamAppointment.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="FaultyAppointmentScopedEvent" type="ExamAppointmentStatusEventType"
+                substitutionGroup="ExamAppointmentStatusEvent" abstract="true"/>
+    <xs:complexType name="AppointmentScopedFaultEventType">
+        <xs:complexContent>
+            <xs:extension base="ExamAppointmentStatusEventType">
+                <xs:sequence>
+                    <xs:element ref="FaultyAppointmentScopedEvent" minOccurs="0"/>
+                </xs:sequence>
+
+                <xs:attributeGroup ref="FaultDetailsAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="AppointmentScheduledEventType">
+        <xs:annotation>
+            <xs:documentation>This is the first event in the appointment lifecycle. It carries all the information
+                other systems need to recreate the same appointment as the event originator. Designates an event where
+                an existing
+                appointment is scheduled, including time, place, and examiner information.
+
+                Multiple schedule events are allowed for a given appointment. Subsequent schedule events will be
+                construed to be modifications.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamAppointmentStatusEventType">
+                <xs:sequence>
+                    <xs:element name="ExaminingFacility" type="FacilityType" minOccurs="0"/>
+                    <xs:element name="ExamRelatedContentionUuids" type="UuidCollection"/>
+                </xs:sequence>
+                <xs:attribute name="scheduledDateTime" type="xs:dateTime" use="required"/>
+                <xs:attribute name="nameOfExaminer" type="xs:string"/>
+                <xs:attribute name="emsPointOfContact" type="xs:string"/>
+                <xs:attribute name="examName" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ACEAppointmentAssignedEventType">
+        <xs:annotation>
+            <xs:documentation>Designates the event of an existing appointment being assigned to a Facility but not
+                having or requiring
+                an actual scheduling with the veteran.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="AppointmentScheduledEventType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="AppointmentCancelRequestEventType">
+        <xs:annotation>
+            <xs:documentation>Allow someone to request an appointment cancellation.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamAppointmentStatusEventType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="AppointmentCanceledEventType">
+        <xs:annotation>
+            <xs:documentation>Signifies that an appointment has actually been cancelled.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamAppointmentStatusEventType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="AppointmentCompletedEventType">
+        <xs:annotation>
+            <xs:documentation>When the scheduled appointment has been performed.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamAppointmentStatusEventType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="AppointmentRescheduleRequestedEventType">
+        <xs:annotation>
+            <xs:documentation>One of the parties to the appointment (either VBMS on behalf of the veteran, or the EMS)
+                uses this
+                event to signal a request to reschedule an appointment. If desired, use the Details element for free
+                text describing
+                a suggested time/place.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamAppointmentStatusEventType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+</xs:schema>

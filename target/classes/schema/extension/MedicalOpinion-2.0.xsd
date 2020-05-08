@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/2.0"
+           targetNamespace="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/2.0"
+           elementFormDefault="qualified" version="2.0">
+
+    <xs:include schemaLocation="CommonTypes-2.0.xsd"/>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+         MedicalOpinion Substitution Group
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:complexType name="MedicalOpinionRequestCollection">
+        <xs:sequence>
+            <xs:element ref="MedicalOpinionRequest" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="MedicalOpinionRequest" type="MedicalOpinionRequestType" abstract="true"/>
+    <xs:complexType name="MedicalOpinionRequestType" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="NarrativeCollectionType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="ConflictingMedicalEvidenceReconciliation" type="ConflictingMedicalEvidenceReconciliationType"
+                substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="ConflictingMedicalEvidenceReconciliationType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="TabbedEvidence" type="TabbedEvidenceType" substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="TabbedEvidenceType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="AggravationOfNonServiceConnectedDisabilityByServiceConnectedDisability"
+                type="AggravationOfNonServiceConnectedDisabilityByServiceConnectedDisabilityType"
+                substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="AggravationOfNonServiceConnectedDisabilityByServiceConnectedDisabilityType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType">
+                <xs:sequence>
+                    <xs:element name="RelatedDisabilities" type="ServiceConnectedDisabilityCollectionType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="AggravationOfPreexistingCondition" type="AggravationOfPreexistingConditionType"
+                substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="AggravationOfPreexistingConditionType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="AidAndAttendance" type="AidAndAttendanceType" substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="AidAndAttendanceType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="MosLanguage" type="MosLanguageType" substitutionGroup="MedicalOpinionRequest"/><!--TODO: not a med opin req -->
+    <xs:complexType name="MosLanguageType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="DirectServiceConnection" type="DirectServiceConnectionType"
+                substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="DirectServiceConnectionType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType">
+                <xs:attribute name="nameOfInServiceInjuryOrEvent" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="GeneralMedicalGulfWarOpinion" type="GeneralMedicalGulfWarOpinionType"
+                substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="GeneralMedicalGulfWarOpinionType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="Respiratory" type="RespiratoryType" substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="RespiratoryType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="SecondaryServiceConnection" type="SecondaryServiceConnectionType"
+                substitutionGroup="MedicalOpinionRequest"/>
+    <xs:complexType name="SecondaryServiceConnectionType">
+        <xs:complexContent>
+            <xs:extension base="MedicalOpinionRequestType">
+                <xs:sequence>
+                    <xs:element name="RelatedDisabilities" type="ServiceConnectedDisabilityCollectionType"
+                                minOccurs="0">
+                        <xs:annotation>
+                            <xs:documentation>
+                                Only needed when medicalOpinion::medicalOpinionType is SecondaryServiceConnection
+                            </xs:documentation>
+                        </xs:annotation>
+
+                    </xs:element>
+                    <!-- TODO: this needs to be maxOccurs="1" -->
+                    <xs:element name="RelatedContentions" type="StringCollection" minOccurs="0" maxOccurs="5000">
+                        <xs:annotation>
+                            <xs:documentation>
+                                Only needed when medicalOpinion::medicalOpinionType is SecondaryServiceConnection
+                            </xs:documentation>
+                        </xs:annotation>
+
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

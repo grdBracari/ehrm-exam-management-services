@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1"
+           targetNamespace="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1"
+           elementFormDefault="qualified" version="3.1">
+
+    <xs:include schemaLocation="CommonTypes-3.1.xsd"/>
+    <xs:include schemaLocation="ContentionScope-3.1.xsd"/>
+
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+         ExamSchedulingRequest Related Objects
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:complexType name="ExamSchedulingRequestType"><!--"This is not a message type used in biz processes; serves primarily as documentation"-->
+        <xs:annotation>
+            <xs:documentation>The "Request" object that is synchronized by events between systems.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="ClaimInformation" minOccurs="0"/>
+            <xs:element name="RequestScopeEvents" type="ExamSchedulingRequestEventCollection" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="examSchedulingRequestUuid" type="UuidType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="StandardExamSchedulingRequestType"><!--"This is not a message type used in biz processes; serves primarily as documentation"-->
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestType">
+                <xs:sequence>
+                    <xs:element name="Contentions" type="ExamRelatedContentionCollectionType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ReworkExamSchedulingRequestType"><!--"This is not a message type used in biz processes; serves primarily as documentation"-->
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestType">
+                <xs:sequence>
+                    <xs:element name="ReworkContentions" type="ReworkContentionCollectionType"/>
+                </xs:sequence>
+                <xs:attribute name="originalExamRequestUuid" type="UuidType" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="ExamCancellationReasonType">
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+         ClaimInformation types
+         ======================================================= -->
+    <!-- ======================================================= -->
+    <xs:element name="ClaimInformation" type="ExamRelatedClaimInformationType" abstract="true"/>
+    <xs:complexType name="ExamRelatedClaimInformationType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>
+                The subset of claim information for this workflow.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="VeteranServiceMemberInfo" type="VsmType" minOccurs="0"/>
+            <xs:element name="SurvivorAndDependentInfo" type="SadType" minOccurs="0"/>
+            <xs:element name="ClaimNarrative" type="NarrativeCollectionType" minOccurs="0"/>
+        </xs:sequence>
+
+        <xs:attribute name="claimDate" type="xs:date" use="required"/>
+        <xs:attribute name="claimLabel" type="xs:string" use="required"/>
+        <xs:attribute name="endProductCode" type="xs:string" use="required"/>
+        <xs:attribute name="payeeCode" type="xs:string" use="required"/>
+        <xs:attribute name="benefitProgramType" type="BenefitType" default="CP Live"/>
+    </xs:complexType>
+
+    <xs:element name="PostDischargeClaimInformation" type="PostDischargeClaimInformationType"
+                substitutionGroup="ClaimInformation"/>
+    <xs:complexType name="PostDischargeClaimInformationType">
+        <xs:complexContent>
+            <xs:extension base="ExamRelatedClaimInformationType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="PreDischargeClaimInformation" type="PreDischargeClaimInformationType"
+                substitutionGroup="ClaimInformation"/>
+    <xs:complexType name="PreDischargeClaimInformationType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>
+                A subtype of ExamRelatedClaimInformation indicating its pre-discharge type.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamRelatedClaimInformationType">
+                <xs:attribute name="predischargeIntakeSite" type="xs:string" use="optional"/> <!-- not required for IDES for now -->
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="BDDClaimInformation" type="BDDClaimInformationType"
+                substitutionGroup="ClaimInformation"/>
+    <xs:complexType name="BDDClaimInformationType">
+        <xs:complexContent>
+            <xs:extension base="PreDischargeClaimInformationType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="IDESClaimInformation" type="IDESClaimInformationType"
+                substitutionGroup="ClaimInformation"/>
+    <xs:complexType name="IDESClaimInformationType">
+        <xs:complexContent>
+            <xs:extension base="PreDischargeClaimInformationType">
+                <xs:sequence>
+                    <xs:element name="PEBLO" type="PersonType" minOccurs="0" maxOccurs="1"/>
+                    <xs:element name="MSC" type="PersonType" minOccurs="0" maxOccurs="1"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="QuickStartClaimInformation" type="QuickStartClaimInformationType"
+                substitutionGroup="ClaimInformation"/>
+    <xs:complexType name="QuickStartClaimInformationType">
+        <xs:complexContent>
+            <xs:extension base="PreDischargeClaimInformationType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="ClarificationRequestReason">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Wrong DBW: Worksheets requested does not match contention."/>
+            <xs:enumeration value="Missing DBQ:  Worksheet missing to fully address contention."/>
+            <xs:enumeration value="Exam excluded under contract"/>
+            <xs:enumeration value="Cancelled at Veteran's request"/>
+            <xs:enumeration value="Veteran's limited or complete unavailability prevents completion"/>
+            <xs:enumeration value="Veteran is deployed"/>
+            <xs:enumeration value="Duplicate Request"/>
+            <xs:enumeration value="Must specify location/body system involved (example: left knee, bilateral ankles, stomach cancer, etc.)"/>
+            <xs:enumeration value="Medical opinion DBQ sent with no medical opinions requested."/>
+            <xs:enumeration value="Requested Opinions - Incomplete/Missing information"/>
+            <xs:enumeration value="Medical opinion requested for a service-connected condition"/>
+            <xs:enumeration value="Veteran's RAD within 1 year. Should Separation Health Assessment (SHA) DBQ be included?"/>
+            <xs:enumeration value="Veteran's RAD over 1 year. Is Separation Health Assessment (SHA) DBQ warranted?"/>
+            <xs:enumeration value="Exam requested for abnormal laboratory findings (example: Hypercholesterolemia, Hyperlipidemia, elevated blood sugar, etc.)"/>
+            <xs:enumeration value="CLCW -- Missing Camp Lejeune service dates"/>
+            <xs:enumeration value="Rework submitted for information not previously requested; new request required"/>
+            <xs:enumeration value="Exam Request is missing MSC contact information (IDES only)"/>
+            <xs:enumeration value="Referred condition(s) are not noted in Exam request (IDES only)"/>
+            <xs:enumeration value="Veteran no longer lives in vendor's assigned jurisdiction"/>
+            <xs:enumeration value="Medical Records not available for review"/>
+            <xs:enumeration value="Request should be submitted as Rework"/>
+            <xs:enumeration value="Other"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+         ExamSchedulingRequest Event Types
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:element name="ExamSchedulingRequestEvent" type="ExamSchedulingRequestEventType" abstract="true"/>
+
+    <xs:complexType name="ExamSchedulingRequestEventType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>This is the abstract base type for the "things that happen to an ExamSchedulingRequest".
+                That is, only concrete subclasses are sent over the wire.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamManagementEventType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:element name="FaultyRequestScopeEvent" type="ExamSchedulingRequestEventType"
+                substitutionGroup="ExamSchedulingRequestEvent" abstract="true"/>
+    <xs:complexType name="RequestScopedFaultEventType">
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+                <xs:sequence>
+                    <xs:element ref="FaultyRequestScopeEvent" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="FaultDetailsAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+         ExamSchedulingRequestCreatedEventBaseType
+         ======================================================= -->
+    <!-- ======================================================= -->
+    <xs:complexType name="ExamSchedulingRequestCreatedEventBaseType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>This event type defines the message that goes over the wire to say that a new
+                ExamSchedulingRequest has
+                been created and is ready to be worked.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+                <xs:sequence>
+                    <xs:element ref="ClaimInformation"/>
+                    <!-- extending types should include a collection of contentions here -->
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ReworkExamSchedulingRequestCreatedEventType">
+        <xs:annotation>
+            <xs:documentation>A specialized version of a ExamSchedulingRequestEventType that stores
+                reworked contentions and references the previously existing request that it
+                replaces. Used exactly like the ExamSchedulingRequestEventType except it is
+                assumed that the original examSchedulingRequest has been closed. Do
+                not include contentions that were completed on the referenced original exam request.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestCreatedEventBaseType">
+                <xs:sequence>
+                    <xs:element name="ExamReworkRelatedContentions" type="ReworkContentionCollectionType"/>
+                </xs:sequence>
+                <!-- contains the examSchedulingRequestId of the original exam request being reworked -->
+                <xs:attribute name="originalExamRequestUuid" type="UuidType"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ExamSchedulingRequestCreatedEventType">
+        <xs:annotation>
+            <xs:documentation>This event signifies a new ExamSchedulingRequestEvent has been created.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestCreatedEventBaseType">
+                <xs:sequence>
+                    <xs:element name="ExamRelatedContentions" type="ExamRelatedContentionCollectionType">
+                        <xs:annotation>
+                            <xs:documentation>
+                                The collection of contentions related to this request.
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+         Clarification related events
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:complexType name="ClarificationResponseBaseType" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+                <xs:sequence>
+                    <xs:element name="ClarificationText" type="NarrativeCollectionType" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+<!-- Narrative Clarification Response deprecated for 17.1 -->
+    <xs:complexType name="NarrativeClarificationResponseEventType">
+        <xs:complexContent>
+            <xs:extension base="ClarificationResponseBaseType">
+                <xs:sequence>
+                    <xs:element name="ContentionClarificationTextEntries" type="ContentionClarificationTextCollection" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="EditedRequestClarificationResponseEventBaseType" abstract="true">
+        <xs:complexContent>
+            <xs:extension base="ClarificationResponseBaseType">
+                <xs:sequence>
+                    <xs:element ref="ClaimInformation"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="EditedRequestClarificationResponseEventType">
+        <xs:complexContent>
+            <xs:extension base="EditedRequestClarificationResponseEventBaseType">
+                <xs:sequence>
+                    <xs:element name="Contentions" type="ExamRelatedContentionCollectionType" />
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ReworkEditedRequestClarificationResponseEventType">
+        <xs:complexContent>
+            <xs:extension base="EditedRequestClarificationResponseEventBaseType">
+                <xs:sequence>
+                    <xs:element name="ReworkContentions" type="ReworkContentionCollectionType" />
+                </xs:sequence>
+                <xs:attribute name="originalExamSchedulingRequestUuid" type="UuidType" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <xs:complexType name="AddressChangeEventType">
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+                <xs:sequence>
+                    <xs:choice>
+                        <xs:element name="NewAddress" type="AddressType"/>
+                        <xs:element name="NewPreferredGeographicLocation" type="PreferredGeographicLocationType"/>
+                    </xs:choice>
+                    <xs:element name="newRegionalOffice" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ExamSchedulingRequestCancellationEventType">
+        <xs:annotation>
+            <xs:documentation>Used to schedule a cancellation request.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+                <xs:sequence>
+                    <xs:element name="ExamCancellationReason" type="ExamCancellationReasonType"/>
+                    <xs:element name="ExamCancellationReasonFreeText" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="SpecialInstructionsEventType">
+        <xs:annotation>
+            <xs:documentation>Free text field for special instructions.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ExamSchedulingRequestEventCollection">
+        <xs:sequence>
+            <xs:element ref="ExamSchedulingRequestEvent" minOccurs="0" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ExamRequestAcknowledgementEventType">
+        <xs:annotation>
+            <xs:documentation>Used to acknowledge receipt of an ExamSchedulingRequestCreatedEvent or
+                ExamReworkSchedulingRequestCreatedEvent
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ClarificationRequestEventType">
+        <xs:annotation>
+            <xs:documentation>Used to add clarifications to the request stack.</xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+                <xs:sequence>
+                    <xs:element name="ClarificationReason" type="ClarificationRequestReason"/>
+                    <xs:element name="PointOfContactPhone" type="PhoneType"/>
+                    <xs:element name="UnclearContentionReferences" type="UnclearContentionReferenceCollectionType"
+                                minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="dateOfRequest" type="xs:date"/>
+                <xs:attribute name="pointOfContactName" type="xs:string" use="required"/>
+                <xs:attribute name="clarificationReasonFreeText" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ExamSchedulingRequestCompleteEventType">
+        <xs:annotation>
+            <xs:documentation>Used to acknowledge ExamSchedulingRequest is complete.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamSchedulingRequestEventType">
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+         Misc Events
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+
+
+</xs:schema>

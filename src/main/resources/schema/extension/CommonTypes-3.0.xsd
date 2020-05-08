@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.0"
+           targetNamespace="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.0"
+           elementFormDefault="qualified" version="3.0">
+
+    <xs:complexType name="ExamManagementEventType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>Base abstract class for any sort of Exam Management event.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Details" type="xs:string" minOccurs="0"/>
+            <xs:element name="EventSource" type="ParticipatingSystemType"/>
+        </xs:sequence>
+        <xs:attribute name="eventUuid" type="UuidType" use="required"/>
+        <xs:attribute name="previousEventUuid" type="UuidType" use="required"/>
+        <xs:attribute name="eventDtg" type="xs:dateTime" use="required"/>
+        <xs:attribute name="modelVersion" type="xs:string" use="required"/>
+        <xs:attribute name="examSchedulingRequestUuid" type="UuidType" use="required"/>
+    </xs:complexType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+         Fault stuff
+         ======================================================= -->
+    <!-- ======================================================= -->
+    <xs:element name="FaultEvent" type="FaultEventType" abstract="true"/>
+    <xs:complexType name="FaultEventType">
+        <xs:annotation>
+            <xs:documentation>A generic type meant for un-scoped faults. For this event, use
+                the previousEventUuid to designate the UUID of the "offending" event.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamManagementEventType">
+                <xs:attributeGroup ref="FaultDetailsAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:attributeGroup name="FaultDetailsAttributeGroup">
+        <xs:attribute name="systemReference" type="xs:string" use="optional"/>
+    </xs:attributeGroup>
+
+    <xs:complexType name="TransportFaultEventType">
+        <xs:annotation>
+            <xs:documentation>Used to provide information on an Event Package transport error.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="FaultEventType">
+                <xs:attribute name="internalMessageId" type="xs:string" use="required"/>
+                <xs:attribute name="eventPackageType" type="xs:string" use="required"/>
+                <xs:attribute name="eventPackageStatus" type="xs:string" use="required"/>
+                <xs:attribute name="errorMessage" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+         MISC
+         ======================================================= -->
+    <!-- ======================================================= -->
+    <xs:simpleType name="ExamReworkReasonType">
+        <xs:annotation>
+            <xs:documentation>Reason that the previous exam was insufficient, or needs clarification.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Case required exam by a specialist"/>
+            <xs:enumeration value="Conflicting information in report"/>
+            <xs:enumeration value="Failed to address all conditions requested"/>
+            <xs:enumeration value="Failed to comply with BVA remand instructions"/>
+            <xs:enumeration value="Failed to provide diagnosis"/>
+            <xs:enumeration value="Failed to provide medical opinion"/>
+            <xs:enumeration value="Failed to provide rationale"/>
+            <xs:enumeration value="Failed to provide requested or required information"/>
+            <xs:enumeration value="In person examination was not performed"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ParticipatingSystemType">
+        <xs:attribute name="participatingSystemName" type="ParticipatingSystemNameType" use="required"/>
+        <xs:attribute name="contractorName" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>When the participatingSystemName is "VBA Contractor," this designates which
+                contractor (e.g., QTC, VetFed, or VES). Do not use for other participating systems.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+    <xs:complexType name="CodeNamePairType">
+        <xs:attribute name="code" type="xs:string" use="required"/><!-- machine-readable -->
+        <xs:attribute name="name" type="xs:string" use="required"/><!-- human-readable description -->
+    </xs:complexType>
+    <xs:simpleType name="ParticipatingSystemNameType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="VBMS"/>
+            <xs:enumeration value="VBA Contractor"/>
+            <xs:enumeration value="VHA"/>
+            <xs:enumeration value="DAS"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="AddressType">
+        <xs:sequence>
+            <xs:element name="Address1" type="xs:string" minOccurs="1"/>
+            <xs:element name="Address2" type="xs:string" minOccurs="0"/>
+            <xs:element name="Address3" type="xs:string" minOccurs="0"/>
+            <xs:element name="City" type="xs:string" />
+            <xs:element name="State" type="xs:string" minOccurs="0"/>
+            <xs:element name="ZipOrPostalCode" type="xs:string" minOccurs="0"/>
+            <xs:element name="Country" type="xs:string"/>
+            <xs:element name="MilitaryPO" type="MilitaryPOType" minOccurs="0"/>
+            <xs:element name="MilitaryPostalCode" type="MilitaryPostalType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="description" type="xs:string">
+            <xs:annotation>
+                <xs:documentation>Indicates what type of address (home, vacation home, temporary, facility, etc.)
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+    </xs:complexType>
+
+    <xs:complexType name="PreferredGeographicLocationType">
+        <xs:complexContent>
+            <xs:extension base="AddressType"/>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="MilitaryPOType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="APO" />
+            <xs:enumeration value="DPO" />
+            <xs:enumeration value="FPO" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="MilitaryPostalType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="AA" />
+            <xs:enumeration value="AE" />
+            <xs:enumeration value="AP" />
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="AssigningAuthorityType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="2.16.840.1.113883.4.349">
+                <xs:annotation>
+                    <xs:documentation>Department of Veterans Affairs</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2.16.840.1.113883.3.42.10001.100001.12">
+                <xs:annotation>
+                    <xs:documentation>Department of Defense</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="2.16.840.1.113883.3.184">
+                <xs:annotation>
+                    <xs:documentation>Social Security Administration</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="BenefitType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="CP Live"/>
+            <xs:enumeration value="CP Death"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="BilateralIndicatorType">
+        <xs:annotation>
+            <xs:documentation>Which region of the body is affected.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="RL">
+                <xs:annotation>
+                    <xs:documentation>Right Lower</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LL">
+                <xs:annotation>
+                    <xs:documentation>Left Lower</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="RU">
+                <xs:annotation>
+                    <xs:documentation>Right Upper</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="LU">
+                <xs:annotation>
+                    <xs:documentation>Left Upper</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BL">
+                <xs:annotation>
+                    <xs:documentation>Both Lower</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+            <xs:enumeration value="BU">
+                <xs:annotation>
+                    <xs:documentation>Both Upper</xs:documentation>
+                </xs:annotation>
+            </xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="CauseOfDeathType">
+        <xs:sequence>
+            <xs:element name="PrincipalCauseOfDeath" type="xs:string" minOccurs="0"/>
+            <xs:element name="ContributingCauseOfDeath" type="xs:string" minOccurs="0"/>
+            <xs:element name="DisabilitiesDescription" type="xs:string" minOccurs="0"/>
+            <xs:element name="OccupationSpecialty" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="deathType" type="DeathType"/>
+    </xs:complexType>
+    <xs:simpleType name="DeathType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ServiceConnectionForCauseOfDeath"/>
+            <xs:enumeration value="ServiceConnectionByVitalOrgan"/>
+            <xs:enumeration value="ServiceConnectionByUsc1151"/>
+            <xs:enumeration value="AsbestosExposure"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ErasOfServiceCollection">
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="PeacetimeEra" type="PeacetimeEraType"/>
+                <xs:element name="Era" type="EraOfServiceType" maxOccurs="7"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="EraOfServiceType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="American"/>
+            <xs:enumeration value="Indian"/>
+            <xs:enumeration value="WWI"/>
+            <xs:enumeration value="WWII"/>
+            <xs:enumeration value="Korean"/>
+            <xs:enumeration value="Vietnam"/>
+            <xs:enumeration value="Gulf War"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="PeacetimeEraType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Peacetime"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ExamRelatedClaimStatusType"> <!-- TODO: Not used; eliminate? -->
+        <xs:annotation>
+            <xs:documentation>Status of the claim associated with the contention(s)
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Cancelled"/>
+            <xs:enumeration value="Closed"/>
+            <xs:enumeration value="New"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="FacilityType">
+        <xs:sequence>
+            <xs:element name="Address" type="AddressType"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:string" use="required"/>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="assigningAuthority" type="AssigningAuthorityType"/>
+        <xs:attribute name="phone" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:simpleType name="GenderType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Male"/>
+            <xs:enumeration value="Female"/>
+            <xs:enumeration value="Undifferentiated"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="ServiceConnectedDisabilityCollectionType">
+        <xs:sequence>
+            <xs:element name="Disability" type="ServiceConnectedDisabilityType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ServiceConnectedDisabilityType">
+        <xs:annotation>
+            <xs:documentation>Injuries or diseases that occurred while on active duty, or aggravated by active military service.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="percentage" type="xs:int" use="required"/>
+        <xs:attribute name="diagnosticCode" type="xs:string" use="required"/>
+        <xs:attribute name="bilateralIndicator" type="BilateralIndicatorType"/>
+    </xs:complexType>
+
+    <xs:simpleType name="SsnTokenType">
+        <xs:restriction base="xs:token">
+            <xs:pattern value="[0-9]{3}-[0-9]{2}-[0-9]{4}|[0-9]{3}-[0-9]{2}-[0-9]{4}[Pp]{1}|[0-9]{9}[Pp]{1}|[0-9]{9}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="SsnType">
+        <xs:sequence>
+            <xs:element name="Value" type="SsnTokenType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="assigningAuthority" type="AssigningAuthorityType"/>
+    </xs:complexType>
+
+    <xs:complexType name="UuidCollection">
+        <xs:sequence>
+            <xs:element name="UuidValue" type="UuidType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:simpleType name="UuidType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="StringCollection">
+        <xs:sequence>
+            <xs:element name="StringValue" type="xs:string" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PhoneType">
+        <xs:attribute name="primaryPhone" type="xs:string" use="required"/>
+        <xs:attribute name="alternatePhone" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="IntegrationControlNumberType">
+        <xs:sequence minOccurs="0">
+            <xs:element name="Value" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="assigningAuthority" type="AssigningAuthorityType"/>
+    </xs:complexType>
+
+    <xs:complexType name="PeriodOfServiceCollection">
+        <xs:sequence>
+            <xs:element name="Period" type="PeriodOfServiceType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="PeriodOfServiceType">
+        <xs:sequence>
+            <xs:element name="Eras" type="ErasOfServiceCollection" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="branchOfService" type="xs:string" use="required"/>
+        <xs:attribute name="entryOnDuty" type="xs:date" use="required"/>
+        <xs:attribute name="radDate" type="xs:date"/>
+    </xs:complexType>
+
+    <xs:complexType name="PersonType">
+        <xs:annotation>
+            <xs:documentation>
+                Abstract type that several types extend (e.g., PebloType, MscType)
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="Address" type="AddressType"/>
+            <xs:element name="Phone" type="PhoneType"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:string" use="required"/>
+        <xs:attribute name="emailAddress" type="xs:string"/>
+        <xs:attribute name="fax" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="VsmType">
+        <xs:annotation> <!--TODO: "Does not extend person type bc/ it handles several elements (name, address) in specialized ways-->
+            <xs:documentation>Data pertaining to a Veteran Service Member (VSM)
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="PreferredGeographicLocation" type="PreferredGeographicLocationType"/>
+                <xs:element name="Address" type="AddressType"/>
+            </xs:choice>
+            <xs:element name="Phone" type="PhoneType" minOccurs="0"/>
+            <xs:element name="IntegrationControlNumber" type="IntegrationControlNumberType" minOccurs="0"/>
+            <xs:element name="PeriodsOfService" type="PeriodOfServiceCollection"/> 
+            <xs:element name="PoaVso" type="PoaVsoType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="EDIPI" type="xs:string"/>
+        <xs:attribute name="fullName" type="xs:string" use="required"/>
+        <xs:attribute name="lastName" type="xs:string" use="required"/>
+        <xs:attribute name="firstName" type="xs:string" use="required"/>
+        <xs:attribute name="middleName" type="xs:string"/>
+        <xs:attribute name="gender" type="GenderType" use="required"/>
+        <xs:attribute name="dateOfBirth" type="xs:date" use="required"/>
+        <xs:attribute name="dateOfDeath" type="xs:date"/>
+        <xs:attribute name="regionalOfficeCode" type="xs:string"/>
+        <xs:attribute name="emailAddress" type="xs:string"/>
+        <xs:attribute name="fileNumber" type="xs:string" use="required"/>
+        <xs:attribute name="pregnant" type="xs:boolean"/>
+    </xs:complexType>
+
+    <xs:complexType name="SadType">
+        <xs:annotation> <!--TODO: "Does not extend person type bc/ it handles several elements (name, address) in specialized ways-->
+            <xs:documentation>Data pertaining to a Survivor and Dependent (SaD)
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:choice>
+                <xs:element name="PreferredGeographicLocation" type="PreferredGeographicLocationType" minOccurs="0"/>
+                <xs:element name="Address" type="AddressType" minOccurs="0"/>
+            </xs:choice>
+            <xs:element name="Phone" type="PhoneType" minOccurs="0"/>
+            <xs:element name="PoaVso" type="PoaVsoType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="fullName" type="xs:string" use="required"/>
+        <xs:attribute name="lastName" type="xs:string" use="required"/>
+        <xs:attribute name="firstName" type="xs:string" use="required"/>
+        <xs:attribute name="middleName" type="xs:string"/>
+        <xs:attribute name="gender" type="GenderType" use="required"/>
+        <xs:attribute name="emailAddress" type="xs:string"/>
+    </xs:complexType>
+
+    <xs:complexType name="PoaVsoType">
+        <xs:sequence>
+            <xs:element name="Name" type="xs:string"/>
+            <xs:element name="Code" type="xs:string"/>
+            <xs:element name="Address" type="AddressType" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="NarrativeCollectionType">
+        <xs:sequence>
+            <xs:element name="NarrativeEntry" type="NarrativeTextType" minOccurs="0" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="NarrativeTextType">
+        <xs:annotation>
+            <xs:documentation>Boilerplate text that accompanies certain types.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="title" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+</xs:schema>

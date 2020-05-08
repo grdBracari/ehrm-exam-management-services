@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.0"
+           targetNamespace="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.0"
+           elementFormDefault="qualified" version="3.0">
+
+    <xs:include schemaLocation="CommonTypes-3.0.xsd"/>
+    <xs:include schemaLocation="MedicalOpinion-3.0.xsd"/>
+    <xs:include schemaLocation="AppointmentScope-3.0.xsd"/>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+         ExamRelatedContention Objects
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:complexType name="ExamRelatedContentionCollectionType">
+        <xs:sequence>
+            <xs:element name="ExamRelatedContention" type="ExamRelatedContentionType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ExamRelatedContentionType">
+        <xs:annotation>
+            <xs:documentation>The claim of the participant in the voice of the claimant. Contentions include medical or
+                dependency contentions.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ContentionName" type="xs:string"/> <!-- As described by veteran-->
+            <xs:element name="Classification" type="CodeNamePairType"> <!-- As classified by VBA -->
+                <xs:annotation>
+                    <xs:documentation>Identifies the standard medical condition that is most closely identified with the
+                        claimed contention.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="ExamAppointments" type="ExamAppointmentCollectionType" minOccurs="0"/>
+            <xs:element name="ExistingDisabilities" type="ServiceConnectedDisabilityCollectionType" minOccurs="0"/>
+            <xs:element name="ContentionNarrative" type="NarrativeCollectionType" minOccurs="0"/>
+            <xs:element name="DbqRequests" type="DbqRequestCollectionType">
+                <xs:annotation>
+                    <xs:documentation>This is a loosely bound Cartesian product of all associated DBQs, as they are
+                        needed for each of
+                        the appointments associated with this contention.
+                    </xs:documentation>
+                </xs:annotation>
+            </xs:element>
+            <xs:element name="MedicalOpinionRequests" type="MedicalOpinionRequestCollection" minOccurs="0"/>
+            <xs:element name="ExamPrioritizationSpecialIssues" type="SpecialIssueCollectionType" minOccurs="0"/>
+            <xs:element name="StandardLanguageEntries" type="StandardLanguageCollectionType" minOccurs="0"/>
+            <xs:element name="ContentionScopeEvents" type="ContentionScopeEventCollectionType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="examRelatedContentionUuid" type="UuidType" use="required"/>
+        <xs:attribute name="contentionType" type="ContentionTypeEnumeration"/>
+        <xs:attribute name="dodReferred" type="xs:boolean"/>
+        <xs:attribute name="adjudicated" type="xs:boolean">
+            <xs:annotation>
+                <xs:documentation>Indicator in Corporate Database that indicates a Contention was Rated and Adjudicated,
+                    which allows VBMS to send the "Results Accepted by VBA" data point to VHA
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="aceEligible" type="xs:boolean" use="optional">
+            <xs:annotation>
+                <xs:documentation>Acceptable Clinical Evidence. That means that the doctor can give a medical opinion
+                    based on
+                    existing evidence (efolder documents, past examinations, etc) and doesn't need to see the
+                    Veteran in person to perform an examination. So this indicator lets the examiner know that, if
+                    VHA/VBA
+                    Contractor management deems it acceptable, VBA is okay with an ACE exam being performed and
+                    doesn't require a medical opinion from an in-person examination.
+                </xs:documentation>
+            </xs:annotation>
+        </xs:attribute>
+        <xs:attribute name="medicalOpinionNeeded" type="xs:boolean"/>
+    </xs:complexType>
+
+    <xs:complexType name="ReworkContentionCollectionType">
+        <xs:sequence>
+            <xs:element name="ReworkContention" type="ReworkExamRelatedContentionType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ReworkExamRelatedContentionType">
+        <xs:annotation>
+            <xs:documentation>A subtype of ExamRelatedContention indicating its rework status.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamRelatedContentionType">
+                <xs:sequence>
+                    <xs:element name="ReworkReason" type="ExamReworkReasonType" maxOccurs="20"/>
+                    <xs:element name="ReworkReasonFreetext" type="xs:string" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attribute name="previouslyWorkedContentionUuid" type="UuidType" use="required"/>
+                <xs:attribute name="clarification" type="xs:boolean" use="required"/>
+                <xs:attribute name="insufficient" type="xs:boolean" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ContentionClarificationTextCollection">
+        <xs:sequence>
+            <xs:element name="ContentionClarificationText" type="ContentionClarificationTextType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="ContentionClarificationTextType">
+        <xs:complexContent>
+            <xs:extension base="NarrativeCollectionType">
+                <xs:attribute name="contentionUuid" type="UuidType"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="UnclearContentionReferenceCollectionType">
+        <xs:sequence>
+            <xs:element name="ContentionClarificationRequest" type="UnclearContentionReferenceType"
+                        maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="UnclearContentionReferenceType">
+        <xs:annotation>
+            <xs:documentation>A subtype of ExamRelatedContention indicating its need for clarification.
+                Part of a Clarification request.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="ContentionClarificationFreeText" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="contentionUuid" type="UuidType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="DbqRequestCollectionType">
+        <xs:sequence>
+            <xs:element name="DbqRequest" type="DbqRequestType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="DbqRequestType">
+        <xs:annotation>
+            <xs:documentation>The name of the Disability Benefits Questionnaire requested.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="NarrativeCollectionType">
+                <xs:attribute name="name" type="xs:string" use="required"/>
+
+            </xs:extension>
+        </xs:complexContent>
+
+    </xs:complexType>
+
+    <xs:complexType name="StandardLanguageCollectionType">
+        <xs:sequence>
+            <xs:element name="StandardLanguageEntry" type="StandardLanguageTextType" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:complexType name="StandardLanguageTextType">
+        <xs:annotation>
+            <xs:documentation>Boilerplate text that accompanies certain types.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="title" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="SpecialIssueCollectionType">
+        <xs:sequence>
+            <xs:element name="SpecialIssue" type="SpecialIssueType" maxOccurs="20"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="SpecialIssueType">
+        <xs:annotation>
+            <xs:documentation>Prioritization Special Issues</xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ALS"/>
+            <xs:enumeration value="Homeless"/>
+            <xs:enumeration value="Incarcerated Veteran"/>
+            <xs:enumeration value="POW case for Protocol Exams"/>
+            <xs:enumeration value="Veteran with known violent behavior or who potentially needs the presence of security while the exam is conducted"/>
+            <xs:enumeration value="Gulf War Undiagnosed Illness Claim - Initial"/>
+            <xs:enumeration value="1151 Claim and Tort Claim"/>
+            <xs:enumeration value="Social and industrial surveys - O&amp;E"/>
+            <xs:enumeration value="Veteran residing outside of US"/>
+            <xs:enumeration value="Remand"/>
+            <xs:enumeration value="BDD Exams for pregnant service member"/>
+            <xs:enumeration value="Claims made concerning deceased Veteran that may need an opinion"/>
+            <xs:enumeration value="Purple Heart"/>
+            <xs:enumeration value="CLCW"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="DeferralReasonType">
+        <xs:annotation>
+            <xs:documentation>Reason a contention as part of a group of contentions might be delayed.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Insufficiency"/>
+            <xs:enumeration value="Clarification"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="ContentionCancellationReasonType">
+        <xs:annotation>
+            <xs:documentation>Reasons a contention might be cancelled.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="FaultyContentionScopedEvent" type="ExamRelatedContentionEventType"
+                substitutionGroup="ExamRelatedContentionEvent" abstract="true"/>
+    <xs:complexType name="ContentionScopedFaultEventType">
+        <xs:complexContent>
+            <xs:extension base="ExamRelatedContentionEventType">
+                <xs:sequence>
+                    <xs:element ref="FaultyContentionScopedEvent" minOccurs="0"/>
+                </xs:sequence>
+                <xs:attributeGroup ref="FaultDetailsAttributeGroup"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:simpleType name="ContentionTypeEnumeration">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NEW"/>
+            <xs:enumeration value="INCREASE"/>
+            <xs:enumeration value="SECONDARY"/>
+            <xs:enumeration value="RFE"/>
+            <xs:enumeration value="PENSION"/>
+            <xs:enumeration value="REOPEN"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <!-- ======================================================= -->
+    <!-- =======================================================
+
+         ExamSchedulingRequest Related Events
+
+         ======================================================= -->
+    <!-- ======================================================= -->
+
+    <xs:complexType name="ContentionScopeEventCollectionType">
+        <xs:annotation>
+            <xs:documentation>A collection of events that have occurred in the Contention scope.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element ref="ExamRelatedContentionEvent" maxOccurs="5000"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="ExamRelatedContentionEvent" type="ExamRelatedContentionEventType" abstract="true"/>
+    <xs:complexType name="ExamRelatedContentionEventType" abstract="true">
+        <xs:annotation>
+            <xs:documentation>A base type for all events relating to Contentions.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamManagementEventType">
+                <xs:attribute name="examRelatedContentionUuid" type="UuidType" use="required"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ContentionCancellationRequestedEventType">
+        <xs:complexContent>
+            <xs:annotation>
+                <xs:documentation>Requesting a cancellation of a contention.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:extension base="ExamRelatedContentionEventType">
+                <xs:sequence>
+                    <xs:element name="ReasonForCancellation" type="ContentionCancellationReasonType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ContentionCanceledEventType">
+        <xs:complexContent>
+            <xs:annotation>
+                <xs:documentation>Contention was cancelled. Spread the word.
+                </xs:documentation>
+            </xs:annotation>
+            <xs:extension base="ExamRelatedContentionEventType">
+                <xs:sequence>
+                    <xs:element name="ReasonForCancellation" type="ContentionCancellationReasonType"/>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+    <xs:complexType name="ResultPackageAvailableEventType">
+        <xs:annotation>
+            <xs:documentation>Result package for one specific contention has been made available. Exam management work
+                is complete for that contention.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="ExamRelatedContentionEventType">
+                <xs:sequence>
+                    <xs:element name="documentReferenceId" type="xs:string" maxOccurs="5000">
+                        <xs:annotation>
+                            <xs:documentation>Refers to the /Preview/Document/DocumentIdentification/IdentificationID of
+                                a DBQ or ExamResponse
+                            </xs:documentation>
+                        </xs:annotation>
+                    </xs:element>
+                </xs:sequence>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+
+</xs:schema>

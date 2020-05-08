@@ -1,0 +1,1 @@
+web: java -Xmx1024M -XX:MaxMetaspaceSize=256M -jar dbq-translator-prod.jar
