@@ -30,6 +30,9 @@ build/
 # Compiled class file
 *.class
 
+# Target Output
+/target/
+
 # Log file
 *.log
 
