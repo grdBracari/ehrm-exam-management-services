@@ -10,7 +10,7 @@
  * http://www.altova.com/mapforce
  */
 
-package com.bracari.services.mapforce.Envelope;
+package com.bracari.services.va.ehrmexammanagementservices.mapforce.Envelope;
 
 
 
@@ -19,65 +19,74 @@ import com.altova.text.edi.*;
 public class EnvelopeDocument extends TextDocument {
 		// EDI Fields
 
-		static StructureItem mFieldACC_1 = null;
-		static StructureItem getFieldACC_1() { if (mFieldACC_1 == null) { initFieldACC_1(); } return mFieldACC_1; }
-		static void initFieldACC_1 () {
-			mFieldACC_1 = new DataElement ("ACC-1",
-				new DataTypeValidatorString(0, 24, null
+		static StructureItem mFieldAD_1 = null;
+		static StructureItem getFieldAD_1() { if (mFieldAD_1 == null) { initFieldAD_1(); } return mFieldAD_1; }
+		static void initFieldAD_1 () {
+			mFieldAD_1 = new DataElement ("AD-1",
+				new DataTypeValidatorString(0, 120, null
 					)
 				);
 			}
 
-		static StructureItem mFieldACC_10 = null;
-		static StructureItem getFieldACC_10() { if (mFieldACC_10 == null) { initFieldACC_10(); } return mFieldACC_10; }
-		static void initFieldACC_10 () {
-			mFieldACC_10 = new DataElement ("ACC-10",
-				new DataTypeValidatorString(0, 1, null
+		static StructureItem mFieldAD_2 = null;
+		static StructureItem getFieldAD_2() { if (mFieldAD_2 == null) { initFieldAD_2(); } return mFieldAD_2; }
+		static void initFieldAD_2 () {
+			mFieldAD_2 = new DataElement ("AD-2",
+				new DataTypeValidatorString(0, 120, null
 					)
 				);
 			}
 
-		static StructureItem mFieldACC_3 = null;
-		static StructureItem getFieldACC_3() { if (mFieldACC_3 == null) { initFieldACC_3(); } return mFieldACC_3; }
-		static void initFieldACC_3 () {
-			mFieldACC_3 = new DataElement ("ACC-3",
-				new DataTypeValidatorString(0, 25, null
+		static StructureItem mFieldAD_3 = null;
+		static StructureItem getFieldAD_3() { if (mFieldAD_3 == null) { initFieldAD_3(); } return mFieldAD_3; }
+		static void initFieldAD_3 () {
+			mFieldAD_3 = new DataElement ("AD-3",
+				new DataTypeValidatorString(0, 50, null
 					)
 				);
 			}
 
-		static StructureItem mFieldACC_5 = null;
-		static StructureItem getFieldACC_5() { if (mFieldACC_5 == null) { initFieldACC_5(); } return mFieldACC_5; }
-		static void initFieldACC_5 () {
-			mFieldACC_5 = new DataElement ("ACC-5",
-				new DataTypeValidatorString(0, 1, null
+		static StructureItem mFieldAD_4 = null;
+		static StructureItem getFieldAD_4() { if (mFieldAD_4 == null) { initFieldAD_4(); } return mFieldAD_4; }
+		static void initFieldAD_4 () {
+			mFieldAD_4 = new DataElement ("AD-4",
+				new DataTypeValidatorString(0, 50, null
 					)
 				);
 			}
 
-		static StructureItem mFieldACC_6 = null;
-		static StructureItem getFieldACC_6() { if (mFieldACC_6 == null) { initFieldACC_6(); } return mFieldACC_6; }
-		static void initFieldACC_6 () {
-			mFieldACC_6 = new DataElement ("ACC-6",
+		static StructureItem mFieldAD_5 = null;
+		static StructureItem getFieldAD_5() { if (mFieldAD_5 == null) { initFieldAD_5(); } return mFieldAD_5; }
+		static void initFieldAD_5 () {
+			mFieldAD_5 = new DataElement ("AD-5",
 				new DataTypeValidatorString(0, 12, null
 					)
 				);
 			}
 
-		static StructureItem mFieldACC_8 = null;
-		static StructureItem getFieldACC_8() { if (mFieldACC_8 == null) { initFieldACC_8(); } return mFieldACC_8; }
-		static void initFieldACC_8 () {
-			mFieldACC_8 = new DataElement ("ACC-8",
-				new DataTypeValidatorString(0, 25, null
+		static StructureItem mFieldAD_6 = null;
+		static StructureItem getFieldAD_6() { if (mFieldAD_6 == null) { initFieldAD_6(); } return mFieldAD_6; }
+		static void initFieldAD_6 () {
+			mFieldAD_6 = new DataElement ("AD-6",
+				new DataTypeValidatorString(0, 3, null
 					)
 				);
 			}
 
-		static StructureItem mFieldACC_9 = null;
-		static StructureItem getFieldACC_9() { if (mFieldACC_9 == null) { initFieldACC_9(); } return mFieldACC_9; }
-		static void initFieldACC_9 () {
-			mFieldACC_9 = new DataElement ("ACC-9",
-				new DataTypeValidatorString(0, 80, null
+		static StructureItem mFieldAD_7 = null;
+		static StructureItem getFieldAD_7() { if (mFieldAD_7 == null) { initFieldAD_7(); } return mFieldAD_7; }
+		static void initFieldAD_7 () {
+			mFieldAD_7 = new DataElement ("AD-7",
+				new DataTypeValidatorString(0, 3, null
+					)
+				);
+			}
+
+		static StructureItem mFieldAD_8 = null;
+		static StructureItem getFieldAD_8() { if (mFieldAD_8 == null) { initFieldAD_8(); } return mFieldAD_8; }
+		static void initFieldAD_8 () {
+			mFieldAD_8 = new DataElement ("AD-8",
+				new DataTypeValidatorString(0, 50, null
 					)
 				);
 			}
@@ -132,60 +141,6 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldAUI_3 () {
 			mFieldAUI_3 = new DataElement ("AUI-3",
 				new DataTypeValidatorString(0, 199, null
-					)
-				);
-			}
-
-		static StructureItem mFieldAUT_10 = null;
-		static StructureItem getFieldAUT_10() { if (mFieldAUT_10 == null) { initFieldAUT_10(); } return mFieldAUT_10; }
-		static void initFieldAUT_10 () {
-			mFieldAUT_10 = new DataElement ("AUT-10",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldAUT_3 = null;
-		static StructureItem getFieldAUT_3() { if (mFieldAUT_3 == null) { initFieldAUT_3(); } return mFieldAUT_3; }
-		static void initFieldAUT_3 () {
-			mFieldAUT_3 = new DataElement ("AUT-3",
-				new DataTypeValidatorString(0, 45, null
-					)
-				);
-			}
-
-		static StructureItem mFieldAUT_4 = null;
-		static StructureItem getFieldAUT_4() { if (mFieldAUT_4 == null) { initFieldAUT_4(); } return mFieldAUT_4; }
-		static void initFieldAUT_4 () {
-			mFieldAUT_4 = new DataElement ("AUT-4",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldAUT_5 = null;
-		static StructureItem getFieldAUT_5() { if (mFieldAUT_5 == null) { initFieldAUT_5(); } return mFieldAUT_5; }
-		static void initFieldAUT_5 () {
-			mFieldAUT_5 = new DataElement ("AUT-5",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldAUT_8 = null;
-		static StructureItem getFieldAUT_8() { if (mFieldAUT_8 == null) { initFieldAUT_8(); } return mFieldAUT_8; }
-		static void initFieldAUT_8 () {
-			mFieldAUT_8 = new DataElement ("AUT-8",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldAUT_9 = null;
-		static StructureItem getFieldAUT_9() { if (mFieldAUT_9 == null) { initFieldAUT_9(); } return mFieldAUT_9; }
-		static void initFieldAUT_9 () {
-			mFieldAUT_9 = new DataElement ("AUT-9",
-				new DataTypeValidatorString(0, 2, null
 					)
 				);
 			}
@@ -259,6 +214,15 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
+		static StructureItem mFieldBLG_2 = null;
+		static StructureItem getFieldBLG_2() { if (mFieldBLG_2 == null) { initFieldBLG_2(); } return mFieldBLG_2; }
+		static void initFieldBLG_2 () {
+			mFieldBLG_2 = new DataElement ("BLG-2",
+				new DataTypeValidatorString(0, 50, null
+					)
+				);
+			}
+
 		static StructureItem mFieldBTS_1 = null;
 		static StructureItem getFieldBTS_1() { if (mFieldBTS_1 == null) { initFieldBTS_1(); } return mFieldBTS_1; }
 		static void initFieldBTS_1 () {
@@ -282,6 +246,24 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldBTS_3 () {
 			mFieldBTS_3 = new DataElement ("BTS-3",
 				new DataTypeValidatorString(0, 100, null
+					)
+				);
+			}
+
+		static StructureItem mFieldCCD_1 = null;
+		static StructureItem getFieldCCD_1() { if (mFieldCCD_1 == null) { initFieldCCD_1(); } return mFieldCCD_1; }
+		static void initFieldCCD_1 () {
+			mFieldCCD_1 = new DataElement ("CCD-1",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldCCD_2 = null;
+		static StructureItem getFieldCCD_2() { if (mFieldCCD_2 == null) { initFieldCCD_2(); } return mFieldCCD_2; }
+		static void initFieldCCD_2 () {
+			mFieldCCD_2 = new DataElement ("CCD-2",
+				new DataTypeValidatorString(0, 24, null
 					)
 				);
 			}
@@ -979,195 +961,6 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mFieldDRG_10 = null;
-		static StructureItem getFieldDRG_10() { if (mFieldDRG_10 == null) { initFieldDRG_10(); } return mFieldDRG_10; }
-		static void initFieldDRG_10 () {
-			mFieldDRG_10 = new DataElement ("DRG-10",
-				new DataTypeValidatorString(0, 1, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_11 = null;
-		static StructureItem getFieldDRG_11() { if (mFieldDRG_11 == null) { initFieldDRG_11(); } return mFieldDRG_11; }
-		static void initFieldDRG_11 () {
-			mFieldDRG_11 = new DataElement ("DRG-11",
-				new DataTypeValidatorString(0, 21, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_15 = null;
-		static StructureItem getFieldDRG_15() { if (mFieldDRG_15 == null) { initFieldDRG_15(); } return mFieldDRG_15; }
-		static void initFieldDRG_15 () {
-			mFieldDRG_15 = new DataElement ("DRG-15",
-				new DataTypeValidatorString(0, 5, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_17 = null;
-		static StructureItem getFieldDRG_17() { if (mFieldDRG_17 == null) { initFieldDRG_17(); } return mFieldDRG_17; }
-		static void initFieldDRG_17 () {
-			mFieldDRG_17 = new DataElement ("DRG-17",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_18 = null;
-		static StructureItem getFieldDRG_18() { if (mFieldDRG_18 == null) { initFieldDRG_18(); } return mFieldDRG_18; }
-		static void initFieldDRG_18 () {
-			mFieldDRG_18 = new DataElement ("DRG-18",
-				new DataTypeValidatorString(0, 100, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_19 = null;
-		static StructureItem getFieldDRG_19() { if (mFieldDRG_19 == null) { initFieldDRG_19(); } return mFieldDRG_19; }
-		static void initFieldDRG_19 () {
-			mFieldDRG_19 = new DataElement ("DRG-19",
-				new DataTypeValidatorString(0, 100, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_2 = null;
-		static StructureItem getFieldDRG_2() { if (mFieldDRG_2 == null) { initFieldDRG_2(); } return mFieldDRG_2; }
-		static void initFieldDRG_2 () {
-			mFieldDRG_2 = new DataElement ("DRG-2",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_20 = null;
-		static StructureItem getFieldDRG_20() { if (mFieldDRG_20 == null) { initFieldDRG_20(); } return mFieldDRG_20; }
-		static void initFieldDRG_20 () {
-			mFieldDRG_20 = new DataElement ("DRG-20",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_25 = null;
-		static StructureItem getFieldDRG_25() { if (mFieldDRG_25 == null) { initFieldDRG_25(); } return mFieldDRG_25; }
-		static void initFieldDRG_25 () {
-			mFieldDRG_25 = new DataElement ("DRG-25",
-				new DataTypeValidatorString(0, 5, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_26 = null;
-		static StructureItem getFieldDRG_26() { if (mFieldDRG_26 == null) { initFieldDRG_26(); } return mFieldDRG_26; }
-		static void initFieldDRG_26 () {
-			mFieldDRG_26 = new DataElement ("DRG-26",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_27 = null;
-		static StructureItem getFieldDRG_27() { if (mFieldDRG_27 == null) { initFieldDRG_27(); } return mFieldDRG_27; }
-		static void initFieldDRG_27 () {
-			mFieldDRG_27 = new DataElement ("DRG-27",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_28 = null;
-		static StructureItem getFieldDRG_28() { if (mFieldDRG_28 == null) { initFieldDRG_28(); } return mFieldDRG_28; }
-		static void initFieldDRG_28 () {
-			mFieldDRG_28 = new DataElement ("DRG-28",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_29 = null;
-		static StructureItem getFieldDRG_29() { if (mFieldDRG_29 == null) { initFieldDRG_29(); } return mFieldDRG_29; }
-		static void initFieldDRG_29 () {
-			mFieldDRG_29 = new DataElement ("DRG-29",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_3 = null;
-		static StructureItem getFieldDRG_3() { if (mFieldDRG_3 == null) { initFieldDRG_3(); } return mFieldDRG_3; }
-		static void initFieldDRG_3 () {
-			mFieldDRG_3 = new DataElement ("DRG-3",
-				new DataTypeValidatorString(0, 1, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_30 = null;
-		static StructureItem getFieldDRG_30() { if (mFieldDRG_30 == null) { initFieldDRG_30(); } return mFieldDRG_30; }
-		static void initFieldDRG_30 () {
-			mFieldDRG_30 = new DataElement ("DRG-30",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_31 = null;
-		static StructureItem getFieldDRG_31() { if (mFieldDRG_31 == null) { initFieldDRG_31(); } return mFieldDRG_31; }
-		static void initFieldDRG_31 () {
-			mFieldDRG_31 = new DataElement ("DRG-31",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_32 = null;
-		static StructureItem getFieldDRG_32() { if (mFieldDRG_32 == null) { initFieldDRG_32(); } return mFieldDRG_32; }
-		static void initFieldDRG_32 () {
-			mFieldDRG_32 = new DataElement ("DRG-32",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_33 = null;
-		static StructureItem getFieldDRG_33() { if (mFieldDRG_33 == null) { initFieldDRG_33(); } return mFieldDRG_33; }
-		static void initFieldDRG_33 () {
-			mFieldDRG_33 = new DataElement ("DRG-33",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_4 = null;
-		static StructureItem getFieldDRG_4() { if (mFieldDRG_4 == null) { initFieldDRG_4(); } return mFieldDRG_4; }
-		static void initFieldDRG_4 () {
-			mFieldDRG_4 = new DataElement ("DRG-4",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_6 = null;
-		static StructureItem getFieldDRG_6() { if (mFieldDRG_6 == null) { initFieldDRG_6(); } return mFieldDRG_6; }
-		static void initFieldDRG_6 () {
-			mFieldDRG_6 = new DataElement ("DRG-6",
-				new DataTypeValidatorString(0, 3, null
-					)
-				);
-			}
-
-		static StructureItem mFieldDRG_8 = null;
-		static StructureItem getFieldDRG_8() { if (mFieldDRG_8 == null) { initFieldDRG_8(); } return mFieldDRG_8; }
-		static void initFieldDRG_8 () {
-			mFieldDRG_8 = new DataElement ("DRG-8",
-				new DataTypeValidatorString(0, 1, null
-					)
-				);
-			}
-
 		static StructureItem mFieldDTN_1 = null;
 		static StructureItem getFieldDTN_1() { if (mFieldDTN_1 == null) { initFieldDTN_1(); } return mFieldDTN_1; }
 		static void initFieldDTN_1 () {
@@ -1182,42 +975,6 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldDTN_2 () {
 			mFieldDTN_2 = new DataElement ("DTN-2",
 				new DataTypeValidatorString(0, 3, null
-					)
-				);
-			}
-
-		static StructureItem mFieldED_2 = null;
-		static StructureItem getFieldED_2() { if (mFieldED_2 == null) { initFieldED_2(); } return mFieldED_2; }
-		static void initFieldED_2 () {
-			mFieldED_2 = new DataElement ("ED-2",
-				new DataTypeValidatorString(0, 11, null
-					)
-				);
-			}
-
-		static StructureItem mFieldED_3 = null;
-		static StructureItem getFieldED_3() { if (mFieldED_3 == null) { initFieldED_3(); } return mFieldED_3; }
-		static void initFieldED_3 () {
-			mFieldED_3 = new DataElement ("ED-3",
-				new DataTypeValidatorString(0, 32, null
-					)
-				);
-			}
-
-		static StructureItem mFieldED_4 = null;
-		static StructureItem getFieldED_4() { if (mFieldED_4 == null) { initFieldED_4(); } return mFieldED_4; }
-		static void initFieldED_4 () {
-			mFieldED_4 = new DataElement ("ED-4",
-				new DataTypeValidatorString(0, 6, null
-					)
-				);
-			}
-
-		static StructureItem mFieldED_5 = null;
-		static StructureItem getFieldED_5() { if (mFieldED_5 == null) { initFieldED_5(); } return mFieldED_5; }
-		static void initFieldED_5 () {
-			mFieldED_5 = new DataElement ("ED-5",
-				new DataTypeValidatorString(0, 65536, null
 					)
 				);
 			}
@@ -1386,6 +1143,105 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldFN_5 () {
 			mFieldFN_5 = new DataElement ("FN-5",
 				new DataTypeValidatorString(0, 50, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_1 = null;
+		static StructureItem getFieldFT1_1() { if (mFieldFT1_1 == null) { initFieldFT1_1(); } return mFieldFT1_1; }
+		static void initFieldFT1_1 () {
+			mFieldFT1_1 = new DataElement ("FT1-1",
+				new DataTypeValidatorString(0, 4, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_10 = null;
+		static StructureItem getFieldFT1_10() { if (mFieldFT1_10 == null) { initFieldFT1_10(); } return mFieldFT1_10; }
+		static void initFieldFT1_10 () {
+			mFieldFT1_10 = new DataElement ("FT1-10",
+				new DataTypeValidatorString(0, 6, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_17 = null;
+		static StructureItem getFieldFT1_17() { if (mFieldFT1_17 == null) { initFieldFT1_17(); } return mFieldFT1_17; }
+		static void initFieldFT1_17 () {
+			mFieldFT1_17 = new DataElement ("FT1-17",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_18 = null;
+		static StructureItem getFieldFT1_18() { if (mFieldFT1_18 == null) { initFieldFT1_18(); } return mFieldFT1_18; }
+		static void initFieldFT1_18 () {
+			mFieldFT1_18 = new DataElement ("FT1-18",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_2 = null;
+		static StructureItem getFieldFT1_2() { if (mFieldFT1_2 == null) { initFieldFT1_2(); } return mFieldFT1_2; }
+		static void initFieldFT1_2 () {
+			mFieldFT1_2 = new DataElement ("FT1-2",
+				new DataTypeValidatorString(0, 12, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_3 = null;
+		static StructureItem getFieldFT1_3() { if (mFieldFT1_3 == null) { initFieldFT1_3(); } return mFieldFT1_3; }
+		static void initFieldFT1_3 () {
+			mFieldFT1_3 = new DataElement ("FT1-3",
+				new DataTypeValidatorString(0, 10, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_31 = null;
+		static StructureItem getFieldFT1_31() { if (mFieldFT1_31 == null) { initFieldFT1_31(); } return mFieldFT1_31; }
+		static void initFieldFT1_31 () {
+			mFieldFT1_31 = new DataElement ("FT1-31",
+				new DataTypeValidatorString(0, 4, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_5 = null;
+		static StructureItem getFieldFT1_5() { if (mFieldFT1_5 == null) { initFieldFT1_5(); } return mFieldFT1_5; }
+		static void initFieldFT1_5 () {
+			mFieldFT1_5 = new DataElement ("FT1-5",
+				new DataTypeValidatorString(0, 24, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_6 = null;
+		static StructureItem getFieldFT1_6() { if (mFieldFT1_6 == null) { initFieldFT1_6(); } return mFieldFT1_6; }
+		static void initFieldFT1_6 () {
+			mFieldFT1_6 = new DataElement ("FT1-6",
+				new DataTypeValidatorString(0, 8, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_8 = null;
+		static StructureItem getFieldFT1_8() { if (mFieldFT1_8 == null) { initFieldFT1_8(); } return mFieldFT1_8; }
+		static void initFieldFT1_8 () {
+			mFieldFT1_8 = new DataElement ("FT1-8",
+				new DataTypeValidatorString(0, 65536, null
+					)
+				);
+			}
+
+		static StructureItem mFieldFT1_9 = null;
+		static StructureItem getFieldFT1_9() { if (mFieldFT1_9 == null) { initFieldFT1_9(); } return mFieldFT1_9; }
+		static void initFieldFT1_9 () {
+			mFieldFT1_9 = new DataElement ("FT1-9",
+				new DataTypeValidatorString(0, 65536, null
 					)
 				);
 			}
@@ -2488,6 +2344,69 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
+		static StructureItem mFieldLA1_1 = null;
+		static StructureItem getFieldLA1_1() { if (mFieldLA1_1 == null) { initFieldLA1_1(); } return mFieldLA1_1; }
+		static void initFieldLA1_1 () {
+			mFieldLA1_1 = new DataElement ("LA1-1",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldLA1_2 = null;
+		static StructureItem getFieldLA1_2() { if (mFieldLA1_2 == null) { initFieldLA1_2(); } return mFieldLA1_2; }
+		static void initFieldLA1_2 () {
+			mFieldLA1_2 = new DataElement ("LA1-2",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldLA1_3 = null;
+		static StructureItem getFieldLA1_3() { if (mFieldLA1_3 == null) { initFieldLA1_3(); } return mFieldLA1_3; }
+		static void initFieldLA1_3 () {
+			mFieldLA1_3 = new DataElement ("LA1-3",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldLA1_5 = null;
+		static StructureItem getFieldLA1_5() { if (mFieldLA1_5 == null) { initFieldLA1_5(); } return mFieldLA1_5; }
+		static void initFieldLA1_5 () {
+			mFieldLA1_5 = new DataElement ("LA1-5",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldLA1_6 = null;
+		static StructureItem getFieldLA1_6() { if (mFieldLA1_6 == null) { initFieldLA1_6(); } return mFieldLA1_6; }
+		static void initFieldLA1_6 () {
+			mFieldLA1_6 = new DataElement ("LA1-6",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldLA1_7 = null;
+		static StructureItem getFieldLA1_7() { if (mFieldLA1_7 == null) { initFieldLA1_7(); } return mFieldLA1_7; }
+		static void initFieldLA1_7 () {
+			mFieldLA1_7 = new DataElement ("LA1-7",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldLA1_8 = null;
+		static StructureItem getFieldLA1_8() { if (mFieldLA1_8 == null) { initFieldLA1_8(); } return mFieldLA1_8; }
+		static void initFieldLA1_8 () {
+			mFieldLA1_8 = new DataElement ("LA1-8",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
 		static StructureItem mFieldMO_1 = null;
 		static StructureItem getFieldMO_1() { if (mFieldMO_1 == null) { initFieldMO_1(); } return mFieldMO_1; }
 		static void initFieldMO_1 () {
@@ -2742,150 +2661,6 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldNDL_9 () {
 			mFieldNDL_9 = new DataElement ("NDL-9",
 				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_1 = null;
-		static StructureItem getFieldNK1_1() { if (mFieldNK1_1 == null) { initFieldNK1_1(); } return mFieldNK1_1; }
-		static void initFieldNK1_1 () {
-			mFieldNK1_1 = new DataElement ("NK1-1",
-				new DataTypeValidatorString(0, 4, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_10 = null;
-		static StructureItem getFieldNK1_10() { if (mFieldNK1_10 == null) { initFieldNK1_10(); } return mFieldNK1_10; }
-		static void initFieldNK1_10 () {
-			mFieldNK1_10 = new DataElement ("NK1-10",
-				new DataTypeValidatorString(0, 60, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_15 = null;
-		static StructureItem getFieldNK1_15() { if (mFieldNK1_15 == null) { initFieldNK1_15(); } return mFieldNK1_15; }
-		static void initFieldNK1_15 () {
-			mFieldNK1_15 = new DataElement ("NK1-15",
-				new DataTypeValidatorString(0, 1, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_16 = null;
-		static StructureItem getFieldNK1_16() { if (mFieldNK1_16 == null) { initFieldNK1_16(); } return mFieldNK1_16; }
-		static void initFieldNK1_16 () {
-			mFieldNK1_16 = new DataElement ("NK1-16",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_17 = null;
-		static StructureItem getFieldNK1_17() { if (mFieldNK1_17 == null) { initFieldNK1_17(); } return mFieldNK1_17; }
-		static void initFieldNK1_17 () {
-			mFieldNK1_17 = new DataElement ("NK1-17",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_18 = null;
-		static StructureItem getFieldNK1_18() { if (mFieldNK1_18 == null) { initFieldNK1_18(); } return mFieldNK1_18; }
-		static void initFieldNK1_18 () {
-			mFieldNK1_18 = new DataElement ("NK1-18",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_21 = null;
-		static StructureItem getFieldNK1_21() { if (mFieldNK1_21 == null) { initFieldNK1_21(); } return mFieldNK1_21; }
-		static void initFieldNK1_21 () {
-			mFieldNK1_21 = new DataElement ("NK1-21",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_23 = null;
-		static StructureItem getFieldNK1_23() { if (mFieldNK1_23 == null) { initFieldNK1_23(); } return mFieldNK1_23; }
-		static void initFieldNK1_23 () {
-			mFieldNK1_23 = new DataElement ("NK1-23",
-				new DataTypeValidatorString(0, 65536, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_24 = null;
-		static StructureItem getFieldNK1_24() { if (mFieldNK1_24 == null) { initFieldNK1_24(); } return mFieldNK1_24; }
-		static void initFieldNK1_24 () {
-			mFieldNK1_24 = new DataElement ("NK1-24",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_34 = null;
-		static StructureItem getFieldNK1_34() { if (mFieldNK1_34 == null) { initFieldNK1_34(); } return mFieldNK1_34; }
-		static void initFieldNK1_34 () {
-			mFieldNK1_34 = new DataElement ("NK1-34",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_36 = null;
-		static StructureItem getFieldNK1_36() { if (mFieldNK1_36 == null) { initFieldNK1_36(); } return mFieldNK1_36; }
-		static void initFieldNK1_36 () {
-			mFieldNK1_36 = new DataElement ("NK1-36",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_37 = null;
-		static StructureItem getFieldNK1_37() { if (mFieldNK1_37 == null) { initFieldNK1_37(); } return mFieldNK1_37; }
-		static void initFieldNK1_37 () {
-			mFieldNK1_37 = new DataElement ("NK1-37",
-				new DataTypeValidatorString(0, 16, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_38 = null;
-		static StructureItem getFieldNK1_38() { if (mFieldNK1_38 == null) { initFieldNK1_38(); } return mFieldNK1_38; }
-		static void initFieldNK1_38 () {
-			mFieldNK1_38 = new DataElement ("NK1-38",
-				new DataTypeValidatorString(0, 250, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_39 = null;
-		static StructureItem getFieldNK1_39() { if (mFieldNK1_39 == null) { initFieldNK1_39(); } return mFieldNK1_39; }
-		static void initFieldNK1_39 () {
-			mFieldNK1_39 = new DataElement ("NK1-39",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_8 = null;
-		static StructureItem getFieldNK1_8() { if (mFieldNK1_8 == null) { initFieldNK1_8(); } return mFieldNK1_8; }
-		static void initFieldNK1_8 () {
-			mFieldNK1_8 = new DataElement ("NK1-8",
-				new DataTypeValidatorString(0, 8, null
-					)
-				);
-			}
-
-		static StructureItem mFieldNK1_9 = null;
-		static StructureItem getFieldNK1_9() { if (mFieldNK1_9 == null) { initFieldNK1_9(); } return mFieldNK1_9; }
-		static void initFieldNK1_9 () {
-			mFieldNK1_9 = new DataElement ("NK1-9",
-				new DataTypeValidatorString(0, 8, null
 					)
 				);
 			}
@@ -3259,6 +3034,87 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
+		static StructureItem mFieldODS_1 = null;
+		static StructureItem getFieldODS_1() { if (mFieldODS_1 == null) { initFieldODS_1(); } return mFieldODS_1; }
+		static void initFieldODS_1 () {
+			mFieldODS_1 = new DataElement ("ODS-1",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldODS_4 = null;
+		static StructureItem getFieldODS_4() { if (mFieldODS_4 == null) { initFieldODS_4(); } return mFieldODS_4; }
+		static void initFieldODS_4 () {
+			mFieldODS_4 = new DataElement ("ODS-4",
+				new DataTypeValidatorString(0, 80, null
+					)
+				);
+			}
+
+		static StructureItem mFieldODT_3 = null;
+		static StructureItem getFieldODT_3() { if (mFieldODT_3 == null) { initFieldODT_3(); } return mFieldODT_3; }
+		static void initFieldODT_3 () {
+			mFieldODT_3 = new DataElement ("ODT-3",
+				new DataTypeValidatorString(0, 80, null
+					)
+				);
+			}
+
+		static StructureItem mFieldORC_1 = null;
+		static StructureItem getFieldORC_1() { if (mFieldORC_1 == null) { initFieldORC_1(); } return mFieldORC_1; }
+		static void initFieldORC_1 () {
+			mFieldORC_1 = new DataElement ("ORC-1",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldORC_15 = null;
+		static StructureItem getFieldORC_15() { if (mFieldORC_15 == null) { initFieldORC_15(); } return mFieldORC_15; }
+		static void initFieldORC_15 () {
+			mFieldORC_15 = new DataElement ("ORC-15",
+				new DataTypeValidatorString(0, 24, null
+					)
+				);
+			}
+
+		static StructureItem mFieldORC_27 = null;
+		static StructureItem getFieldORC_27() { if (mFieldORC_27 == null) { initFieldORC_27(); } return mFieldORC_27; }
+		static void initFieldORC_27 () {
+			mFieldORC_27 = new DataElement ("ORC-27",
+				new DataTypeValidatorString(0, 24, null
+					)
+				);
+			}
+
+		static StructureItem mFieldORC_5 = null;
+		static StructureItem getFieldORC_5() { if (mFieldORC_5 == null) { initFieldORC_5(); } return mFieldORC_5; }
+		static void initFieldORC_5 () {
+			mFieldORC_5 = new DataElement ("ORC-5",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldORC_6 = null;
+		static StructureItem getFieldORC_6() { if (mFieldORC_6 == null) { initFieldORC_6(); } return mFieldORC_6; }
+		static void initFieldORC_6 () {
+			mFieldORC_6 = new DataElement ("ORC-6",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldORC_9 = null;
+		static StructureItem getFieldORC_9() { if (mFieldORC_9 == null) { initFieldORC_9(); } return mFieldORC_9; }
+		static void initFieldORC_9 () {
+			mFieldORC_9 = new DataElement ("ORC-9",
+				new DataTypeValidatorString(0, 24, null
+					)
+				);
+			}
+
 		static StructureItem mFieldOSD_1 = null;
 		static StructureItem getFieldOSD_1() { if (mFieldOSD_1 == null) { initFieldOSD_1(); } return mFieldOSD_1; }
 		static void initFieldOSD_1 () {
@@ -3354,6 +3210,150 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldOSD_9 () {
 			mFieldOSD_9 = new DataElement ("OSD-9",
 				new DataTypeValidatorString(0, 6, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_1 = null;
+		static StructureItem getFieldPD1_1() { if (mFieldPD1_1 == null) { initFieldPD1_1(); } return mFieldPD1_1; }
+		static void initFieldPD1_1 () {
+			mFieldPD1_1 = new DataElement ("PD1-1",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_12 = null;
+		static StructureItem getFieldPD1_12() { if (mFieldPD1_12 == null) { initFieldPD1_12(); } return mFieldPD1_12; }
+		static void initFieldPD1_12 () {
+			mFieldPD1_12 = new DataElement ("PD1-12",
+				new DataTypeValidatorString(0, 65536, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_13 = null;
+		static StructureItem getFieldPD1_13() { if (mFieldPD1_13 == null) { initFieldPD1_13(); } return mFieldPD1_13; }
+		static void initFieldPD1_13 () {
+			mFieldPD1_13 = new DataElement ("PD1-13",
+				new DataTypeValidatorString(0, 65536, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_16 = null;
+		static StructureItem getFieldPD1_16() { if (mFieldPD1_16 == null) { initFieldPD1_16(); } return mFieldPD1_16; }
+		static void initFieldPD1_16 () {
+			mFieldPD1_16 = new DataElement ("PD1-16",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_17 = null;
+		static StructureItem getFieldPD1_17() { if (mFieldPD1_17 == null) { initFieldPD1_17(); } return mFieldPD1_17; }
+		static void initFieldPD1_17 () {
+			mFieldPD1_17 = new DataElement ("PD1-17",
+				new DataTypeValidatorString(0, 8, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_18 = null;
+		static StructureItem getFieldPD1_18() { if (mFieldPD1_18 == null) { initFieldPD1_18(); } return mFieldPD1_18; }
+		static void initFieldPD1_18 () {
+			mFieldPD1_18 = new DataElement ("PD1-18",
+				new DataTypeValidatorString(0, 8, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_19 = null;
+		static StructureItem getFieldPD1_19() { if (mFieldPD1_19 == null) { initFieldPD1_19(); } return mFieldPD1_19; }
+		static void initFieldPD1_19 () {
+			mFieldPD1_19 = new DataElement ("PD1-19",
+				new DataTypeValidatorString(0, 5, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_2 = null;
+		static StructureItem getFieldPD1_2() { if (mFieldPD1_2 == null) { initFieldPD1_2(); } return mFieldPD1_2; }
+		static void initFieldPD1_2 () {
+			mFieldPD1_2 = new DataElement ("PD1-2",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_20 = null;
+		static StructureItem getFieldPD1_20() { if (mFieldPD1_20 == null) { initFieldPD1_20(); } return mFieldPD1_20; }
+		static void initFieldPD1_20 () {
+			mFieldPD1_20 = new DataElement ("PD1-20",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_21 = null;
+		static StructureItem getFieldPD1_21() { if (mFieldPD1_21 == null) { initFieldPD1_21(); } return mFieldPD1_21; }
+		static void initFieldPD1_21 () {
+			mFieldPD1_21 = new DataElement ("PD1-21",
+				new DataTypeValidatorString(0, 3, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_22 = null;
+		static StructureItem getFieldPD1_22() { if (mFieldPD1_22 == null) { initFieldPD1_22(); } return mFieldPD1_22; }
+		static void initFieldPD1_22 () {
+			mFieldPD1_22 = new DataElement ("PD1-22",
+				new DataTypeValidatorString(0, 8, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_5 = null;
+		static StructureItem getFieldPD1_5() { if (mFieldPD1_5 == null) { initFieldPD1_5(); } return mFieldPD1_5; }
+		static void initFieldPD1_5 () {
+			mFieldPD1_5 = new DataElement ("PD1-5",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_6 = null;
+		static StructureItem getFieldPD1_6() { if (mFieldPD1_6 == null) { initFieldPD1_6(); } return mFieldPD1_6; }
+		static void initFieldPD1_6 () {
+			mFieldPD1_6 = new DataElement ("PD1-6",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_7 = null;
+		static StructureItem getFieldPD1_7() { if (mFieldPD1_7 == null) { initFieldPD1_7(); } return mFieldPD1_7; }
+		static void initFieldPD1_7 () {
+			mFieldPD1_7 = new DataElement ("PD1-7",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_8 = null;
+		static StructureItem getFieldPD1_8() { if (mFieldPD1_8 == null) { initFieldPD1_8(); } return mFieldPD1_8; }
+		static void initFieldPD1_8 () {
+			mFieldPD1_8 = new DataElement ("PD1-8",
+				new DataTypeValidatorString(0, 2, null
+					)
+				);
+			}
+
+		static StructureItem mFieldPD1_9 = null;
+		static StructureItem getFieldPD1_9() { if (mFieldPD1_9 == null) { initFieldPD1_9(); } return mFieldPD1_9; }
+		static void initFieldPD1_9 () {
+			mFieldPD1_9 = new DataElement ("PD1-9",
+				new DataTypeValidatorString(0, 1, null
 					)
 				);
 			}
@@ -3588,168 +3588,6 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldPLN_4 () {
 			mFieldPLN_4 = new DataElement ("PLN-4",
 				new DataTypeValidatorString(0, 8, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_1 = null;
-		static StructureItem getFieldPR1_1() { if (mFieldPR1_1 == null) { initFieldPR1_1(); } return mFieldPR1_1; }
-		static void initFieldPR1_1 () {
-			mFieldPR1_1 = new DataElement ("PR1-1",
-				new DataTypeValidatorString(0, 4, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_10 = null;
-		static StructureItem getFieldPR1_10() { if (mFieldPR1_10 == null) { initFieldPR1_10(); } return mFieldPR1_10; }
-		static void initFieldPR1_10 () {
-			mFieldPR1_10 = new DataElement ("PR1-10",
-				new DataTypeValidatorString(0, 4, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_11 = null;
-		static StructureItem getFieldPR1_11() { if (mFieldPR1_11 == null) { initFieldPR1_11(); } return mFieldPR1_11; }
-		static void initFieldPR1_11 () {
-			mFieldPR1_11 = new DataElement ("PR1-11",
-				new DataTypeValidatorString(0, 65536, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_12 = null;
-		static StructureItem getFieldPR1_12() { if (mFieldPR1_12 == null) { initFieldPR1_12(); } return mFieldPR1_12; }
-		static void initFieldPR1_12 () {
-			mFieldPR1_12 = new DataElement ("PR1-12",
-				new DataTypeValidatorString(0, 65536, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_14 = null;
-		static StructureItem getFieldPR1_14() { if (mFieldPR1_14 == null) { initFieldPR1_14(); } return mFieldPR1_14; }
-		static void initFieldPR1_14 () {
-			mFieldPR1_14 = new DataElement ("PR1-14",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_17 = null;
-		static StructureItem getFieldPR1_17() { if (mFieldPR1_17 == null) { initFieldPR1_17(); } return mFieldPR1_17; }
-		static void initFieldPR1_17 () {
-			mFieldPR1_17 = new DataElement ("PR1-17",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_2 = null;
-		static StructureItem getFieldPR1_2() { if (mFieldPR1_2 == null) { initFieldPR1_2(); } return mFieldPR1_2; }
-		static void initFieldPR1_2 () {
-			mFieldPR1_2 = new DataElement ("PR1-2",
-				new DataTypeValidatorString(0, 65536, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_20 = null;
-		static StructureItem getFieldPR1_20() { if (mFieldPR1_20 == null) { initFieldPR1_20(); } return mFieldPR1_20; }
-		static void initFieldPR1_20 () {
-			mFieldPR1_20 = new DataElement ("PR1-20",
-				new DataTypeValidatorString(0, 1, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_21 = null;
-		static StructureItem getFieldPR1_21() { if (mFieldPR1_21 == null) { initFieldPR1_21(); } return mFieldPR1_21; }
-		static void initFieldPR1_21 () {
-			mFieldPR1_21 = new DataElement ("PR1-21",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_22 = null;
-		static StructureItem getFieldPR1_22() { if (mFieldPR1_22 == null) { initFieldPR1_22(); } return mFieldPR1_22; }
-		static void initFieldPR1_22 () {
-			mFieldPR1_22 = new DataElement ("PR1-22",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_4 = null;
-		static StructureItem getFieldPR1_4() { if (mFieldPR1_4 == null) { initFieldPR1_4(); } return mFieldPR1_4; }
-		static void initFieldPR1_4 () {
-			mFieldPR1_4 = new DataElement ("PR1-4",
-				new DataTypeValidatorString(0, 65536, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_5 = null;
-		static StructureItem getFieldPR1_5() { if (mFieldPR1_5 == null) { initFieldPR1_5(); } return mFieldPR1_5; }
-		static void initFieldPR1_5 () {
-			mFieldPR1_5 = new DataElement ("PR1-5",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_6 = null;
-		static StructureItem getFieldPR1_6() { if (mFieldPR1_6 == null) { initFieldPR1_6(); } return mFieldPR1_6; }
-		static void initFieldPR1_6 () {
-			mFieldPR1_6 = new DataElement ("PR1-6",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_7 = null;
-		static StructureItem getFieldPR1_7() { if (mFieldPR1_7 == null) { initFieldPR1_7(); } return mFieldPR1_7; }
-		static void initFieldPR1_7 () {
-			mFieldPR1_7 = new DataElement ("PR1-7",
-				new DataTypeValidatorString(0, 4, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_8 = null;
-		static StructureItem getFieldPR1_8() { if (mFieldPR1_8 == null) { initFieldPR1_8(); } return mFieldPR1_8; }
-		static void initFieldPR1_8 () {
-			mFieldPR1_8 = new DataElement ("PR1-8",
-				new DataTypeValidatorString(0, 65536, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPR1_9 = null;
-		static StructureItem getFieldPR1_9() { if (mFieldPR1_9 == null) { initFieldPR1_9(); } return mFieldPR1_9; }
-		static void initFieldPR1_9 () {
-			mFieldPR1_9 = new DataElement ("PR1-9",
-				new DataTypeValidatorString(0, 2, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPRD_8 = null;
-		static StructureItem getFieldPRD_8() { if (mFieldPRD_8 == null) { initFieldPRD_8(); } return mFieldPRD_8; }
-		static void initFieldPRD_8 () {
-			mFieldPRD_8 = new DataElement ("PRD-8",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldPRD_9 = null;
-		static StructureItem getFieldPRD_9() { if (mFieldPRD_9 == null) { initFieldPRD_9(); } return mFieldPRD_9; }
-		static void initFieldPRD_9 () {
-			mFieldPRD_9 = new DataElement ("PRD-9",
-				new DataTypeValidatorString(0, 24, null
 					)
 				);
 			}
@@ -4618,33 +4456,6 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mFieldRF1_7 = null;
-		static StructureItem getFieldRF1_7() { if (mFieldRF1_7 == null) { initFieldRF1_7(); } return mFieldRF1_7; }
-		static void initFieldRF1_7 () {
-			mFieldRF1_7 = new DataElement ("RF1-7",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldRF1_8 = null;
-		static StructureItem getFieldRF1_8() { if (mFieldRF1_8 == null) { initFieldRF1_8(); } return mFieldRF1_8; }
-		static void initFieldRF1_8 () {
-			mFieldRF1_8 = new DataElement ("RF1-8",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
-		static StructureItem mFieldRF1_9 = null;
-		static StructureItem getFieldRF1_9() { if (mFieldRF1_9 == null) { initFieldRF1_9(); } return mFieldRF1_9; }
-		static void initFieldRF1_9 () {
-			mFieldRF1_9 = new DataElement ("RF1-9",
-				new DataTypeValidatorString(0, 24, null
-					)
-				);
-			}
-
 		static StructureItem mFieldRI_1 = null;
 		static StructureItem getFieldRI_1() { if (mFieldRI_1 == null) { initFieldRI_1(); } return mFieldRI_1; }
 		static void initFieldRI_1 () {
@@ -4690,6 +4501,204 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
+		static StructureItem mFieldRQ1_1 = null;
+		static StructureItem getFieldRQ1_1() { if (mFieldRQ1_1 == null) { initFieldRQ1_1(); } return mFieldRQ1_1; }
+		static void initFieldRQ1_1 () {
+			mFieldRQ1_1 = new DataElement ("RQ1-1",
+				new DataTypeValidatorString(0, 10, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQ1_3 = null;
+		static StructureItem getFieldRQ1_3() { if (mFieldRQ1_3 == null) { initFieldRQ1_3(); } return mFieldRQ1_3; }
+		static void initFieldRQ1_3 () {
+			mFieldRQ1_3 = new DataElement ("RQ1-3",
+				new DataTypeValidatorString(0, 16, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQ1_5 = null;
+		static StructureItem getFieldRQ1_5() { if (mFieldRQ1_5 == null) { initFieldRQ1_5(); } return mFieldRQ1_5; }
+		static void initFieldRQ1_5 () {
+			mFieldRQ1_5 = new DataElement ("RQ1-5",
+				new DataTypeValidatorString(0, 16, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQ1_6 = null;
+		static StructureItem getFieldRQ1_6() { if (mFieldRQ1_6 == null) { initFieldRQ1_6(); } return mFieldRQ1_6; }
+		static void initFieldRQ1_6 () {
+			mFieldRQ1_6 = new DataElement ("RQ1-6",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQ1_7 = null;
+		static StructureItem getFieldRQ1_7() { if (mFieldRQ1_7 == null) { initFieldRQ1_7(); } return mFieldRQ1_7; }
+		static void initFieldRQ1_7 () {
+			mFieldRQ1_7 = new DataElement ("RQ1-7",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQD_1 = null;
+		static StructureItem getFieldRQD_1() { if (mFieldRQD_1 == null) { initFieldRQD_1(); } return mFieldRQD_1; }
+		static void initFieldRQD_1 () {
+			mFieldRQD_1 = new DataElement ("RQD-1",
+				new DataTypeValidatorString(0, 4, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQD_10 = null;
+		static StructureItem getFieldRQD_10() { if (mFieldRQD_10 == null) { initFieldRQD_10(); } return mFieldRQD_10; }
+		static void initFieldRQD_10 () {
+			mFieldRQD_10 = new DataElement ("RQD-10",
+				new DataTypeValidatorString(0, 8, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQD_5 = null;
+		static StructureItem getFieldRQD_5() { if (mFieldRQD_5 == null) { initFieldRQD_5(); } return mFieldRQD_5; }
+		static void initFieldRQD_5 () {
+			mFieldRQD_5 = new DataElement ("RQD-5",
+				new DataTypeValidatorString(0, 6, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQD_7 = null;
+		static StructureItem getFieldRQD_7() { if (mFieldRQD_7 == null) { initFieldRQD_7(); } return mFieldRQD_7; }
+		static void initFieldRQD_7 () {
+			mFieldRQD_7 = new DataElement ("RQD-7",
+				new DataTypeValidatorString(0, 30, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRQD_8 = null;
+		static StructureItem getFieldRQD_8() { if (mFieldRQD_8 == null) { initFieldRQD_8(); } return mFieldRQD_8; }
+		static void initFieldRQD_8 () {
+			mFieldRQD_8 = new DataElement ("RQD-8",
+				new DataTypeValidatorString(0, 30, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_11 = null;
+		static StructureItem getFieldRXO_11() { if (mFieldRXO_11 == null) { initFieldRXO_11(); } return mFieldRXO_11; }
+		static void initFieldRXO_11 () {
+			mFieldRXO_11 = new DataElement ("RXO-11",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_13 = null;
+		static StructureItem getFieldRXO_13() { if (mFieldRXO_13 == null) { initFieldRXO_13(); } return mFieldRXO_13; }
+		static void initFieldRXO_13 () {
+			mFieldRXO_13 = new DataElement ("RXO-13",
+				new DataTypeValidatorString(0, 3, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_16 = null;
+		static StructureItem getFieldRXO_16() { if (mFieldRXO_16 == null) { initFieldRXO_16(); } return mFieldRXO_16; }
+		static void initFieldRXO_16 () {
+			mFieldRXO_16 = new DataElement ("RXO-16",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_17 = null;
+		static StructureItem getFieldRXO_17() { if (mFieldRXO_17 == null) { initFieldRXO_17(); } return mFieldRXO_17; }
+		static void initFieldRXO_17 () {
+			mFieldRXO_17 = new DataElement ("RXO-17",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_18 = null;
+		static StructureItem getFieldRXO_18() { if (mFieldRXO_18 == null) { initFieldRXO_18(); } return mFieldRXO_18; }
+		static void initFieldRXO_18 () {
+			mFieldRXO_18 = new DataElement ("RXO-18",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_2 = null;
+		static StructureItem getFieldRXO_2() { if (mFieldRXO_2 == null) { initFieldRXO_2(); } return mFieldRXO_2; }
+		static void initFieldRXO_2 () {
+			mFieldRXO_2 = new DataElement ("RXO-2",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_21 = null;
+		static StructureItem getFieldRXO_21() { if (mFieldRXO_21 == null) { initFieldRXO_21(); } return mFieldRXO_21; }
+		static void initFieldRXO_21 () {
+			mFieldRXO_21 = new DataElement ("RXO-21",
+				new DataTypeValidatorString(0, 6, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_25 = null;
+		static StructureItem getFieldRXO_25() { if (mFieldRXO_25 == null) { initFieldRXO_25(); } return mFieldRXO_25; }
+		static void initFieldRXO_25 () {
+			mFieldRXO_25 = new DataElement ("RXO-25",
+				new DataTypeValidatorString(0, 5, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_27 = null;
+		static StructureItem getFieldRXO_27() { if (mFieldRXO_27 == null) { initFieldRXO_27(); } return mFieldRXO_27; }
+		static void initFieldRXO_27 () {
+			mFieldRXO_27 = new DataElement ("RXO-27",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_28 = null;
+		static StructureItem getFieldRXO_28() { if (mFieldRXO_28 == null) { initFieldRXO_28(); } return mFieldRXO_28; }
+		static void initFieldRXO_28 () {
+			mFieldRXO_28 = new DataElement ("RXO-28",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_3 = null;
+		static StructureItem getFieldRXO_3() { if (mFieldRXO_3 == null) { initFieldRXO_3(); } return mFieldRXO_3; }
+		static void initFieldRXO_3 () {
+			mFieldRXO_3 = new DataElement ("RXO-3",
+				new DataTypeValidatorString(0, 20, null
+					)
+				);
+			}
+
+		static StructureItem mFieldRXO_9 = null;
+		static StructureItem getFieldRXO_9() { if (mFieldRXO_9 == null) { initFieldRXO_9(); } return mFieldRXO_9; }
+		static void initFieldRXO_9 () {
+			mFieldRXO_9 = new DataElement ("RXO-9",
+				new DataTypeValidatorString(0, 1, null
+					)
+				);
+			}
+
 		static StructureItem mFieldSAD_1 = null;
 		static StructureItem getFieldSAD_1() { if (mFieldSAD_1 == null) { initFieldSAD_1(); } return mFieldSAD_1; }
 		static void initFieldSAD_1 () {
@@ -4713,51 +4722,6 @@ public class EnvelopeDocument extends TextDocument {
 		static void initFieldSAD_3 () {
 			mFieldSAD_3 = new DataElement ("SAD-3",
 				new DataTypeValidatorString(0, 12, null
-					)
-				);
-			}
-
-		static StructureItem mFieldSFT_2 = null;
-		static StructureItem getFieldSFT_2() { if (mFieldSFT_2 == null) { initFieldSFT_2(); } return mFieldSFT_2; }
-		static void initFieldSFT_2 () {
-			mFieldSFT_2 = new DataElement ("SFT-2",
-				new DataTypeValidatorString(0, 15, null
-					)
-				);
-			}
-
-		static StructureItem mFieldSFT_3 = null;
-		static StructureItem getFieldSFT_3() { if (mFieldSFT_3 == null) { initFieldSFT_3(); } return mFieldSFT_3; }
-		static void initFieldSFT_3 () {
-			mFieldSFT_3 = new DataElement ("SFT-3",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldSFT_4 = null;
-		static StructureItem getFieldSFT_4() { if (mFieldSFT_4 == null) { initFieldSFT_4(); } return mFieldSFT_4; }
-		static void initFieldSFT_4 () {
-			mFieldSFT_4 = new DataElement ("SFT-4",
-				new DataTypeValidatorString(0, 20, null
-					)
-				);
-			}
-
-		static StructureItem mFieldSFT_5 = null;
-		static StructureItem getFieldSFT_5() { if (mFieldSFT_5 == null) { initFieldSFT_5(); } return mFieldSFT_5; }
-		static void initFieldSFT_5 () {
-			mFieldSFT_5 = new DataElement ("SFT-5",
-				new DataTypeValidatorString(0, 1024, null
-					)
-				);
-			}
-
-		static StructureItem mFieldSFT_6 = null;
-		static StructureItem getFieldSFT_6() { if (mFieldSFT_6 == null) { initFieldSFT_6(); } return mFieldSFT_6; }
-		static void initFieldSFT_6 () {
-			mFieldSFT_6 = new DataElement ("SFT-6",
-				new DataTypeValidatorString(0, 24, null
 					)
 				);
 			}
@@ -5530,6 +5494,17 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
+		static StructureItem mFieldCCD = null;
+		static StructureItem getFieldCCD() { if (mFieldCCD == null) { initFieldCCD(); } return mFieldCCD; }
+		static void initFieldCCD () {
+			mFieldCCD = new Composite ("CCD",
+				new Particle[]{
+					new Particle("CCD-1", getFieldCCD_1(), 1, 1, 1, false, new String[]{}),
+					new Particle("CCD-2", getFieldCCD_2(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
 		static StructureItem mFieldCD = null;
 		static StructureItem getFieldCD() { if (mFieldCD == null) { initFieldCD(); } return mFieldCD; }
 		static void initFieldCD () {
@@ -5661,6 +5636,17 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
+		static StructureItem mFieldDR = null;
+		static StructureItem getFieldDR() { if (mFieldDR == null) { initFieldDR(); } return mFieldDR; }
+		static void initFieldDR () {
+			mFieldDR = new Composite ("DR",
+				new Particle[]{
+					new Particle("DR-1", getFieldDR_1(), 0, 1, 1, false, new String[]{}),
+					new Particle("DR-2", getFieldDR_2(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
 		static StructureItem mFieldDTN = null;
 		static StructureItem getFieldDTN() { if (mFieldDTN == null) { initFieldDTN(); } return mFieldDTN; }
 		static void initFieldDTN () {
@@ -5668,20 +5654,6 @@ public class EnvelopeDocument extends TextDocument {
 				new Particle[]{
 					new Particle("DTN-1", getFieldDTN_1(), 1, 1, 1, false, new String[]{}),
 					new Particle("DTN-2", getFieldDTN_2(), 1, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mFieldED = null;
-		static StructureItem getFieldED() { if (mFieldED == null) { initFieldED(); } return mFieldED; }
-		static void initFieldED () {
-			mFieldED = new Composite ("ED",
-				new Particle[]{
-					new Particle("ED-1", getFieldED_1(), 0, 1, 1, false, new String[]{}),
-					new Particle("ED-2", getFieldED_2(), 1, 1, 1, false, new String[]{}),
-					new Particle("ED-3", getFieldED_3(), 0, 1, 1, false, new String[]{}),
-					new Particle("ED-4", getFieldED_4(), 1, 1, 1, false, new String[]{}),
-					new Particle("ED-5", getFieldED_5(), 1, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -5757,13 +5729,20 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mFieldMO = null;
-		static StructureItem getFieldMO() { if (mFieldMO == null) { initFieldMO(); } return mFieldMO; }
-		static void initFieldMO () {
-			mFieldMO = new Composite ("MO",
+		static StructureItem mFieldLA1 = null;
+		static StructureItem getFieldLA1() { if (mFieldLA1 == null) { initFieldLA1(); } return mFieldLA1; }
+		static void initFieldLA1 () {
+			mFieldLA1 = new Composite ("LA1",
 				new Particle[]{
-					new Particle("MO-1", getFieldMO_1(), 0, 1, 1, false, new String[]{}),
-					new Particle("MO-2", getFieldMO_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-1", getFieldLA1_1(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-2", getFieldLA1_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-3", getFieldLA1_3(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-4", getFieldLA1_4(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-5", getFieldLA1_5(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-6", getFieldLA1_6(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-7", getFieldLA1_7(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-8", getFieldLA1_8(), 0, 1, 1, false, new String[]{}),
+					new Particle("LA1-9", getFieldLA1_9(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -6098,26 +6077,6 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mStructureACC = null;
-		static StructureItem getStructureACC() { if (mStructureACC == null) { initStructureACC(); } return mStructureACC; }
-		static void initStructureACC () {
-			mStructureACC = new Segment ("ACC","", "", 
-				new Particle[]{
-					new Particle("ACC-1", getFieldACC_1(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-2", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-3", getFieldACC_3(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-4", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-5", getFieldACC_5(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-6", getFieldACC_6(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-7", getFieldXCN(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-8", getFieldACC_8(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-9", getFieldACC_9(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-10", getFieldACC_10(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC-11", getFieldXAD(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
 		static StructureItem mStructureAL1 = null;
 		static StructureItem getStructureAL1() { if (mStructureAL1 == null) { initStructureAL1(); } return mStructureAL1; }
 		static void initStructureAL1 () {
@@ -6129,25 +6088,6 @@ public class EnvelopeDocument extends TextDocument {
 					new Particle("AL1-4", getFieldCWE(), 0, 1, 1, false, new String[]{}),
 					new Particle("AL1-5", getFieldAL1_5(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
 					new Particle("AL1-6", getFieldAL1_6(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureAUT = null;
-		static StructureItem getStructureAUT() { if (mStructureAUT == null) { initStructureAUT(); } return mStructureAUT; }
-		static void initStructureAUT () {
-			mStructureAUT = new Segment ("AUT","", "", 
-				new Particle[]{
-					new Particle("AUT-1", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-2", getFieldCWE(), 1, 1, 1, false, new String[]{}),
-					new Particle("AUT-3", getFieldAUT_3(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-4", getFieldAUT_4(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-5", getFieldAUT_5(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-6", getFieldEI(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-7", getFieldCP(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-8", getFieldAUT_8(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-9", getFieldAUT_9(), 0, 1, 1, false, new String[]{}),
-					new Particle("AUT-10", getFieldAUT_10(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -6171,6 +6111,19 @@ public class EnvelopeDocument extends TextDocument {
 					new Particle("BHS-12", getFieldBHS_12(), 0, 1, 1, false, new String[]{}),
 					new Particle("BHS-13", getFieldHD(), 0, 1, 1, false, new String[]{}),
 					new Particle("BHS-14", getFieldHD(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructureBLG = null;
+		static StructureItem getStructureBLG() { if (mStructureBLG == null) { initStructureBLG(); } return mStructureBLG; }
+		static void initStructureBLG () {
+			mStructureBLG = new Segment ("BLG","", "", 
+				new Particle[]{
+					new Particle("BLG-1", getFieldCCD(), 0, 1, 1, false, new String[]{}),
+					new Particle("BLG-2", getFieldBLG_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("BLG-3", getFieldCX(), 0, 1, 1, false, new String[]{}),
+					new Particle("BLG-4", getFieldCWE(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -6199,6 +6152,18 @@ public class EnvelopeDocument extends TextDocument {
 					new Particle("CTD-5", getFieldXTN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
 					new Particle("CTD-6", getFieldCWE(), 0, 1, 1, false, new String[]{}),
 					new Particle("CTD-7", getFieldPLN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructureCTI = null;
+		static StructureItem getStructureCTI() { if (mStructureCTI == null) { initStructureCTI(); } return mStructureCTI; }
+		static void initStructureCTI () {
+			mStructureCTI = new Segment ("CTI","", "", 
+				new Particle[]{
+					new Particle("CTI-1", getFieldEI(), 1, 1, 1, false, new String[]{}),
+					new Particle("CTI-2", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("CTI-3", getFieldCWE(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -6238,48 +6203,6 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mStructureDRG = null;
-		static StructureItem getStructureDRG() { if (mStructureDRG == null) { initStructureDRG(); } return mStructureDRG; }
-		static void initStructureDRG () {
-			mStructureDRG = new Segment ("DRG","", "", 
-				new Particle[]{
-					new Particle("DRG-1", getFieldCNE(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-2", getFieldDRG_2(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-3", getFieldDRG_3(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-4", getFieldDRG_4(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-5", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-6", getFieldDRG_6(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-7", getFieldCP(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-8", getFieldDRG_8(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-9", getFieldCP(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-10", getFieldDRG_10(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-11", getFieldDRG_11(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-12", getFieldXPN(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-13", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-14", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-15", getFieldDRG_15(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-16", getFieldMO(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-17", getFieldDRG_17(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-18", getFieldDRG_18(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-19", getFieldDRG_19(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-20", getFieldDRG_20(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-21", getFieldMO(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-22", getFieldMO(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-23", getFieldMO(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-24", getFieldMO(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-25", getFieldDRG_25(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-26", getFieldDRG_26(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-27", getFieldDRG_27(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-28", getFieldDRG_28(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-29", getFieldDRG_29(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-30", getFieldDRG_30(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-31", getFieldDRG_31(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-32", getFieldDRG_32(), 0, 1, 1, false, new String[]{}),
-					new Particle("DRG-33", getFieldDRG_33(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
 		static StructureItem mStructureFHS = null;
 		static StructureItem getStructureFHS() { if (mStructureFHS == null) { initStructureFHS(); } return mStructureFHS; }
 		static void initStructureFHS () {
@@ -6299,6 +6222,46 @@ public class EnvelopeDocument extends TextDocument {
 					new Particle("FHS-12", getFieldFHS_12(), 0, 1, 1, false, new String[]{}),
 					new Particle("FHS-13", getFieldHD(), 0, 1, 1, false, new String[]{}),
 					new Particle("FHS-14", getFieldHD(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructureFT1 = null;
+		static StructureItem getStructureFT1() { if (mStructureFT1 == null) { initStructureFT1(); } return mStructureFT1; }
+		static void initStructureFT1 () {
+			mStructureFT1 = new Segment ("FT1","", "", 
+				new Particle[]{
+					new Particle("FT1-1", getFieldFT1_1(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-2", getFieldFT1_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-3", getFieldFT1_3(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-4", getFieldDR(), 1, 1, 1, false, new String[]{}),
+					new Particle("FT1-5", getFieldFT1_5(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-6", getFieldFT1_6(), 1, 1, 1, false, new String[]{}),
+					new Particle("FT1-7", getFieldCWE(), 1, 1, 1, false, new String[]{}),
+					new Particle("FT1-8", getFieldFT1_8(), 0, 0, 1, false, new String[]{}),
+					new Particle("FT1-9", getFieldFT1_9(), 0, 0, 1, false, new String[]{}),
+					new Particle("FT1-10", getFieldFT1_10(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-11", getFieldCP(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-12", getFieldCP(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-13", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-14", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-15", getFieldCP(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-16", getFieldPL(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-17", getFieldFT1_17(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-18", getFieldFT1_18(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-19", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("FT1-20", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("FT1-21", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("FT1-22", getFieldCP(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-23", getFieldEI(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-24", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("FT1-25", getFieldCNE(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-26", getFieldCNE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("FT1-27", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-28", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-29", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-30", getFieldCX(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1-31", getFieldFT1_31(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -6591,54 +6554,6 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mStructureNK1 = null;
-		static StructureItem getStructureNK1() { if (mStructureNK1 == null) { initStructureNK1(); } return mStructureNK1; }
-		static void initStructureNK1 () {
-			mStructureNK1 = new Segment ("NK1","", "", 
-				new Particle[]{
-					new Particle("NK1-1", getFieldNK1_1(), 1, 1, 1, false, new String[]{}),
-					new Particle("NK1-2", getFieldXPN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-3", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-4", getFieldXAD(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-5", getFieldXTN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-6", getFieldXTN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-7", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-8", getFieldNK1_8(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-9", getFieldNK1_9(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-10", getFieldNK1_10(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-11", getFieldJCC(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-12", getFieldCX(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-13", getFieldXON(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-14", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-15", getFieldNK1_15(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-16", getFieldNK1_16(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-17", getFieldNK1_17(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-18", getFieldNK1_18(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-19", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-20", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-21", getFieldNK1_21(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-22", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-23", getFieldNK1_23(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-24", getFieldNK1_24(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-25", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-26", getFieldXPN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-27", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-28", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-29", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-30", getFieldXPN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-31", getFieldXTN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-32", getFieldXAD(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-33", getFieldCX(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-34", getFieldNK1_34(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-35", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("NK1-36", getFieldNK1_36(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-37", getFieldNK1_37(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-38", getFieldNK1_38(), 0, 1, 1, false, new String[]{}),
-					new Particle("NK1-39", getFieldNK1_39(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
 		static StructureItem mStructureNTE = null;
 		static StructureItem getStructureNTE() { if (mStructureNTE == null) { initStructureNTE(); } return mStructureNTE; }
 		static void initStructureNTE () {
@@ -6749,6 +6664,102 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
+		static StructureItem mStructureODS = null;
+		static StructureItem getStructureODS() { if (mStructureODS == null) { initStructureODS(); } return mStructureODS; }
+		static void initStructureODS () {
+			mStructureODS = new Segment ("ODS","", "", 
+				new Particle[]{
+					new Particle("ODS-1", getFieldODS_1(), 1, 1, 1, false, new String[]{}),
+					new Particle("ODS-2", getFieldCWE(), 0, 10, 1, false, new String[]{}),
+					new Particle("ODS-3", getFieldCWE(), 1, 20, 1, false, new String[]{}),
+					new Particle("ODS-4", getFieldODS_4(), 0, 2, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructureODT = null;
+		static StructureItem getStructureODT() { if (mStructureODT == null) { initStructureODT(); } return mStructureODT; }
+		static void initStructureODT () {
+			mStructureODT = new Segment ("ODT","", "", 
+				new Particle[]{
+					new Particle("ODT-1", getFieldCWE(), 1, 1, 1, false, new String[]{}),
+					new Particle("ODT-2", getFieldCWE(), 0, 10, 1, false, new String[]{}),
+					new Particle("ODT-3", getFieldODT_3(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructureORC = null;
+		static StructureItem getStructureORC() { if (mStructureORC == null) { initStructureORC(); } return mStructureORC; }
+		static void initStructureORC () {
+			mStructureORC = new Segment ("ORC","", "", 
+				new Particle[]{
+					new Particle("ORC-1", getFieldORC_1(), 1, 1, 1, false, new String[]{}),
+					new Particle("ORC-2", getFieldEI(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-3", getFieldEI(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-4", getFieldEI(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-5", getFieldORC_5(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-6", getFieldORC_6(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-7", getFieldTQ(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-8", getFieldEIP(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-9", getFieldORC_9(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-10", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-11", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-12", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-13", getFieldPL(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-14", getFieldXTN(), 0, 2, 1, false, new String[]{}),
+					new Particle("ORC-15", getFieldORC_15(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-16", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-17", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-18", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-19", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-20", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-21", getFieldXON(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-22", getFieldXAD(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-23", getFieldXTN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-24", getFieldXAD(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC-25", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-26", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-27", getFieldORC_27(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-28", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-29", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-30", getFieldCNE(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORC-31", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructurePD1 = null;
+		static StructureItem getStructurePD1() { if (mStructurePD1 == null) { initStructurePD1(); } return mStructurePD1; }
+		static void initStructurePD1 () {
+			mStructurePD1 = new Segment ("PD1","", "", 
+				new Particle[]{
+					new Particle("PD1-1", getFieldPD1_1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("PD1-2", getFieldPD1_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-3", getFieldXON(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("PD1-4", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("PD1-5", getFieldPD1_5(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-6", getFieldPD1_6(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-7", getFieldPD1_7(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-8", getFieldPD1_8(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-9", getFieldPD1_9(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-10", getFieldCX(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("PD1-11", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-12", getFieldPD1_12(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-13", getFieldPD1_13(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-14", getFieldXON(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("PD1-15", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("PD1-16", getFieldPD1_16(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-17", getFieldPD1_17(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-18", getFieldPD1_18(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-19", getFieldPD1_19(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-20", getFieldPD1_20(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-21", getFieldPD1_21(), 0, 1, 1, false, new String[]{}),
+					new Particle("PD1-22", getFieldPD1_22(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
 		static StructureItem mStructurePID = null;
 		static StructureItem getStructurePID() { if (mStructurePID == null) { initStructurePID(); } return mStructurePID; }
 		static void initStructurePID () {
@@ -6793,60 +6804,6 @@ public class EnvelopeDocument extends TextDocument {
 					new Particle("PID-37", getFieldPID_37(), 0, 1, 1, false, new String[]{}),
 					new Particle("PID-38", getFieldCWE(), 0, 1, 1, false, new String[]{}),
 					new Particle("PID-39", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructurePR1 = null;
-		static StructureItem getStructurePR1() { if (mStructurePR1 == null) { initStructurePR1(); } return mStructurePR1; }
-		static void initStructurePR1 () {
-			mStructurePR1 = new Segment ("PR1","", "", 
-				new Particle[]{
-					new Particle("PR1-1", getFieldPR1_1(), 1, 1, 1, false, new String[]{}),
-					new Particle("PR1-2", getFieldPR1_2(), 0, 0, 1, false, new String[]{}),
-					new Particle("PR1-3", getFieldCNE(), 1, 1, 1, false, new String[]{}),
-					new Particle("PR1-4", getFieldPR1_4(), 0, 0, 1, false, new String[]{}),
-					new Particle("PR1-5", getFieldPR1_5(), 1, 1, 1, false, new String[]{}),
-					new Particle("PR1-6", getFieldPR1_6(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-7", getFieldPR1_7(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-8", getFieldPR1_8(), 0, 0, 1, false, new String[]{}),
-					new Particle("PR1-9", getFieldPR1_9(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-10", getFieldPR1_10(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-11", getFieldPR1_11(), 0, 0, 1, false, new String[]{}),
-					new Particle("PR1-12", getFieldPR1_12(), 0, 0, 1, false, new String[]{}),
-					new Particle("PR1-13", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-14", getFieldPR1_14(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-15", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-16", getFieldCNE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PR1-17", getFieldPR1_17(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-18", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PR1-19", getFieldEI(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-20", getFieldPR1_20(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-21", getFieldPR1_21(), 0, 1, 1, false, new String[]{}),
-					new Particle("PR1-22", getFieldPR1_22(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructurePRD = null;
-		static StructureItem getStructurePRD() { if (mStructurePRD == null) { initStructurePRD(); } return mStructurePRD; }
-		static void initStructurePRD () {
-			mStructurePRD = new Segment ("PRD","", "", 
-				new Particle[]{
-					new Particle("PRD-1", getFieldCWE(), 1, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-2", getFieldXPN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-3", getFieldXAD(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-4", getFieldPL(), 0, 1, 1, false, new String[]{}),
-					new Particle("PRD-5", getFieldXTN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-6", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("PRD-7", getFieldPLN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-8", getFieldPRD_8(), 0, 1, 1, false, new String[]{}),
-					new Particle("PRD-9", getFieldPRD_9(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-10", getFieldXON(), 0, 1, 1, false, new String[]{}),
-					new Particle("PRD-11", getFieldXAD(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-12", getFieldPL(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-13", getFieldXTN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PRD-14", getFieldCWE(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -7011,94 +6968,81 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mStructureRF1 = null;
-		static StructureItem getStructureRF1() { if (mStructureRF1 == null) { initStructureRF1(); } return mStructureRF1; }
-		static void initStructureRF1 () {
-			mStructureRF1 = new Segment ("RF1","", "", 
+		static StructureItem mStructureRQ1 = null;
+		static StructureItem getStructureRQ1() { if (mStructureRQ1 == null) { initStructureRQ1(); } return mStructureRQ1; }
+		static void initStructureRQ1 () {
+			mStructureRQ1 = new Segment ("RQ1","", "", 
 				new Particle[]{
-					new Particle("RF1-1", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1-2", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1-3", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1-4", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("RF1-5", getFieldCWE(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1-6", getFieldEI(), 1, 1, 1, false, new String[]{}),
-					new Particle("RF1-7", getFieldRF1_7(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1-8", getFieldRF1_8(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1-9", getFieldRF1_9(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1-10", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("RF1-11", getFieldEI(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("RF1-12", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQ1-1", getFieldRQ1_1(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQ1-2", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQ1-3", getFieldRQ1_3(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQ1-4", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQ1-5", getFieldRQ1_5(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQ1-6", getFieldRQ1_6(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQ1-7", getFieldRQ1_7(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
 
-		static StructureItem mStructureSFT = null;
-		static StructureItem getStructureSFT() { if (mStructureSFT == null) { initStructureSFT(); } return mStructureSFT; }
-		static void initStructureSFT () {
-			mStructureSFT = new Segment ("SFT","", "", 
+		static StructureItem mStructureRQD = null;
+		static StructureItem getStructureRQD() { if (mStructureRQD == null) { initStructureRQD(); } return mStructureRQD; }
+		static void initStructureRQD () {
+			mStructureRQD = new Segment ("RQD","", "", 
 				new Particle[]{
-					new Particle("SFT-1", getFieldXON(), 1, 1, 1, false, new String[]{}),
-					new Particle("SFT-2", getFieldSFT_2(), 1, 1, 1, false, new String[]{}),
-					new Particle("SFT-3", getFieldSFT_3(), 1, 1, 1, false, new String[]{}),
-					new Particle("SFT-4", getFieldSFT_4(), 1, 1, 1, false, new String[]{}),
-					new Particle("SFT-5", getFieldSFT_5(), 0, 1, 1, false, new String[]{}),
-					new Particle("SFT-6", getFieldSFT_6(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-1", getFieldRQD_1(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-2", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-3", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-4", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-5", getFieldRQD_5(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-6", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-7", getFieldRQD_7(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-8", getFieldRQD_8(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-9", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RQD-10", getFieldRQD_10(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
 
-		static StructureItem mStructureUAC = null;
-		static StructureItem getStructureUAC() { if (mStructureUAC == null) { initStructureUAC(); } return mStructureUAC; }
-		static void initStructureUAC () {
-			mStructureUAC = new Segment ("UAC","", "", 
+		static StructureItem mStructureRXO = null;
+		static StructureItem getStructureRXO() { if (mStructureRXO == null) { initStructureRXO(); } return mStructureRXO; }
+		static void initStructureRXO () {
+			mStructureRXO = new Segment ("RXO","", "", 
 				new Particle[]{
-					new Particle("UAC-1", getFieldCWE(), 1, 1, 1, false, new String[]{}),
-					new Particle("UAC-2", getFieldED(), 1, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureREF_I12_AUTHORIZATION_CONTACT = null;
-		static StructureItem getStructureREF_I12_AUTHORIZATION_CONTACT() { if (mStructureREF_I12_AUTHORIZATION_CONTACT == null) { initStructureREF_I12_AUTHORIZATION_CONTACT(); } return mStructureREF_I12_AUTHORIZATION_CONTACT; }
-		static void initStructureREF_I12_AUTHORIZATION_CONTACT () {
-			mStructureREF_I12_AUTHORIZATION_CONTACT = new Group ("REF_I12.AUTHORIZATION_CONTACT","", "", 
-				new Particle[]{
-					new Particle("AUT", getStructureAUT(), 1, 1, 1, false, new String[]{}),
-					new Particle("CTD", getStructureCTD(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureREF_I12_ = null;
-		static StructureItem getStructureREF_I12_() { if (mStructureREF_I12_ == null) { initStructureREF_I12_(); } return mStructureREF_I12_; }
-		static void initStructureREF_I12_ () {
-			mStructureREF_I12_ = new Group ("REF_I12.","", "", 
-				new Particle[]{
-					new Particle("OBR", getStructureOBR(), 1, 1, 1, false, new String[]{}),
-					new Particle("NTE", getStructureNTE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("REF_I12.RESULTS_NOTES", getStructureREF_I12_RESULTS_NOTES(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureREF_I12_2 = null;
-		static StructureItem getStructureREF_I12_2() { if (mStructureREF_I12_2 == null) { initStructureREF_I12_2(); } return mStructureREF_I12_2; }
-		static void initStructureREF_I12_2 () {
-			mStructureREF_I12_2 = new Group ("REF_I12.","", "", 
-				new Particle[]{
-					new Particle("OBX", getStructureOBX(), 1, 1, 1, false, new String[]{}),
-					new Particle("NTE_2", getStructureNTE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureREF_I12_3 = null;
-		static StructureItem getStructureREF_I12_3() { if (mStructureREF_I12_3 == null) { initStructureREF_I12_3(); } return mStructureREF_I12_3; }
-		static void initStructureREF_I12_3 () {
-			mStructureREF_I12_3 = new Group ("REF_I12.","", "", 
-				new Particle[]{
-					new Particle("PR1", getStructurePR1(), 1, 1, 1, false, new String[]{}),
-					new Particle("REF_I12.AUTHORIZATION_CONTACT", getStructureREF_I12_AUTHORIZATION_CONTACT2(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-1", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-2", getFieldRXO_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-3", getFieldRXO_3(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-4", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-5", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-6", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("RXO-7", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("RXO-8", getFieldLA1(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-9", getFieldRXO_9(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-10", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-11", getFieldRXO_11(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-12", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-13", getFieldRXO_13(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-14", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("RXO-15", getFieldXCN(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("RXO-16", getFieldRXO_16(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-17", getFieldRXO_17(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-18", getFieldRXO_18(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-19", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-20", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("RXO-21", getFieldRXO_21(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-22", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-23", getFieldCQ(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-24", getFieldCWE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("RXO-25", getFieldRXO_25(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-26", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-27", getFieldRXO_27(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-28", getFieldRXO_28(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-29", getFieldEI(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-30", getFieldEI(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-31", getFieldCNE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-32", getFieldCWE(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-33", getFieldXAD(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-34", getFieldPL(), 0, 1, 1, false, new String[]{}),
+					new Particle("RXO-35", getFieldXAD(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -7139,37 +7083,38 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mStructureMessage_REF_I12 = null;
-		static StructureItem getStructureMessage_REF_I12() { if (mStructureMessage_REF_I12 == null) { initStructureMessage_REF_I12(); } return mStructureMessage_REF_I12; }
-		static void initStructureMessage_REF_I12 () {
-			mStructureMessage_REF_I12 = new Group ("Message_REF_I12","", "", 
+		static StructureItem mStructureMessage_ORM_O01 = null;
+		static StructureItem getStructureMessage_ORM_O01() { if (mStructureMessage_ORM_O01 == null) { initStructureMessage_ORM_O01(); } return mStructureMessage_ORM_O01; }
+		static void initStructureMessage_ORM_O01 () {
+			mStructureMessage_ORM_O01 = new Group ("Message_ORM_O01","", "", 
 				new Particle[]{
 					new Particle("MSH", getStructureMSH(), 1, 1, 1, false, new String[]{}),
-					new Particle("SFT", getStructureSFT(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("UAC", getStructureUAC(), 0, 1, 1, false, new String[]{}),
-					new Particle("RF1", getStructureRF1(), 0, 1, 1, false, new String[]{}),
-					new Particle("REF_I12.AUTHORIZATION_CONTACT", getStructureREF_I12_AUTHORIZATION_CONTACT(), 0, 1, 1, false, new String[]{}),
-					new Particle("REF_I12.PROVIDER_CONTACT", getStructureREF_I12_PROVIDER_CONTACT(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("PID", getStructurePID(), 1, 1, 1, false, new String[]{}),
-					new Particle("NK1", getStructureNK1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("GT1", getStructureGT1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("REF_I12.INSURANCE", getStructureREF_I12_INSURANCE(), 0, 1, 1, false, new String[]{}),
-					new Particle("ACC", getStructureACC(), 0, 1, 1, false, new String[]{}),
-					new Particle("DG1", getStructureDG1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("DRG", getStructureDRG(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("AL1", getStructureAL1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					new Particle("REF_I12.PROCEDURE", getStructureREF_I12_PROCEDURE(), 0, 1, 1, false, new String[]{}),
-					new Particle("REF_I12.OBSERVATION", getStructureREF_I12_OBSERVATION(), 0, 1, 1, false, new String[]{}),
-					new Particle("REF_I12.PATIENT VISIT", getStructureREF_I12_PATIENT_VISIT(), 0, 1, 1, false, new String[]{}),
 					new Particle("NTE", getStructureNTE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORM_O01.PATIENT", getStructureORM_O01_PATIENT(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORM_O01.ORDER", getStructureORM_O01_ORDER(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
 					}
 				);
 			}
 
-		static StructureItem mStructureREF_I12_4 = null;
-		static StructureItem getStructureREF_I12_4() { if (mStructureREF_I12_4 == null) { initStructureREF_I12_4(); } return mStructureREF_I12_4; }
-		static void initStructureREF_I12_4 () {
-			mStructureREF_I12_4 = new Group ("REF_I12.","", "", 
+		static StructureItem mStructureORM_O01_ = null;
+		static StructureItem getStructureORM_O01_() { if (mStructureORM_O01_ == null) { initStructureORM_O01_(); } return mStructureORM_O01_; }
+		static void initStructureORM_O01_ () {
+			mStructureORM_O01_ = new Group ("ORM_O01.","", "", 
+				new Particle[]{
+					new Particle("OBR", getStructureOBR(), 1, 1, 1, false, new String[]{}),
+					new Particle("RQD", getStructureRQD(), 1, 1, 1, false, new String[]{}),
+					new Particle("RQ1", getStructureRQ1(), 1, 1, 1, false, new String[]{}),
+					new Particle("RXO", getStructureRXO(), 1, 1, 1, false, new String[]{}),
+					new Particle("ODS", getStructureODS(), 1, 1, 1, false, new String[]{}),
+					new Particle("ODT", getStructureODT(), 1, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructureORM_O01_INSURANCE = null;
+		static StructureItem getStructureORM_O01_INSURANCE() { if (mStructureORM_O01_INSURANCE == null) { initStructureORM_O01_INSURANCE(); } return mStructureORM_O01_INSURANCE; }
+		static void initStructureORM_O01_INSURANCE () {
+			mStructureORM_O01_INSURANCE = new Group ("ORM_O01.INSURANCE","", "", 
 				new Particle[]{
 					new Particle("IN1", getStructureIN1(), 1, 1, 1, false, new String[]{}),
 					new Particle("IN2", getStructureIN2(), 0, 1, 1, false, new String[]{}),
@@ -7178,75 +7123,68 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mStructureREF_I12_AUTHORIZATION_CONTACT2 = null;
-		static StructureItem getStructureREF_I12_AUTHORIZATION_CONTACT2() { if (mStructureREF_I12_AUTHORIZATION_CONTACT2 == null) { initStructureREF_I12_AUTHORIZATION_CONTACT2(); } return mStructureREF_I12_AUTHORIZATION_CONTACT2; }
-		static void initStructureREF_I12_AUTHORIZATION_CONTACT2 () {
-			mStructureREF_I12_AUTHORIZATION_CONTACT2 = new Group ("REF_I12.AUTHORIZATION_CONTACT","", "", 
+		static StructureItem mStructureORM_O01_OBSERVATION = null;
+		static StructureItem getStructureORM_O01_OBSERVATION() { if (mStructureORM_O01_OBSERVATION == null) { initStructureORM_O01_OBSERVATION(); } return mStructureORM_O01_OBSERVATION; }
+		static void initStructureORM_O01_OBSERVATION () {
+			mStructureORM_O01_OBSERVATION = new Group ("ORM_O01.OBSERVATION","", "", 
 				new Particle[]{
-					new Particle("AUT_2", getStructureAUT(), 1, 1, 1, false, new String[]{}),
-					new Particle("CTD_2", getStructureCTD(), 0, 1, 1, false, new String[]{}),
+					new Particle("OBX", getStructureOBX(), 1, 1, 1, false, new String[]{}),
+					new Particle("NTE", getStructureNTE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
 					}
 				);
 			}
 
-		static StructureItem mStructureREF_I12_INSURANCE = null;
-		static StructureItem getStructureREF_I12_INSURANCE() { if (mStructureREF_I12_INSURANCE == null) { initStructureREF_I12_INSURANCE(); } return mStructureREF_I12_INSURANCE; }
-		static void initStructureREF_I12_INSURANCE () {
-			mStructureREF_I12_INSURANCE = new Group ("REF_I12.INSURANCE","", "", 
+		static StructureItem mStructureORM_O01_ORDER = null;
+		static StructureItem getStructureORM_O01_ORDER() { if (mStructureORM_O01_ORDER == null) { initStructureORM_O01_ORDER(); } return mStructureORM_O01_ORDER; }
+		static void initStructureORM_O01_ORDER () {
+			mStructureORM_O01_ORDER = new Group ("ORM_O01.ORDER","", "", 
 				new Particle[]{
-					new Particle("REF_I12.", getStructureREF_I12_4(), 1, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORC", getStructureORC(), 1, 1, 1, false, new String[]{}),
+					new Particle("ORM_O01.ORDER_DETAIL", getStructureORM_O01_ORDER_DETAIL(), 0, 1, 1, false, new String[]{}),
+					new Particle("FT1", getStructureFT1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("CTI", getStructureCTI(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("BLG", getStructureBLG(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
 
-		static StructureItem mStructureREF_I12_OBSERVATION = null;
-		static StructureItem getStructureREF_I12_OBSERVATION() { if (mStructureREF_I12_OBSERVATION == null) { initStructureREF_I12_OBSERVATION(); } return mStructureREF_I12_OBSERVATION; }
-		static void initStructureREF_I12_OBSERVATION () {
-			mStructureREF_I12_OBSERVATION = new Group ("REF_I12.OBSERVATION","", "", 
+		static StructureItem mStructureORM_O01_ORDER_DETAIL = null;
+		static StructureItem getStructureORM_O01_ORDER_DETAIL() { if (mStructureORM_O01_ORDER_DETAIL == null) { initStructureORM_O01_ORDER_DETAIL(); } return mStructureORM_O01_ORDER_DETAIL; }
+		static void initStructureORM_O01_ORDER_DETAIL () {
+			mStructureORM_O01_ORDER_DETAIL = new Group ("ORM_O01.ORDER_DETAIL","", "", 
 				new Particle[]{
-					new Particle("REF_I12.", getStructureREF_I12_(), 1, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORM_O01.", getStructureORM_O01_(), 1, 1, 1, false, new String[]{}),
+					new Particle("NTE", getStructureNTE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("CTD", getStructureCTD(), 0, 1, 1, false, new String[]{}),
+					new Particle("DG1", getStructureDG1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORM_O01.OBSERVATION", getStructureORM_O01_OBSERVATION(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
 
-		static StructureItem mStructureREF_I12_PATIENT_VISIT = null;
-		static StructureItem getStructureREF_I12_PATIENT_VISIT() { if (mStructureREF_I12_PATIENT_VISIT == null) { initStructureREF_I12_PATIENT_VISIT(); } return mStructureREF_I12_PATIENT_VISIT; }
-		static void initStructureREF_I12_PATIENT_VISIT () {
-			mStructureREF_I12_PATIENT_VISIT = new Group ("REF_I12.PATIENT VISIT","", "", 
+		static StructureItem mStructureORM_O01_PATIENT = null;
+		static StructureItem getStructureORM_O01_PATIENT() { if (mStructureORM_O01_PATIENT == null) { initStructureORM_O01_PATIENT(); } return mStructureORM_O01_PATIENT; }
+		static void initStructureORM_O01_PATIENT () {
+			mStructureORM_O01_PATIENT = new Group ("ORM_O01.PATIENT","", "", 
+				new Particle[]{
+					new Particle("PID", getStructurePID(), 1, 1, 1, false, new String[]{}),
+					new Particle("PD1", getStructurePD1(), 0, 1, 1, false, new String[]{}),
+					new Particle("NTE", getStructureNTE(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					new Particle("ORM_O01.PATIENT_VISIT", getStructureORM_O01_PATIENT_VISIT(), 0, 1, 1, false, new String[]{}),
+					new Particle("ORM_O01.INSURANCE", getStructureORM_O01_INSURANCE(), 0, 1, 1, false, new String[]{}),
+					new Particle("GT1", getStructureGT1(), 0, 1, 1, false, new String[]{}),
+					new Particle("AL1", getStructureAL1(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mStructureORM_O01_PATIENT_VISIT = null;
+		static StructureItem getStructureORM_O01_PATIENT_VISIT() { if (mStructureORM_O01_PATIENT_VISIT == null) { initStructureORM_O01_PATIENT_VISIT(); } return mStructureORM_O01_PATIENT_VISIT; }
+		static void initStructureORM_O01_PATIENT_VISIT () {
+			mStructureORM_O01_PATIENT_VISIT = new Group ("ORM_O01.PATIENT_VISIT","", "", 
 				new Particle[]{
 					new Particle("PV1", getStructurePV1(), 1, 1, 1, false, new String[]{}),
 					new Particle("PV2", getStructurePV2(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureREF_I12_PROCEDURE = null;
-		static StructureItem getStructureREF_I12_PROCEDURE() { if (mStructureREF_I12_PROCEDURE == null) { initStructureREF_I12_PROCEDURE(); } return mStructureREF_I12_PROCEDURE; }
-		static void initStructureREF_I12_PROCEDURE () {
-			mStructureREF_I12_PROCEDURE = new Group ("REF_I12.PROCEDURE","", "", 
-				new Particle[]{
-					new Particle("REF_I12.", getStructureREF_I12_3(), 1, Integer.MAX_VALUE, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureREF_I12_PROVIDER_CONTACT = null;
-		static StructureItem getStructureREF_I12_PROVIDER_CONTACT() { if (mStructureREF_I12_PROVIDER_CONTACT == null) { initStructureREF_I12_PROVIDER_CONTACT(); } return mStructureREF_I12_PROVIDER_CONTACT; }
-		static void initStructureREF_I12_PROVIDER_CONTACT () {
-			mStructureREF_I12_PROVIDER_CONTACT = new Group ("REF_I12.PROVIDER_CONTACT","", "", 
-				new Particle[]{
-					new Particle("PRD", getStructurePRD(), 1, 1, 1, false, new String[]{}),
-					new Particle("CTD", getStructureCTD(), 0, Integer.MAX_VALUE, 1, false, new String[]{}),
-					}
-				);
-			}
-
-		static StructureItem mStructureREF_I12_RESULTS_NOTES = null;
-		static StructureItem getStructureREF_I12_RESULTS_NOTES() { if (mStructureREF_I12_RESULTS_NOTES == null) { initStructureREF_I12_RESULTS_NOTES(); } return mStructureREF_I12_RESULTS_NOTES; }
-		static void initStructureREF_I12_RESULTS_NOTES () {
-			mStructureREF_I12_RESULTS_NOTES = new Group ("REF_I12.RESULTS_NOTES","", "", 
-				new Particle[]{
-					new Particle("REF_I12.", getStructureREF_I12_2(), 1, Integer.MAX_VALUE, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -7448,18 +7386,6 @@ public class EnvelopeDocument extends TextDocument {
 				);
 			}
 
-		static StructureItem mFieldED_1 = null;
-		static StructureItem getFieldED_1() { if (mFieldED_1 == null) { initFieldED_1(); } return mFieldED_1; }
-		static void initFieldED_1 () {
-			mFieldED_1 = new SubComposite ("ED-1",
-				new Particle[]{
-					new Particle("HD-1", getFieldHD_1(), 0, 1, 1, false, new String[]{}),
-					new Particle("HD-2", getFieldHD_2(), 0, 1, 1, false, new String[]{}),
-					new Particle("HD-3", getFieldHD_3(), 0, 1, 1, false, new String[]{}),
-					}
-				);
-			}
-
 		static StructureItem mFieldEIP_1 = null;
 		static StructureItem getFieldEIP_1() { if (mFieldEIP_1 == null) { initFieldEIP_1(); } return mFieldEIP_1; }
 		static void initFieldEIP_1 () {
@@ -7482,6 +7408,35 @@ public class EnvelopeDocument extends TextDocument {
 					new Particle("EI-2", getFieldEI_2(), 0, 1, 1, false, new String[]{}),
 					new Particle("EI-3", getFieldEI_3(), 0, 1, 1, false, new String[]{}),
 					new Particle("EI-4", getFieldEI_4(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mFieldLA1_4 = null;
+		static StructureItem getFieldLA1_4() { if (mFieldLA1_4 == null) { initFieldLA1_4(); } return mFieldLA1_4; }
+		static void initFieldLA1_4 () {
+			mFieldLA1_4 = new SubComposite ("LA1-4",
+				new Particle[]{
+					new Particle("HD-1", getFieldHD_1(), 0, 1, 1, false, new String[]{}),
+					new Particle("HD-2", getFieldHD_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("HD-3", getFieldHD_3(), 0, 1, 1, false, new String[]{}),
+					}
+				);
+			}
+
+		static StructureItem mFieldLA1_9 = null;
+		static StructureItem getFieldLA1_9() { if (mFieldLA1_9 == null) { initFieldLA1_9(); } return mFieldLA1_9; }
+		static void initFieldLA1_9 () {
+			mFieldLA1_9 = new SubComposite ("LA1-9",
+				new Particle[]{
+					new Particle("AD-1", getFieldAD_1(), 0, 1, 1, false, new String[]{}),
+					new Particle("AD-2", getFieldAD_2(), 0, 1, 1, false, new String[]{}),
+					new Particle("AD-3", getFieldAD_3(), 0, 1, 1, false, new String[]{}),
+					new Particle("AD-4", getFieldAD_4(), 0, 1, 1, false, new String[]{}),
+					new Particle("AD-5", getFieldAD_5(), 0, 1, 1, false, new String[]{}),
+					new Particle("AD-6", getFieldAD_6(), 0, 1, 1, false, new String[]{}),
+					new Particle("AD-7", getFieldAD_7(), 0, 1, 1, false, new String[]{}),
+					new Particle("AD-8", getFieldAD_8(), 0, 1, 1, false, new String[]{}),
 					}
 				);
 			}
@@ -8136,8 +8091,8 @@ public class EnvelopeDocument extends TextDocument {
 			String[] arStandardSegments = new String[] { "ABS","ACC","ADD","ADJ","AFF","AIG","AIL","AIP","AIS","AL1","APR","ARQ","ARV","AUT","BHS","BLC","BLG","BPO","BPX","BTS","BTX","CDM","CER","CM0","CM1","CM2","CNS","CON","CSP","CSR","CSS","CTD","CTI","DB1","DG1","DMI","DRG","DSC","DSP","ECD","ECR","ED","EDU","EQP","EQU","ERR","EVN","FAC","FHS","FT1","FTS","GOL","GP1","GP2","GT1","Hxx","IAM","IIM","ILT","IN1","IN2","IN3","INV","IPC","IPR","ISD","ITM","IVC","IVT","LAN","LCC","LCH","LDP","LOC","LRL","MFA","MFE","MFI","MRG","MSA","MSH","NCK","NDS","NK1","NPU","NSC","NST","NTE","OBR","OBX","ODS","ODT","OM1","OM2","OM3","OM4","OM5","OM6","OM7","ORC","ORG","OVR","PCE","PCR","PD1","PDA","PDC","PEO","PES","PID","PKG","PMT","PR1","PRA","PRB","PRC","PRD","PSG","PSH","PSL","PSS","PTH","PV1","PV2","PYE","QAK","QID","QPD","QRD","QRF","QRI","RCP","RDF","RDT","REL","RF1","RFI","RGS","RMI","ROL","RQ1","RQD","RXA","RXC","RXD","RXE","RXG","RXO","RXR","SAC","SCD","SCH","SCP","SDD","SFT","SID","SLT","SPM","STF","STZ","TCC","TCD","TQ1","TQ2","TXA","UAC","UB1","UB2","URD","URS","VAR","VND","ZL7","Zxx" };
 			StandardSegments.addAll( java.util.Arrays.asList( arStandardSegments) );
 
-			String[] arREF_I12Segments = new String[] { "ACC","AL1","AUT","CTD","DG1","DRG","GT1","IN1","IN2","IN3","MSH","NK1","NTE","OBR","OBX","PID","PR1","PRD","PV1","PV2","RF1","SFT","UAC" };
-			mMessages.put( "REF_I12", new Message( "REF_I12", new Particle("Message_REF_I12", getStructureMessage_REF_I12(), 1,1,1, false, new String[]{}), new java.util.HashSet<String>( java.util.Arrays.asList( arREF_I12Segments) ), 0, 0, 0 ) );
+			String[] arORM_O01Segments = new String[] { "AL1","BLG","CTD","CTI","DG1","FT1","GT1","IN1","IN2","IN3","MSH","NTE","OBR","OBX","ODS","ODT","ORC","PD1","PID","PV1","PV2","RQ1","RQD","RXO" };
+			mMessages.put( "ORM_O01", new Message( "ORM_O01", new Particle("Message_ORM_O01", getStructureMessage_ORM_O01(), 1,1,1, false, new String[]{}), new java.util.HashSet<String>( java.util.Arrays.asList( arORM_O01Segments) ), 0, 0, 0 ) );
 		}
 
 		public EnvelopeDocument() {
@@ -8160,12 +8115,12 @@ public class EnvelopeDocument extends TextDocument {
 		}
 
 		protected void initSettings() {
-			super.setStructureName("REF_I12");
+			super.setStructureName("ORM_O01");
 			
 			super.mSettings = new EDIHL7Settings();
 			
 			// general settings:
-			super.mSettings.setMessageType("REF_I12");
+			super.mSettings.setMessageType("ORM_O01");
 			super.mSettings.setLineEnd(0);
 			super.mSettings.setAutoCompleteData(true);
 			super.mSettings.setTerminateSegmentsWithLinefeed(false);

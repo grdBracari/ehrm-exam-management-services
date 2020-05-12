@@ -11,7 +11,7 @@
  */
 
 
-package com.bracari.services.mapforce;
+package com.bracari.services.va.ehrmexammanagementservices.mapforce;
 
 import javax.swing.UIManager;
 import java.awt.*;

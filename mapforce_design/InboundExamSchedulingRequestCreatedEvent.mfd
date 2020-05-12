@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2020r2 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="22">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1" blackbox="0">
+		<properties JavaBasePackage="com.bracari.services.va.ehrmexammanagementservices.mapforce" SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="4" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="432" lty="50" rbx="474" rby="66"/>
+					<data>
+						<constant value="|" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="5" kind="2">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="408" lty="66" rbx="474" rby="82"/>
+					<data>
+						<constant value="^~\&amp;" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="6" kind="2">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="407" lty="82" rbx="475" rby="98"/>
+					<data>
+						<constant value="VBMS" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="9" kind="2">
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="424" lty="223" rbx="487" rby="239"/>
+					<data>
+						<constant value="ORM" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="8" kind="2">
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="421" lty="238" rbx="487" rby="254"/>
+					<data>
+						<constant value="&quot;O01&quot;" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="7" kind="2">
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="421" lty="300" rbx="474" rby="316"/>
+					<data>
+						<constant value="2.3" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="13" kind="2">
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="417" lty="430" rbx="464" rby="446"/>
+					<data>
+						<constant value="O" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="14" kind="2">
+					<targets>
+						<datapoint pos="0" key="8"/>
+					</targets>
+					<view ltx="427" lty="466" rbx="488" rby="482"/>
+					<data>
+						<constant value="C&amp;P" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="15" kind="2">
+					<targets>
+						<datapoint pos="0" key="9"/>
+					</targets>
+					<view ltx="426" lty="507" rbx="483" rby="523"/>
+					<data>
+						<constant value="NW" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="12" kind="2">
+					<targets>
+						<datapoint pos="0" key="10"/>
+					</targets>
+					<view ltx="417" lty="414" rbx="462" rby="430"/>
+					<data>
+						<constant value="1" datatype="string"/>
+					</data>
+				</component>
+				<component name="create-guid" library="lang" uid="11" kind="5">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="386" lty="254" rbx="467" rby="290"/>
+				</component>
+				<component name="ORM_O01" library="text" uid="2" kind="16">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="528" lty="104" rbx="1040" rby="505"/>
+					<data>
+						<root scrollposition="332">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1">
+									<entry name="GroupFHS" expanded="1">
+										<entry name="GroupBHS" expanded="1">
+											<entry name="Message_ORM_O01" expanded="1">
+												<entry name="MSH" expanded="1">
+													<entry name="MSH-1" inpkey="11"/>
+													<entry name="MSH-2" inpkey="12"/>
+													<entry name="MSH-3" inpkey="13"/>
+													<entry name="MSH-9" expanded="1">
+														<entry name="MSG-1" inpkey="14"/>
+														<entry name="MSG-2" inpkey="15"/>
+													</entry>
+													<entry name="MSH-10" inpkey="16"/>
+													<entry name="MSH-12" inpkey="17"/>
+												</entry>
+												<entry name="ORM_O01.PATIENT" expanded="1">
+													<entry name="PID">
+														<entry name="PID-1" inpkey="18"/>
+														<entry name="PID-3" inpkey="19"/>
+														<entry name="PID-5" expanded="1">
+															<entry name="XPN-1">
+																<entry name="FN-1" inpkey="20"/>
+															</entry>
+															<entry name="XPN-2" inpkey="21"/>
+															<entry name="XPN-3" inpkey="22"/>
+														</entry>
+														<entry name="PID-7" inpkey="23"/>
+														<entry name="PID-8" inpkey="24"/>
+														<entry name="PID-11">
+															<entry name="XAD-1">
+																<entry name="SAD-1" inpkey="25"/>
+																<entry name="SAD-2" inpkey="26"/>
+																<entry name="SAD-3" inpkey="27"/>
+															</entry>
+															<entry name="XAD-4" inpkey="28"/>
+															<entry name="XAD-5" inpkey="29"/>
+															<entry name="XAD-6" inpkey="30"/>
+															<entry name="XAD-7" inpkey="31"/>
+														</entry>
+														<entry name="PID-13" expanded="1">
+															<entry name="XTN-1" inpkey="32"/>
+														</entry>
+														<entry name="PID-14">
+															<entry name="XTN-1" inpkey="33"/>
+														</entry>
+														<entry name="PID-19" inpkey="34"/>
+														<entry name="PID-29" inpkey="35"/>
+													</entry>
+													<entry name="ORM_O01.PATIENT_VISIT">
+														<entry name="PV1" expanded="1">
+															<entry name="PV1-1" inpkey="36"/>
+															<entry name="PV1-2" inpkey="37"/>
+															<entry name="PV1-18" inpkey="38"/>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="ORM_O01.ORDER" expanded="1">
+													<entry name="ORC">
+														<entry name="ORC-1" inpkey="39"/>
+													</entry>
+													<entry name="ORM_O01.ORDER_DETAIL" expanded="1">
+														<entry name="ORM_O01." expanded="1">
+															<entry name="OBR" expanded="1">
+																<entry name="OBR-1" inpkey="40"/>
+																<entry name="OBR-2" expanded="1">
+																	<entry name="EI-1" inpkey="41"/>
+																</entry>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<text encoding="1" byteorder="1" byteordermark="0" type="edi" kind="EDIHL7" config="HL7/Envelope.Config">
+							<settings isidoc="false" writeuna="true" syntaxlevel="A" controllingagency="HL7" syntaxversionnumber="2" requestacknowledgement="false" interchangecontrolversionnumber="" terminatewithlinefeed="false" autocompletedata="true" unpackedformat="false">
+								<separators repetition="~" escape="\" decimal="." segment="%0D" segmentcode="%7C" subcomponent="&amp;" component="%5E" dataelement="%7C"/>
+								<validation>
+									<case action="stop" kind="undefined"/>
+									<case action="stop" kind="missing-segment"/>
+									<case action="stop" kind="missing-group"/>
+									<case action="report+reject" kind="missing-field-or-composite"/>
+									<case action="report+reject" kind="extra-data"/>
+									<case action="report+reject" kind="invalid-field-value"/>
+									<case action="report+reject" kind="invalid-date"/>
+									<case action="report+reject" kind="invalid-time"/>
+									<case action="report+reject" kind="extra-repeat"/>
+									<case action="report+reject" kind="numeric-overflow"/>
+									<case action="report+reject" kind="data-element-too-short"/>
+									<case action="report+reject" kind="data-element-too-long"/>
+									<case action="stop" kind="unexpected-eof"/>
+									<case action="report+reject" kind="invalid-codelist-value"/>
+									<case action="report+reject" kind="semantic"/>
+									<case action="stop" kind="segment-not-in-message"/>
+									<case action="stop" kind="unrecognized-segment-id"/>
+									<case action="report+reject" kind="impl-not-used-present"/>
+									<case action="report+reject" kind="not-all-data-parsed"/>
+								</validation>
+							</settings>
+							<messages>
+								<message type="ORM_O01"/>
+							</messages>
+						</text>
+					</data>
+				</component>
+				<component name="ExamManagement-3.1" library="xml" uid="3" kind="14">
+					<properties XSLTTargetEncoding="UTF-8"/>
+					<view ltx="6" lty="24" rbx="306" rby="524"/>
+					<data>
+						<root>
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="2" expanded="1">
+								<entry name="document" ns="2" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ExamManagementEventNotification" ns="1" expanded="1">
+										<entry name="ExamSchedulingRequestCreatedEvent" ns="1" expanded="1">
+											<entry name="eventUuid" type="attribute" outkey="42"/>
+											<entry name="examSchedulingRequestUuid" type="attribute" outkey="43"/>
+											<entry name="PostDischargeClaimInformation" ns="1" expanded="1">
+												<entry name="VeteranServiceMemberInfo" ns="1" expanded="1">
+													<entry name="EDIPI" type="attribute" outkey="44"/>
+													<entry name="lastName" type="attribute" outkey="45"/>
+													<entry name="firstName" type="attribute" outkey="46"/>
+													<entry name="middleName" type="attribute" outkey="47"/>
+													<entry name="gender" type="attribute" outkey="48"/>
+													<entry name="dateOfBirth" type="attribute" outkey="49"/>
+													<entry name="dateOfDeath" type="attribute" outkey="50"/>
+													<entry name="fileNumber" type="attribute" outkey="51"/>
+													<entry name="Address" ns="1" expanded="1">
+														<entry name="description" type="attribute" outkey="52"/>
+														<entry name="Address1" ns="1" outkey="53"/>
+														<entry name="Address2" ns="1" outkey="54"/>
+														<entry name="Address3" ns="1" outkey="55"/>
+														<entry name="State" ns="1" outkey="56"/>
+														<entry name="ZipOrPostalCode" ns="1" outkey="57"/>
+														<entry name="Country" ns="1" outkey="58"/>
+													</entry>
+													<entry name="Phone" ns="1" expanded="1">
+														<entry name="primaryPhone" type="attribute" outkey="59"/>
+														<entry name="alternatePhone" type="attribute" outkey="60"/>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<document schema="..\src\main\resources\schema\exchange\ExamManagement-3.1.xsd" inputinstance="..\soap-ui\1_ExamSchedulingRequestCreatedEvent.xml" outputinstance="..\soap-ui\1_ExamSchedulingRequestCreatedEvent.xml" instanceroot="{http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1}ExamManagementEventNotification"/>
+					</data>
+				</component>
+			</children>
+			<graph directed="1">
+				<edges/>
+				<vertices>
+					<vertex vertexkey="1">
+						<edges>
+							<edge vertexkey="11"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="2">
+						<edges>
+							<edge vertexkey="12"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="3">
+						<edges>
+							<edge vertexkey="13"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="4">
+						<edges>
+							<edge vertexkey="14"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="5">
+						<edges>
+							<edge vertexkey="15"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="42">
+						<edges>
+							<edge vertexkey="16"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="6">
+						<edges>
+							<edge vertexkey="17"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="10">
+						<edges>
+							<edge vertexkey="18"/>
+							<edge vertexkey="36"/>
+							<edge vertexkey="40"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="44">
+						<edges>
+							<edge vertexkey="19"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="45">
+						<edges>
+							<edge vertexkey="20"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="46">
+						<edges>
+							<edge vertexkey="21"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="47">
+						<edges>
+							<edge vertexkey="22"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="49">
+						<edges>
+							<edge vertexkey="23"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="48">
+						<edges>
+							<edge vertexkey="24"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="53">
+						<edges>
+							<edge vertexkey="25"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="54">
+						<edges>
+							<edge vertexkey="26"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="55">
+						<edges>
+							<edge vertexkey="27"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="56">
+						<edges>
+							<edge vertexkey="28"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="57">
+						<edges>
+							<edge vertexkey="29"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="58">
+						<edges>
+							<edge vertexkey="30"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="52">
+						<edges>
+							<edge vertexkey="31"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="59">
+						<edges>
+							<edge vertexkey="32"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="60">
+						<edges>
+							<edge vertexkey="33"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="51">
+						<edges>
+							<edge vertexkey="34"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="50">
+						<edges>
+							<edge vertexkey="35"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="7">
+						<edges>
+							<edge vertexkey="37"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="8">
+						<edges>
+							<edge vertexkey="38"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="9">
+						<edges>
+							<edge vertexkey="39"/>
+						</edges>
+					</vertex>
+					<vertex vertexkey="43">
+						<edges>
+							<edge vertexkey="41"/>
+						</edges>
+					</vertex>
+				</vertices>
+			</graph>
+		</structure>
+	</component>
+</mapping>

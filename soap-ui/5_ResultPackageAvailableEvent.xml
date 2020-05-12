@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<em:ExamManagementEventNotification xmlns:em="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1"
+                                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                    xsi:schemaLocation="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1 ../../../XMLschemas/exchange/ExamManagement-3.1.xsd">
+    <em:OriginatingSystem participatingSystemName="VBA Contractor" contractorName="QTC"/>
+    <em:Destination participatingSystemName="VBMS"/>
+
+    <em:ResultPackageAvailableEvent eventUuid="3dc65a57-0985-44bb-adb2-07958a359a39"
+                                    eventDtg="2016-09-27T13:20:00Z"
+                                    modelVersion="3.1"
+                                    examRelatedContentionUuid="98c5e124-f347-46e4-b11c-d2ad21d649f2"
+                                    previousEventUuid="e2e77561-2937-4700-b219-5e77c688e1cf"
+                                    examSchedulingRequestUuid="d910d88e-716e-49d8-942e-8ddfb0390d5e">
+        <em:EventSource participatingSystemName="VBA Contractor" contractorName="QTC"/>
+        <em:documentReferenceId>24b3309b-5d5a-4ea6-b335-5248b0c4e245</em:documentReferenceId>
+    </em:ResultPackageAvailableEvent>
+</em:ExamManagementEventNotification>

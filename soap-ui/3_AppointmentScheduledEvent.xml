@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<em:ExamManagementEventNotification xmlns:em="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1"
+                                    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                                    xsi:schemaLocation="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1 ../../../XMLschemas/exchange/ExamManagement-3.1.xsd">
+
+    <em:OriginatingSystem participatingSystemName="VBA Contractor" contractorName="QTC"/>
+    <em:Destination participatingSystemName="VBMS"/>
+
+    <em:AppointmentScheduledEvent eventUuid="194aa797-7293-4e25-9f2e-78269911910e"
+                                  eventDtg="2016-08-28T14:20:00Z"
+                                  examName="Knee and Lower Leg evaluation"
+                                  modelVersion="3.1"
+                                  examAppointmentUuid="292e4f75-d234-4e38-bf10-399cba9cdab7"
+                                  scheduledDateTime="2016-09-01T13:00:00Z"
+                                  previousEventUuid="4abe3d4d-d12c-44b1-9e8d-a99f355719c9"
+                                  examSchedulingRequestUuid="d910d88e-716e-49d8-942e-8ddfb0390d5e">
+        <em:EventSource participatingSystemName="VBA Contractor" contractorName="QTC"/>
+
+        <em:ExaminingFacility id="1123" name="Examining Facility">
+            <em:Address>
+                <em:Address1>123 Street</em:Address1>
+                <em:City>Traverse City</em:City>
+                <em:State>MI</em:State>
+                <em:ZipOrPostalCode>49491</em:ZipOrPostalCode>
+                <em:Country>US</em:Country>
+            </em:Address>
+        </em:ExaminingFacility>
+
+        <em:ExamRelatedContentionUuids>
+            <em:UuidValue>98c5e124-f347-46e4-b11c-d2ad21d649f2</em:UuidValue>
+        </em:ExamRelatedContentionUuids>
+    </em:AppointmentScheduledEvent>
+</em:ExamManagementEventNotification>

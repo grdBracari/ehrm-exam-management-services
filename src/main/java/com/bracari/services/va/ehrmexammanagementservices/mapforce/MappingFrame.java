@@ -11,7 +11,7 @@
  */
 
 
-package com.bracari.services.mapforce;
+package com.bracari.services.va.ehrmexammanagementservices.mapforce;
 
 import java.awt.*;
 import java.awt.event.*;
@@ -43,8 +43,8 @@ public class MappingFrame extends JFrame implements com.altova.TraceTarget {
 	JLabel jExamManagement_3_12Label0 = new JLabel();
 	JTextField jExamManagement_3_12TextField0 = new JTextField();
 
-	JLabel jREF_I12Label1 = new JLabel();
-	JTextField jREF_I12TextField1 = new JTextField();
+	JLabel jORM_O01Label1 = new JLabel();
+	JTextField jORM_O01TextField1 = new JTextField();
 
 
 	public MappingFrame() {
@@ -119,18 +119,18 @@ public class MappingFrame extends JFrame implements com.altova.TraceTarget {
 		jExamManagement_3_12Label0.setText("Source instance of ExamManagement-3.1.xsd:");
 		jExamManagement_3_12Label0.setBounds(new Rectangle(15, 10, 438, 23));
 		jPanelStructures.add(jExamManagement_3_12Label0, null);
-		jExamManagement_3_12TextField0.setText("C:/Projects/VBMS-CS2/ExamManagement-3.1beta2.iepd/ExamManagement-3.1beta2.iepd/XMLsamples/3.1/basic_exam_schedule_request/1_ExamSchedulingRequestCreatedEvent.xml");
+		jExamManagement_3_12TextField0.setText("../soap-ui/1_ExamSchedulingRequestCreatedEvent.xml");
 		jExamManagement_3_12TextField0.setBounds(new Rectangle(15, 35, 438, 23));
 		jExamManagement_3_12TextField0.setEditable(false);
 		jPanelStructures.add(jExamManagement_3_12TextField0, null);
 
-		jREF_I12Label1.setText("Instance of REF_I12 file:");
-		jREF_I12Label1.setBounds(new Rectangle(15, 60, 438, 23));
-		jPanelStructures.add(jREF_I12Label1, null);
-		jREF_I12TextField1.setText("REF_I12.hl7");
-		jREF_I12TextField1.setBounds(new Rectangle(15, 85, 438, 23));
-		jREF_I12TextField1.setEditable(false);
-		jPanelStructures.add(jREF_I12TextField1, null);
+		jORM_O01Label1.setText("Instance of ORM_O01 file:");
+		jORM_O01Label1.setBounds(new Rectangle(15, 60, 438, 23));
+		jPanelStructures.add(jORM_O01Label1, null);
+		jORM_O01TextField1.setText("ORM_O01.hl7");
+		jORM_O01TextField1.setBounds(new Rectangle(15, 85, 438, 23));
+		jORM_O01TextField1.setEditable(false);
+		jPanelStructures.add(jORM_O01TextField1, null);
 
 		jPanelStructures.setLayout(null);
 		jPanelStructures.setPreferredSize(new Dimension(85, 500));
@@ -157,12 +157,12 @@ public class MappingFrame extends JFrame implements com.altova.TraceTarget {
 			try {
 
 		try {
-			MappingMapToREF_I12 MappingMapToREF_I12Object = new MappingMapToREF_I12();
+			MappingMapToORM_O01 MappingMapToORM_O01Object = new MappingMapToORM_O01();
 
 
 
 
-			MappingMapToREF_I12Object.registerTraceTarget(ttc);
+			MappingMapToORM_O01Object.registerTraceTarget(ttc);
 	
 
 			// run mapping
@@ -191,20 +191,20 @@ public class MappingFrame extends JFrame implements com.altova.TraceTarget {
 			// 
 			// By default, run will close all inputs and outputs. If you do not want this,
 			// call the following function:
-			// MappingMapToREF_I12Object.setCloseObjectsAfterRun(false);
+			// MappingMapToORM_O01Object.setCloseObjectsAfterRun(false);
 
 			
-			com.altova.io.Input ExamManagement_3_12Source = com.altova.io.StreamInput.createInput("C:/Projects/VBMS-CS2/ExamManagement-3.1beta2.iepd/ExamManagement-3.1beta2.iepd/XMLsamples/3.1/basic_exam_schedule_request/1_ExamSchedulingRequestCreatedEvent.xml");
-			com.altova.io.Output REF_I12Target = new com.altova.io.FileOutput("REF_I12.hl7");
+			com.altova.io.Input ExamManagement_3_12Source = com.altova.io.StreamInput.createInput("../soap-ui/1_ExamSchedulingRequestCreatedEvent.xml");
+			com.altova.io.Output ORM_O01Target = new com.altova.io.FileOutput("ORM_O01.hl7");
 
 			try {
-				MappingMapToREF_I12Object.run(
+				MappingMapToORM_O01Object.run(
 						ExamManagement_3_12Source,
-						REF_I12Target);
+						ORM_O01Target);
 
 			} finally {
 				(ExamManagement_3_12Source).close();
-				REF_I12Target.close();
+				ORM_O01Target.close();
 			}
 
 		} finally {

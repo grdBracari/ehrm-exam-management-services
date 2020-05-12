@@ -1,8 +1,6 @@
 package com.bracari.services.va.ehrmexammanagementservices.controllers;
 
-import com.altova.io.DocumentInput;
-import com.altova.io.Input;
-import com.bracari.services.mapforce.MappingMapToREF_I12;
+import com.bracari.services.va.ehrmexammanagementservices.mapforce.MappingMapToORM_O01;
 import com.bracari.services.va.ehrmexammanagementservices.util.ResponseStatusGuidException;
 import com.bracari.services.va.ehrmexammanagementservices.util.XMLValidator;
 import io.micrometer.core.instrument.Counter;
@@ -20,28 +18,18 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-import org.w3c.dom.Node;
-import org.w3c.dom.NodeList;
 
 import org.xml.sax.SAXException;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.xml.XMLConstants;
-import javax.xml.namespace.NamespaceContext;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.transform.*;
 import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
-import javax.xml.xpath.XPath;
-import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
-import javax.xml.xpath.XPathFactory;
 import java.io.*;
-import java.util.Base64;
-import java.util.Iterator;
 import java.util.UUID;
 
 import static org.springframework.http.MediaType.*;
@@ -185,20 +173,20 @@ public class TransformerController {
 
         ByteArrayOutputStream buffer = new ByteArrayOutputStream();
         try {
-            MappingMapToREF_I12 MappingMapToREF_I12Object = new MappingMapToREF_I12();
-            com.altova.io.Input ExamManagement_3_12Source = new com.altova.io.DocumentInput(document); //com.altova.io.StreamInput.createInput("C:/Projects/VBMS-CS2/ExamManagement-3.1beta2.iepd/ExamManagement-3.1beta2.iepd/XMLsamples/3.1/basic_exam_schedule_request/1_ExamSchedulingRequestCreatedEvent.xml");
-            com.altova.io.Output REF_I12Target = new com.altova.io.StreamOutput(buffer);
+            MappingMapToORM_O01 examSchedulingRequestCreatedEventMap = new MappingMapToORM_O01();
+            com.altova.io.Input examSchedulingRequestCreatedEventXML = new com.altova.io.DocumentInput(document); //com.altova.io.StreamInput.createInput("C:/Projects/VBMS-CS2/ExamManagement-3.1beta2.iepd/ExamManagement-3.1beta2.iepd/XMLsamples/3.1/basic_exam_schedule_request/1_ExamSchedulingRequestCreatedEvent.xml");
+            com.altova.io.Output examSchedulingRequestCreatedEventHL7 = new com.altova.io.StreamOutput(buffer);
 
                     new com.altova.io.FileOutput("REF_I12.hl7");
 
             try {
-                MappingMapToREF_I12Object.run(
-                        ExamManagement_3_12Source,
-                        REF_I12Target);
+                examSchedulingRequestCreatedEventMap.run(
+                        examSchedulingRequestCreatedEventXML,
+                        examSchedulingRequestCreatedEventHL7);
 
             } finally {
-                (ExamManagement_3_12Source).close();
-                REF_I12Target.close();
+                (examSchedulingRequestCreatedEventXML).close();
+                examSchedulingRequestCreatedEventHL7.close();
             }
 
         }  catch (com.altova.UserException ue) {
