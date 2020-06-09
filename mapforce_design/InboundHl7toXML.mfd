@@ -342,29 +342,11 @@
 						<constant value="VBA EXAM SCHEDULING REQUEST" datatype="string"/>
 					</data>
 				</component>
-				<component name="constant" library="core" uid="53" kind="2">
-					<targets>
-						<datapoint/>
-					</targets>
-					<view ltx="395" lty="864" rbx="455" rby="881"/>
-					<data>
-						<constant value="NM" datatype="string"/>
-					</data>
-				</component>
-				<component name="constant" library="core" uid="52" kind="2">
-					<targets>
-						<datapoint pos="0" key="115"/>
-					</targets>
-					<view ltx="401" lty="829" rbx="457" rby="846"/>
-					<data>
-						<constant value="DT" datatype="string"/>
-					</data>
-				</component>
 				<component name="ExamManagement-3.1" library="xml" uid="3" kind="14">
-					<properties/>
+					<properties XSLTTargetEncoding="UTF-8"/>
 					<view ltx="20" lty="25" rbx="343" rby="528"/>
 					<data>
-						<root scrollposition="1">
+						<root scrollposition="103">
 							<header>
 								<namespaces>
 									<namespace uid="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1"/>
@@ -380,11 +362,266 @@
 						<document schema="..\src\main\resources\schema\exchange\ExamManagement-3.1.xsd" inputinstance="..\soap-ui\1_ExamSchedulingRequestCreatedEvent.xml" outputinstance="..\soap-ui\1_ExamSchedulingRequestCreatedEvent.xml" instanceroot="{http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1}ExamManagementEventNotification"/>
 					</data>
 				</component>
+				<component name="auto-number" library="core" uid="50" kind="5">
+					<sources>
+						<datapoint/>
+						<datapoint/>
+						<datapoint/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="78"/>
+					</targets>
+					<view ltx="980" lty="323" rbx="1122" rby="409"/>
+				</component>
+				<component name="constant" library="core" uid="53" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="1146" lty="442" rbx="1206" rby="459"/>
+					<data>
+						<constant value="NM" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="61" kind="2">
+					<targets>
+						<datapoint pos="0" key="119"/>
+					</targets>
+					<view ltx="1267" lty="133" rbx="1315" rby="150"/>
+					<data>
+						<constant value="1" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="52" kind="2">
+					<targets>
+						<datapoint pos="0" key="115"/>
+					</targets>
+					<view ltx="1185" lty="214" rbx="1241" rby="231"/>
+					<data>
+						<constant value="DT" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="62" kind="2">
+					<targets>
+						<datapoint pos="0" key="156"/>
+					</targets>
+					<view ltx="1300" lty="411" rbx="1348" rby="428"/>
+					<data>
+						<constant value="2" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="64" kind="2">
+					<targets>
+						<datapoint pos="0" key="157"/>
+					</targets>
+					<view ltx="1312" lty="427" rbx="1360" rby="444"/>
+					<data>
+						<constant value="3" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="65" kind="2">
+					<targets>
+						<datapoint pos="0" key="158"/>
+					</targets>
+					<view ltx="1326" lty="442" rbx="1374" rby="459"/>
+					<data>
+						<constant value="4" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="66" kind="2">
+					<targets>
+						<datapoint pos="0" key="159"/>
+					</targets>
+					<view ltx="1343" lty="458" rbx="1391" rby="475"/>
+					<data>
+						<constant value="5" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="67" kind="2">
+					<targets>
+						<datapoint pos="0" key="160"/>
+					</targets>
+					<view ltx="1356" lty="474" rbx="1404" rby="491"/>
+					<data>
+						<constant value="6" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="70" kind="2">
+					<targets>
+						<datapoint pos="0" key="161"/>
+					</targets>
+					<view ltx="1219" lty="246" rbx="1279" rby="263"/>
+					<data>
+						<constant value="NM" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="68" kind="2">
+					<targets>
+						<datapoint pos="0" key="162"/>
+					</targets>
+					<view ltx="1366" lty="490" rbx="1414" rby="507"/>
+					<data>
+						<constant value="7" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="69" kind="2">
+					<targets>
+						<datapoint pos="0" key="163"/>
+					</targets>
+					<view ltx="1383" lty="506" rbx="1431" rby="523"/>
+					<data>
+						<constant value="8" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="51" kind="2">
+					<targets>
+						<datapoint pos="0" key="118"/>
+					</targets>
+					<view ltx="1208" lty="230" rbx="1262" rby="247"/>
+					<data>
+						<constant value="ST" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="75" kind="2">
+					<targets>
+						<datapoint pos="0" key="180"/>
+					</targets>
+					<view ltx="1591" lty="185" rbx="1696" rby="202"/>
+					<data>
+						<constant value="C0001_UUID" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="71" kind="2">
+					<targets>
+						<datapoint pos="0" key="178"/>
+					</targets>
+					<view ltx="1458" lty="121" rbx="1551" rby="138"/>
+					<data>
+						<constant value="ESR_UUID" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="72" kind="2">
+					<targets>
+						<datapoint pos="0" key="181"/>
+					</targets>
+					<view ltx="1474" lty="137" rbx="1605" rby="154"/>
+					<data>
+						<constant value="ESR_EVENT_UUID" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="73" kind="2">
+					<targets>
+						<datapoint pos="0" key="182"/>
+					</targets>
+					<view ltx="1531" lty="153" rbx="1623" rby="170"/>
+					<data>
+						<constant value="ESR_DATE" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="74" kind="2">
+					<targets>
+						<datapoint pos="0" key="183"/>
+					</targets>
+					<view ltx="1546" lty="169" rbx="1696" rby="186"/>
+					<data>
+						<constant value="ESR_PREVIOUS_UUID" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="76" kind="2">
+					<targets>
+						<datapoint pos="0" key="184"/>
+					</targets>
+					<view ltx="1612" lty="201" rbx="1721" rby="218"/>
+					<data>
+						<constant value="C0001_NAME" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="78" kind="2">
+					<targets>
+						<datapoint pos="0" key="185"/>
+					</targets>
+					<view ltx="1657" lty="233" rbx="1792" rby="250"/>
+					<data>
+						<constant value="C0001_NARRATIVE" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="77" kind="2">
+					<targets>
+						<datapoint pos="0" key="186"/>
+					</targets>
+					<view ltx="1635" lty="217" rbx="1764" rby="234"/>
+					<data>
+						<constant value="C0001_CLASS_CD" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="79" kind="2">
+					<targets>
+						<datapoint pos="0" key="187"/>
+					</targets>
+					<view ltx="1921" lty="66" rbx="2089" rby="83"/>
+					<data>
+						<constant value="d910d88e-716e-49d8-942e-8ddfb0390d5e" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="80" kind="2">
+					<targets>
+						<datapoint pos="0" key="196"/>
+					</targets>
+					<view ltx="1930" lty="82" rbx="2089" rby="99"/>
+					<data>
+						<constant value="2f5fb79d-f54a-4f27-98ec-5a442fb4f703" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="81" kind="2">
+					<targets>
+						<datapoint pos="0" key="197"/>
+					</targets>
+					<view ltx="1945" lty="98" rbx="2059" rby="115"/>
+					<data>
+						<constant value="202006031422" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="82" kind="2">
+					<targets>
+						<datapoint pos="0" key="198"/>
+					</targets>
+					<view ltx="1957" lty="114" rbx="2116" rby="131"/>
+					<data>
+						<constant value="2f5fb79d-f54a-4f27-98ec-5a442fb4f703" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="83" kind="2">
+					<targets>
+						<datapoint pos="0" key="199"/>
+					</targets>
+					<view ltx="1978" lty="130" rbx="2141" rby="147"/>
+					<data>
+						<constant value="98c5e124-f347-46e4-b11c-d2ad21d649f2" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="84" kind="2">
+					<targets>
+						<datapoint pos="0" key="200"/>
+					</targets>
+					<view ltx="1998" lty="146" rbx="2141" rby="163"/>
+					<data>
+						<constant value="My right knee hurts" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="85" kind="2">
+					<targets>
+						<datapoint pos="0" key="201"/>
+					</targets>
+					<view ltx="1772" lty="411" rbx="1838" rby="428"/>
+					<data>
+						<constant value="8997" datatype="string"/>
+					</data>
+				</component>
 				<component name="ORM_O01" library="text" uid="2" kind="16">
 					<properties XSLTDefaultOutput="1"/>
 					<view ltx="502" lty="2" rbx="868" rby="405"/>
 					<data>
-						<root scrollposition="7554">
+						<root scrollposition="5224">
 							<header>
 								<namespaces>
 									<namespace/>
@@ -396,7 +633,7 @@
 									<entry name="GroupFHS" expanded="1">
 										<entry name="GroupBHS" expanded="1">
 											<entry name="Message_ORM_O01" expanded="1">
-												<entry name="MSH" expanded="1">
+												<entry name="MSH">
 													<entry name="MSH-1" inpkey="11"/>
 													<entry name="MSH-2" inpkey="12"/>
 													<entry name="MSH-3" expanded="1">
@@ -432,6 +669,7 @@
 															</entry>
 														</entry>
 														<entry name="PID-3" expanded="1">
+															<entry name="CX-1" inpkey="116"/>
 															<entry name="CX-3">
 																<inputnodefunctions>
 																	<rule applyto="self">
@@ -473,7 +711,7 @@
 												<entry name="ORM_O01.ORDER" expanded="1">
 													<entry name="ORC" expanded="1">
 														<entry name="ORC-1" inpkey="65"/>
-														<entry name="ORC-12" expanded="1">
+														<entry name="ORC-12">
 															<entry name="XCN-16" expanded="1"/>
 															<entry name="XCN-23" expanded="1">
 																<entry name="CWE-1" inpkey="72"/>
@@ -483,7 +721,7 @@
 														<entry name="ORC-31" expanded="1"/>
 													</entry>
 													<entry name="ORM_O01.ORDER_DETAIL" expanded="1">
-														<entry name="ORM_O01." expanded="1">
+														<entry name="ORM_O01.">
 															<entry name="OBR" expanded="1">
 																<entry name="OBR-1" inpkey="73"/>
 																<entry name="OBR-2" expanded="1">
@@ -495,10 +733,112 @@
 																</entry>
 															</entry>
 														</entry>
-														<entry name="ORM_O01.OBSERVATION" expanded="1">
+														<entry name="ORM_O01.OBSERVATION">
 															<entry name="OBX" expanded="1">
 																<entry name="OBX-1" inpkey="77"/>
 																<entry name="OBX-2" inpkey="79"/>
+																<entry name="OBX-3">
+																	<entry name="CWE-1" inpkey="188"/>
+																</entry>
+																<entry name="OBX-5">
+																	<entry name="CD-1" expanded="1">
+																		<entry name="WVI-1" inpkey="189"/>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" clone="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="164"/>
+																<entry name="OBX-2" inpkey="165"/>
+																<entry name="OBX-3" expanded="1">
+																	<entry name="CWE-1" inpkey="179"/>
+																</entry>
+																<entry name="OBX-5" expanded="1">
+																	<entry name="CD-1" expanded="1">
+																		<entry name="WVI-1" inpkey="202"/>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" clone="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="166"/>
+																<entry name="OBX-2" inpkey="167"/>
+																<entry name="OBX-3" expanded="1">
+																	<entry name="CWE-1" inpkey="190"/>
+																</entry>
+																<entry name="OBX-5" expanded="1">
+																	<entry name="CD-1" expanded="1">
+																		<entry name="WVI-1" inpkey="203"/>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" clone="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="168"/>
+																<entry name="OBX-2" inpkey="169"/>
+																<entry name="OBX-3" expanded="1">
+																	<entry name="CWE-1" inpkey="191"/>
+																</entry>
+																<entry name="OBX-5" expanded="1">
+																	<entry name="CD-1" inpkey="204" expanded="1"/>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" clone="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="170"/>
+																<entry name="OBX-2" inpkey="171"/>
+																<entry name="OBX-3" expanded="1">
+																	<entry name="CWE-1" inpkey="192"/>
+																</entry>
+																<entry name="OBX-5" expanded="1">
+																	<entry name="CD-1" expanded="1">
+																		<entry name="WVI-1" inpkey="205"/>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" clone="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="172"/>
+																<entry name="OBX-2" inpkey="173"/>
+																<entry name="OBX-3" expanded="1">
+																	<entry name="CWE-1" inpkey="193"/>
+																</entry>
+																<entry name="OBX-5" expanded="1">
+																	<entry name="CD-1" expanded="1">
+																		<entry name="WVI-1" inpkey="206"/>
+																	</entry>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" expanded="1" clone="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="174"/>
+																<entry name="OBX-2" inpkey="175"/>
+																<entry name="OBX-3" expanded="1">
+																	<entry name="CWE-1" inpkey="194"/>
+																</entry>
+																<entry name="OBX-5">
+																	<entry name="CD-1" expanded="1">
+																		<entry name="WVI-1" inpkey="207"/>
+																	</entry>
+																</entry>
+																<entry name="OBX-6" expanded="1">
+																	<entry name="CWE-1" inpkey="208"/>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" clone="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="176"/>
+																<entry name="OBX-2" inpkey="177"/>
+																<entry name="OBX-3" expanded="1">
+																	<entry name="CWE-1" inpkey="195"/>
+																</entry>
 															</entry>
 														</entry>
 													</entry>
@@ -509,7 +849,7 @@
 								</entry>
 							</entry>
 						</root>
-						<text inputinstance="..\soap-ui\testInput.hl7" encoding="1" byteorder="1" byteordermark="0" type="edi" kind="EDIHL7" config="HL7/Envelope.Config">
+						<text inputinstance="..\soap-ui\testInput.hl7" outputinstance="..\..\x_old\mapforce_design\hl7-outputForXMLConversion.hl7" encoding="1" byteorder="1" byteordermark="0" type="edi" kind="EDIHL7" config="HL7.Custom/Envelope.Config">
 							<settings isidoc="false" writeuna="true" syntaxlevel="A" controllingagency="HL7" syntaxversionnumber="2" requestacknowledgement="false" interchangecontrolversionnumber="" terminatewithlinefeed="false" autocompletedata="true" unpackedformat="false">
 								<separators repetition="~" escape="\" decimal="." segment="%0D" segmentcode="%7C" subcomponent="&amp;" component="%5E" dataelement="%7C"/>
 								<validation>
@@ -540,25 +880,13 @@
 						</text>
 					</data>
 				</component>
-				<component name="auto-number" library="core" uid="50" kind="5">
-					<sources>
-						<datapoint/>
-						<datapoint/>
-						<datapoint/>
-						<datapoint/>
-					</sources>
+				<component name="constant" library="core" uid="86" kind="2">
 					<targets>
-						<datapoint pos="0" key="78"/>
+						<datapoint pos="0" key="209"/>
 					</targets>
-					<view ltx="134" lty="795" rbx="276" rby="881"/>
-				</component>
-				<component name="constant" library="core" uid="51" kind="2">
-					<targets>
-						<datapoint/>
-					</targets>
-					<view ltx="401" lty="795" rbx="455" rby="812"/>
+					<view ltx="1793" lty="427" rbx="1943" rby="444"/>
 					<data>
-						<constant value="ST" datatype="string"/>
+						<constant value="The right knee is reported as having pain." datatype="string"/>
 					</data>
 				</component>
 			</children>
@@ -599,7 +927,38 @@
 			<edge from="70" to="75"/>
 			<edge from="71" to="76"/>
 			<edge from="78" to="77"/>
-			<edge from="115" to="79"/>
+			<edge from="118" to="79"/>
+			<edge from="119" to="116"/>
+			<edge from="156" to="164"/>
+			<edge from="118" to="165"/>
+			<edge from="157" to="166"/>
+			<edge from="115" to="167"/>
+			<edge from="158" to="168"/>
+			<edge from="118" to="169"/>
+			<edge from="159" to="170"/>
+			<edge from="118" to="171"/>
+			<edge from="160" to="172"/>
+			<edge from="118" to="173"/>
+			<edge from="162" to="174"/>
+			<edge from="161" to="175"/>
+			<edge from="163" to="176"/>
+			<edge from="118" to="177"/>
+			<edge from="181" to="179"/>
+			<edge from="178" to="188"/>
+			<edge from="187" to="189"/>
+			<edge from="182" to="190"/>
+			<edge from="183" to="191"/>
+			<edge from="180" to="192"/>
+			<edge from="184" to="193"/>
+			<edge from="186" to="194"/>
+			<edge from="185" to="195"/>
+			<edge from="196" to="202"/>
+			<edge from="197" to="203"/>
+			<edge from="198" to="204"/>
+			<edge from="199" to="205"/>
+			<edge from="200" to="206"/>
+			<edge from="201" to="207"/>
+			<edge from="209" to="208"/>
 		</connections>
 	</component>
 </mapping>

@@ -1,0 +1,94 @@
+Inbound XML to OPL
+<?xml version="1.0" encoding="UTF-8"?>
+<em:ExamManagementEventNotification xmlns:em="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.0 ../../../XMLschemas/exchange/ExamManagement-3.0.xsd">
+	 
+	<em:OriginatingSystem participatingSystemName="VBMS"/>
+	<em:Destination participatingSystemName="VBA Contractor" contractorName="QTC"/>
+	<em:ExamSchedulingRequestCreatedEvent eventUuid="2f5fb79d-f54a-4f27-98ec-5a442fb4f703" eventDtg="2016-08-22T09:49:41.152-04:00" modelVersion="3.0" previousEventUuid="2f5fb79d-f54a-4f27-98ec-5a442fb4f703" examSchedulingRequestUuid="d910d88e-716e-49d8-942e-8ddfb0390d5e">
+		<em:EventSource participatingSystemName="VBMS"/>
+		<em:PostDischargeClaimInformation claimDate="2016-08-22-04:00" claimLabel="New" endProductCode="020NEW" payeeCode="00" benefitProgramType="CP Live">
+			<em:VeteranServiceMemberInfo fullName="QTC Testing" lastName="Testing" firstName="QTC" gender="Male" dateOfBirth="1950-01-01" emailAddress="Test@gmail.com" fileNumber="500941800">
+				<em:Address>
+					<em:Address1>12101 PINE FOREST</em:Address1>
+					<em:Address2>CIR</em:Address2>
+					<em:City>FAIRFAX</em:City>
+					<em:State>VA</em:State>
+					<em:ZipOrPostalCode>22030</em:ZipOrPostalCode>
+					<em:Country>USA</em:Country>
+				</em:Address>
+				<em:Phone primaryPhone="7031231234"/>
+				<em:PeriodsOfService>
+					<em:Period branchOfService="Coast Guard" entryOnDuty="1970-01-01-05:00" radDate="1975-01-01-05:00">
+						<em:Eras>
+							<em:PeacetimeEra>Peacetime</em:PeacetimeEra>
+							<!--<em:ConflictEra>Vietnam</em:ConflictEra>-->
+						</em:Eras>
+					</em:Period>
+				</em:PeriodsOfService>
+				 
+			</em:VeteranServiceMemberInfo>
+		</em:PostDischargeClaimInformation>
+		<em:ExamRelatedContentions>
+			<em:ExamRelatedContention examRelatedContentionUuid="98c5e124-f347-46e4-b11c-d2ad21d649f2" contentionType="NEW" aceEligible="true">
+				<em:ContentionName>My right knee hurts</em:ContentionName>
+				<em:Classification code="8997" name="8997 name"/>
+				<em:DbqRequests>
+					<em:DbqRequest name="MUSC Knee and Lower Leg">
+						<em:NarrativeEntry>The right knee is reported as having pain.</em:NarrativeEntry>
+					</em:DbqRequest>
+				</em:DbqRequests>
+				<em:StandardLanguageEntries>
+					<em:StandardLanguageEntry>
+						The Veteran is claiming service connection for Right knee. Please examine the Veteran for a
+						chronic disability related to his or her claimed condition and indicate the current level of
+						severity.
+					</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>
+						Clinician: If using the ACE process to complete the Medical Examination, please explain the
+						basis for the decision not to examine the Veteran, and identify the specific materials reviewed
+						to complete the Medical Examination.
+					</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>
+						The Veteran does not need to report for all examinations for the following Contention:
+					</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>Right knee</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>
+						For this Contention, VBMS expects a results package to at a minimum include data pertaining to
+						the following DBQ(s) / associated CUI Output:
+					</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>          ? MUSC Knee and Lower Leg</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>
+						When completing any musculoskeletal DBQ, additional information is required to comply with a
+						recent US Court of Appeals for Veterans Claims (CAVC) decision in the case of Mitchell v.
+						Shinseki, relating to functional limitations. In the section of the DBQ titled ?Functional loss
+						and additional limitation in ROM,? additional questions must be addressed. For each joint
+						examined, please provide an opinion.
+					</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>
+						1. Whether pain, weakness, fatigability, or incoordination could significantly limit
+						functional ability during flare-ups, or when the joint is used repeatedly over a period of time,
+						and
+					</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>
+						2. Describe any such additional limitation due to pain, weakness, fatigability or
+						incoordination, and if feasible, this opinion should be expressed in terms of the degrees of
+						additional ROM loss due to /?pain on use or during flare-ups/?.
+					</em:StandardLanguageEntry>
+					<em:StandardLanguageEntry> </em:StandardLanguageEntry>
+					<em:StandardLanguageEntry>
+						3. If such opinion is not feasible, please state and provide an explanation as to why
+						the opinion cannot be rendered.
+					</em:StandardLanguageEntry>
+				</em:StandardLanguageEntries>
+			</em:ExamRelatedContention>
+		</em:ExamRelatedContentions>
+	</em:ExamSchedulingRequestCreatedEvent>
+	 
+</em:ExamManagementEventNotification>
