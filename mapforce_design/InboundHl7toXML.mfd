@@ -1,0 +1,605 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Edited with Altova MapForce 2020r2 -->
+<mapping xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="31">
+	<resources/>
+	<component name="defaultmap" uid="1" editable="1">
+		<properties SelectedLanguage="builtin"/>
+		<structure>
+			<children>
+				<component name="constant" library="core" uid="10" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="411" lty="269" rbx="462" rby="286"/>
+					<data>
+						<constant value="O" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="11" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="421" lty="305" rbx="485" rby="322"/>
+					<data>
+						<constant value="C&amp;P" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="12" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="420" lty="346" rbx="481" rby="363"/>
+					<data>
+						<constant value="NW" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="4" kind="2">
+					<targets>
+						<datapoint pos="0" key="3"/>
+					</targets>
+					<view ltx="426" lty="72" rbx="471" rby="89"/>
+					<data>
+						<constant value="|" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="6" kind="2">
+					<targets>
+						<datapoint pos="0" key="5"/>
+					</targets>
+					<view ltx="401" lty="104" rbx="472" rby="121"/>
+					<data>
+						<constant value="VBMS" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="16" kind="2">
+					<targets>
+						<datapoint pos="0" key="21"/>
+					</targets>
+					<view ltx="434" lty="427" rbx="517" rby="444"/>
+					<data>
+						<constant value="CERNER" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="15" kind="2">
+					<targets>
+						<datapoint pos="0" key="16"/>
+					</targets>
+					<view ltx="338" lty="480" rbx="459" rby="497"/>
+					<data>
+						<constant value="668 SPO WA VA" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="18" kind="2">
+					<properties/>
+					<targets>
+						<datapoint pos="0" key="23"/>
+					</targets>
+					<view ltx="290" lty="580" rbx="436" rby="597"/>
+					<data>
+						<constant value="[Y,4-4][M,2-2][D,2-2]&quot;+0000&quot;" datatype="string"/>
+						<wsdl/>
+					</data>
+				</component>
+				<component name="parse-date" library="core" uid="20" kind="5">
+					<properties/>
+					<sources>
+						<datapoint/>
+						<datapoint pos="1" key="24"/>
+					</sources>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="502" lty="597" rbx="585" rby="651"/>
+				</component>
+				<component name="constant" library="core" uid="23" kind="2">
+					<targets>
+						<datapoint pos="0" key="31"/>
+					</targets>
+					<view ltx="673" lty="493" rbx="725" rby="510"/>
+					<data>
+						<constant value="101" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="create-guid" library="lang" uid="13" kind="5">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="499" lty="248" rbx="585" rby="286"/>
+				</component>
+				<component name="constant" library="core" uid="9" kind="2">
+					<targets>
+						<datapoint pos="0" key="4"/>
+					</targets>
+					<view ltx="414" lty="214" rbx="471" rby="231"/>
+					<data>
+						<constant value="2.3" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="8" kind="2">
+					<targets>
+						<datapoint pos="0" key="7"/>
+					</targets>
+					<view ltx="410" lty="170" rbx="462" rby="187"/>
+					<data>
+						<constant value="001" datatype="decimal"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="7" kind="2">
+					<targets>
+						<datapoint pos="0" key="2"/>
+					</targets>
+					<view ltx="417" lty="137" rbx="485" rby="154"/>
+					<data>
+						<constant value="ORM" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="26" kind="2">
+					<targets>
+						<datapoint pos="0" key="35"/>
+					</targets>
+					<view ltx="607" lty="518" rbx="727" rby="535"/>
+					<data>
+						<constant value="1786009000001" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="27" kind="2">
+					<targets>
+						<datapoint pos="0" key="39"/>
+					</targets>
+					<view ltx="715" lty="610" rbx="782" rby="627"/>
+					<data>
+						<constant value="MRN" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="5" kind="2">
+					<targets>
+						<datapoint pos="0" key="6"/>
+					</targets>
+					<view ltx="402" lty="88" rbx="473" rby="105"/>
+					<data>
+						<constant value="^~\&amp;" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="30" kind="2">
+					<targets>
+						<datapoint pos="0" key="40"/>
+					</targets>
+					<view ltx="820" lty="548" rbx="888" rby="565"/>
+					<data>
+						<constant value="EDIPI" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="31" kind="2">
+					<targets>
+						<datapoint pos="0" key="42"/>
+					</targets>
+					<view ltx="918" lty="618" rbx="1054" rby="635"/>
+					<data>
+						<constant value="CS2VBMS TESTING" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="28" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="980" lty="503" rbx="1082" rby="520"/>
+					<data>
+						<constant value="2107713614" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="32" kind="2">
+					<targets>
+						<datapoint pos="0" key="48"/>
+					</targets>
+					<view ltx="672" lty="579" rbx="762" rby="596"/>
+					<data>
+						<constant value="19740101" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="33" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="904" lty="575" rbx="956" rby="592"/>
+					<data>
+						<constant value="M" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="34" kind="2">
+					<targets>
+						<datapoint pos="0" key="49"/>
+					</targets>
+					<view ltx="918" lty="548" rbx="1096" rby="565"/>
+					<data>
+						<constant value="1234 ROCKCREEK PARKWAY" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="35" kind="2">
+					<targets>
+						<datapoint pos="0" key="50"/>
+					</targets>
+					<view ltx="820" lty="591" rbx="926" rby="608"/>
+					<data>
+						<constant value="KANSAS CITY" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="36" kind="2">
+					<targets>
+						<datapoint pos="0" key="51"/>
+					</targets>
+					<view ltx="871" lty="654" rbx="932" rby="671"/>
+					<data>
+						<constant value="MO" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="37" kind="2">
+					<targets>
+						<datapoint pos="0" key="52"/>
+					</targets>
+					<view ltx="814" lty="664" rbx="886" rby="681"/>
+					<data>
+						<constant value="64117" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="38" kind="2">
+					<targets>
+						<datapoint pos="0" key="60"/>
+					</targets>
+					<view ltx="695" lty="659" rbx="765" rby="676"/>
+					<data>
+						<constant value="TEMP" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="39" kind="2">
+					<targets>
+						<datapoint pos="0" key="61"/>
+					</targets>
+					<view ltx="625" lty="634" rbx="673" rby="651"/>
+					<data>
+						<constant value="P" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="42" kind="2">
+					<targets>
+						<datapoint pos="0" key="67"/>
+					</targets>
+					<view ltx="630" lty="476" rbx="691" rby="493"/>
+					<data>
+						<constant value="NW" datatype="string"/>
+					</data>
+				</component>
+				<component name="parse-date" library="core" uid="19" kind="5">
+					<properties/>
+					<sources>
+						<datapoint pos="0" key="28"/>
+						<datapoint pos="1" key="25"/>
+					</sources>
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="502" lty="530" rbx="585" rby="584"/>
+				</component>
+				<component name="constant" library="core" uid="40" kind="2">
+					<targets>
+						<datapoint pos="0" key="66"/>
+					</targets>
+					<view ltx="499" lty="196" rbx="581" rby="213"/>
+					<data>
+						<constant value="ord doc" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="43" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="788" lty="495" rbx="959" rby="512"/>
+					<data>
+						<constant value="178600900000120200604" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="14" kind="2">
+					<targets>
+						<datapoint pos="0" key="1"/>
+					</targets>
+					<view ltx="411" lty="253" rbx="459" rby="270"/>
+					<data>
+						<constant value="1" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="44" kind="2">
+					<targets>
+						<datapoint pos="0" key="68"/>
+					</targets>
+					<view ltx="618" lty="349" rbx="666" rby="366"/>
+					<data>
+						<constant value="1" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="45" kind="2">
+					<targets>
+						<datapoint pos="0" key="69"/>
+					</targets>
+					<view ltx="556" lty="398" rbx="727" rby="415"/>
+					<data>
+						<constant value="178600900000120200604" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="47" kind="2">
+					<targets>
+						<datapoint pos="0" key="70"/>
+					</targets>
+					<view ltx="107" lty="614" rbx="191" rby="631"/>
+					<data>
+						<constant value="VBA ESR" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="48" kind="2">
+					<targets>
+						<datapoint pos="0" key="71"/>
+					</targets>
+					<view ltx="166" lty="696" rbx="342" rby="713"/>
+					<data>
+						<constant value="VBA EXAM SCHEDULING REQUEST" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="53" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="395" lty="864" rbx="455" rby="881"/>
+					<data>
+						<constant value="NM" datatype="string"/>
+					</data>
+				</component>
+				<component name="constant" library="core" uid="52" kind="2">
+					<targets>
+						<datapoint pos="0" key="115"/>
+					</targets>
+					<view ltx="401" lty="829" rbx="457" rby="846"/>
+					<data>
+						<constant value="DT" datatype="string"/>
+					</data>
+				</component>
+				<component name="ExamManagement-3.1" library="xml" uid="3" kind="14">
+					<properties/>
+					<view ltx="20" lty="25" rbx="343" rby="528"/>
+					<data>
+						<root scrollposition="1">
+							<header>
+								<namespaces>
+									<namespace uid="http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1"/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1" casttotargettypemode="cast-in-subtree">
+									<entry name="ExamManagementEventNotification" expanded="1"/>
+								</entry>
+							</entry>
+						</root>
+						<document schema="..\src\main\resources\schema\exchange\ExamManagement-3.1.xsd" inputinstance="..\soap-ui\1_ExamSchedulingRequestCreatedEvent.xml" outputinstance="..\soap-ui\1_ExamSchedulingRequestCreatedEvent.xml" instanceroot="{http://va.gov/vler/schemas/vlerSupersetSchema/examManagement/3.1}ExamManagementEventNotification"/>
+					</data>
+				</component>
+				<component name="ORM_O01" library="text" uid="2" kind="16">
+					<properties XSLTDefaultOutput="1"/>
+					<view ltx="502" lty="2" rbx="868" rby="405"/>
+					<data>
+						<root scrollposition="7554">
+							<header>
+								<namespaces>
+									<namespace/>
+									<namespace uid="http://www.altova.com/mapforce"/>
+								</namespaces>
+							</header>
+							<entry name="FileInstance" ns="1" expanded="1">
+								<entry name="document" ns="1" expanded="1">
+									<entry name="GroupFHS" expanded="1">
+										<entry name="GroupBHS" expanded="1">
+											<entry name="Message_ORM_O01" expanded="1">
+												<entry name="MSH" expanded="1">
+													<entry name="MSH-1" inpkey="11"/>
+													<entry name="MSH-2" inpkey="12"/>
+													<entry name="MSH-3" expanded="1">
+														<entry name="HD-1" inpkey="17"/>
+													</entry>
+													<entry name="MSH-4" expanded="1">
+														<entry name="HD-1" inpkey="18"/>
+													</entry>
+													<entry name="MSH-5" expanded="1">
+														<entry name="HD-1" inpkey="19"/>
+													</entry>
+													<entry name="MSH-6" expanded="1">
+														<entry name="HD-1" inpkey="20"/>
+													</entry>
+													<entry name="MSH-7" outkey="30"/>
+													<entry name="MSH-9" expanded="1">
+														<entry name="MSG-1" inpkey="14"/>
+														<entry name="MSG-2" inpkey="15"/>
+													</entry>
+													<entry name="MSH-10" inpkey="32"/>
+													<entry name="MSH-12" expanded="1">
+														<entry name="VID-1" inpkey="33"/>
+													</entry>
+												</entry>
+												<entry name="ORM_O01.PATIENT" expanded="1">
+													<entry name="PID" expanded="1">
+														<entry name="PID-1" inpkey="36"/>
+														<entry name="PID-2" expanded="1">
+															<entry name="CX-1" inpkey="37"/>
+															<entry name="CX-4" expanded="1">
+																<entry name="HD-1" inpkey="43"/>
+																<entry name="HD-2" inpkey="44"/>
+															</entry>
+														</entry>
+														<entry name="PID-3" expanded="1">
+															<entry name="CX-3">
+																<inputnodefunctions>
+																	<rule applyto="self">
+																		<default value="^"/>
+																	</rule>
+																</inputnodefunctions>
+															</entry>
+															<entry name="CX-4" expanded="1">
+																<entry name="HD-1" inpkey="46"/>
+															</entry>
+															<entry name="CX-6" inpkey="53"/>
+															<entry name="CX-9" expanded="1"/>
+														</entry>
+														<entry name="PID-4" expanded="1"/>
+														<entry name="PID-5" expanded="1"/>
+														<entry name="PID-6" expanded="1"/>
+														<entry name="PID-7" inpkey="54"/>
+														<entry name="PID-11" expanded="1">
+															<entry name="XAD-1" expanded="1">
+																<entry name="SAD-1" inpkey="55"/>
+															</entry>
+															<entry name="XAD-3" inpkey="56"/>
+															<entry name="XAD-4" inpkey="57"/>
+															<entry name="XAD-5" inpkey="58"/>
+															<entry name="XAD-7" inpkey="59"/>
+														</entry>
+													</entry>
+													<entry name="PD1" expanded="1"/>
+													<entry name="ORM_O01.PATIENT_VISIT" expanded="1">
+														<entry name="PV1" expanded="1">
+															<entry name="PV1-1" inpkey="62"/>
+															<entry name="PV1-2" inpkey="63"/>
+															<entry name="PV1-19" expanded="1">
+																<entry name="CX-1" inpkey="64"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+												<entry name="ORM_O01.ORDER" expanded="1">
+													<entry name="ORC" expanded="1">
+														<entry name="ORC-1" inpkey="65"/>
+														<entry name="ORC-12" expanded="1">
+															<entry name="XCN-16" expanded="1"/>
+															<entry name="XCN-23" expanded="1">
+																<entry name="CWE-1" inpkey="72"/>
+															</entry>
+														</entry>
+														<entry name="ORC-13" expanded="1"/>
+														<entry name="ORC-31" expanded="1"/>
+													</entry>
+													<entry name="ORM_O01.ORDER_DETAIL" expanded="1">
+														<entry name="ORM_O01." expanded="1">
+															<entry name="OBR" expanded="1">
+																<entry name="OBR-1" inpkey="73"/>
+																<entry name="OBR-2" expanded="1">
+																	<entry name="EI-3" inpkey="74"/>
+																</entry>
+																<entry name="OBR-3" expanded="1">
+																	<entry name="EI-1" inpkey="75"/>
+																	<entry name="EI-2" inpkey="76"/>
+																</entry>
+															</entry>
+														</entry>
+														<entry name="ORM_O01.OBSERVATION" expanded="1">
+															<entry name="OBX" expanded="1">
+																<entry name="OBX-1" inpkey="77"/>
+																<entry name="OBX-2" inpkey="79"/>
+															</entry>
+														</entry>
+													</entry>
+												</entry>
+											</entry>
+										</entry>
+									</entry>
+								</entry>
+							</entry>
+						</root>
+						<text inputinstance="..\soap-ui\testInput.hl7" encoding="1" byteorder="1" byteordermark="0" type="edi" kind="EDIHL7" config="HL7/Envelope.Config">
+							<settings isidoc="false" writeuna="true" syntaxlevel="A" controllingagency="HL7" syntaxversionnumber="2" requestacknowledgement="false" interchangecontrolversionnumber="" terminatewithlinefeed="false" autocompletedata="true" unpackedformat="false">
+								<separators repetition="~" escape="\" decimal="." segment="%0D" segmentcode="%7C" subcomponent="&amp;" component="%5E" dataelement="%7C"/>
+								<validation>
+									<case action="stop" kind="undefined"/>
+									<case action="stop" kind="missing-segment"/>
+									<case action="stop" kind="missing-group"/>
+									<case action="report+reject" kind="missing-field-or-composite"/>
+									<case action="report+reject" kind="extra-data"/>
+									<case action="report+reject" kind="invalid-field-value"/>
+									<case action="report+reject" kind="invalid-date"/>
+									<case action="report+reject" kind="invalid-time"/>
+									<case action="report+reject" kind="extra-repeat"/>
+									<case action="report+reject" kind="numeric-overflow"/>
+									<case action="report+reject" kind="data-element-too-short"/>
+									<case action="report+reject" kind="data-element-too-long"/>
+									<case action="stop" kind="unexpected-eof"/>
+									<case action="report+reject" kind="invalid-codelist-value"/>
+									<case action="report+reject" kind="semantic"/>
+									<case action="stop" kind="segment-not-in-message"/>
+									<case action="stop" kind="unrecognized-segment-id"/>
+									<case action="report+reject" kind="impl-not-used-present"/>
+									<case action="report+reject" kind="not-all-data-parsed"/>
+								</validation>
+							</settings>
+							<messages>
+								<message type="ORM_O01"/>
+							</messages>
+						</text>
+					</data>
+				</component>
+				<component name="auto-number" library="core" uid="50" kind="5">
+					<sources>
+						<datapoint/>
+						<datapoint/>
+						<datapoint/>
+						<datapoint/>
+					</sources>
+					<targets>
+						<datapoint pos="0" key="78"/>
+					</targets>
+					<view ltx="134" lty="795" rbx="276" rby="881"/>
+				</component>
+				<component name="constant" library="core" uid="51" kind="2">
+					<targets>
+						<datapoint/>
+					</targets>
+					<view ltx="401" lty="795" rbx="455" rby="812"/>
+					<data>
+						<constant value="ST" datatype="string"/>
+					</data>
+				</component>
+			</children>
+		</structure>
+		<connections>
+			<edge from="3" to="11"/>
+			<edge from="6" to="12"/>
+			<edge from="2" to="14"/>
+			<edge from="7" to="15"/>
+			<edge from="5" to="17"/>
+			<edge from="16" to="18"/>
+			<edge from="21" to="19"/>
+			<edge from="16" to="20"/>
+			<edge from="23" to="24"/>
+			<edge from="23" to="25"/>
+			<edge from="30" to="28"/>
+			<edge from="31" to="32"/>
+			<edge from="4" to="33"/>
+			<edge from="1" to="36"/>
+			<edge from="35" to="37"/>
+			<edge from="39" to="43"/>
+			<edge from="39" to="44"/>
+			<edge from="40" to="46"/>
+			<edge from="42" to="53"/>
+			<edge from="48" to="54"/>
+			<edge from="49" to="55"/>
+			<edge from="50" to="56"/>
+			<edge from="51" to="57"/>
+			<edge from="52" to="58"/>
+			<edge from="60" to="59"/>
+			<edge from="1" to="62"/>
+			<edge from="61" to="63"/>
+			<edge from="61" to="64"/>
+			<edge from="67" to="65"/>
+			<edge from="66" to="72"/>
+			<edge from="68" to="73"/>
+			<edge from="69" to="74"/>
+			<edge from="70" to="75"/>
+			<edge from="71" to="76"/>
+			<edge from="78" to="77"/>
+			<edge from="115" to="79"/>
+		</connections>
+	</component>
+</mapping>
